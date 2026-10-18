@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مِعجم الاتصال والإعلام الأكاديمي | LexiMedia</title>
-  
+  <title>معجم الاتصال والإعلام الأكاديمي | LexiMedia</title>
+
   <!-- Google Fonts: Cairo & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -20,10 +20,6 @@
       darkMode: 'class',
       theme: {
         extend: {
-          fontFamily: {
-            cairo: ['Cairo', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', 'Cairo', 'sans-serif'],
-          },
           colors: {
             brand: {
               50: '#f0f7ff',
@@ -47,1568 +43,701 @@
     body {
       font-family: 'Cairo', sans-serif;
     }
-    .en-text {
+    .en-font {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      direction: ltr;
-      display: inline-block;
     }
-    ::-webkit-scrollbar {
+    .custom-scroll::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
-    ::-webkit-scrollbar-track {
-      background: #f1f5f9;
-    }
-    .dark ::-webkit-scrollbar-track {
-      background: #1e293b;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #94a3b8;
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #cbd5e1;
       border-radius: 9999px;
     }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #64748b;
+    .dark .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #334155;
     }
-    .bg-grid-pattern {
-      background-size: 32px 32px;
-      background-image: 
-        linear-gradient(to right, rgba(2, 132, 199, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(2, 132, 199, 0.04) 1px, transparent 1px);
+    .grid-bg {
+      background-size: 24px 24px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
     }
-    .dark .bg-grid-pattern {
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    }
-    .badge-glow {
-      box-shadow: 0 0 15px rgba(2, 132, 199, 0.15);
+    .dark .grid-bg {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     }
   </style>
 </head>
 
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-200">
-  
-  <!-- Header -->
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
+
+  <!-- Navbar -->
   <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-18 py-3">
-        
-        <!-- Logo & Academic Identity -->
-        <div class="flex items-center gap-3">
-          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-600 to-sky-400 flex items-center justify-center text-white shadow-md shadow-brand-600/20">
-            <i class="fa-solid fa-book-bookmark text-xl"></i>
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">مِعجم</span>
-              <span class="text-xs font-bold px-2 py-0.5 rounded-md bg-brand-100 dark:bg-brand-900/60 text-brand-700 dark:text-brand-300">LexiMedia</span>
-            </div>
-            <p class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">المرجع الأكاديمي لمصطلحات الإعلام والاتصال المؤسسي</p>
-          </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
+          <i class="fa-solid fa-book-bookmark text-xl"></i>
         </div>
-
-        <!-- Navigation Actions -->
-        <div class="flex items-center gap-2 sm:gap-4">
-          <button id="themeToggleBtn" aria-label="تبديل النمط الليلي" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-sm">
-            <i class="fa-solid fa-moon dark:hidden"></i>
-            <i class="fa-solid fa-sun hidden dark:inline"></i>
-          </button>
-          
-          <button onclick="openModal('compareModal')" class="hidden md:flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
-            <i class="fa-solid fa-scale-balanced text-brand-600 dark:text-brand-400"></i>
-            <span>مقارنة المصطلحات</span>
-          </button>
-
-          <button onclick="openModal('academicCitationModal')" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold bg-brand-700 hover:bg-brand-800 text-white shadow-sm shadow-brand-700/30 transition-all">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span class="hidden sm:inline">دليل التوثيق والاعتماد</span>
-            <span class="sm:hidden">التوثيق</span>
-          </button>
-
-          <button id="loginNavBtn" onclick="openLoginModal()" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold border border-brand-500/40 text-brand-700 dark:text-sky-300 bg-brand-50/70 dark:bg-slate-800 hover:bg-brand-100 dark:hover:bg-slate-700 transition-all">
-            <i class="fa-solid fa-user-lock"></i>
-            <span id="navUserStatus">بوابة المشتركين</span>
-          </button>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl font-black text-brand-900 dark:text-white tracking-tight">معجم</span>
+            <span class="text-xs px-2 py-0.5 rounded-md bg-brand-100 text-brand-800 dark:bg-brand-900/60 dark:text-brand-300 font-bold en-font">LexiMedia</span>
+          </div>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-medium -mt-0.5">المرجع الأكاديمي لمصطلحات الإعلام والاتصال المؤسسي</p>
         </div>
+      </div>
 
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-100/70 dark:bg-slate-800 text-slate-600 dark:text-slate-300 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="تبديل المظهر">
+          <i class="fa-solid fa-moon dark:hidden"></i>
+          <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+        </button>
+
+        <a href="#statsSection" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <i class="fa-solid fa-chart-pie text-brand-500"></i>
+          مؤشرات المعجم
+        </a>
+
+        <div class="h-6 w-[1px] bg-slate-200 dark:bg-slate-800 hidden sm:block"></div>
+
+        <a href="https://drhebeldib.github.io/leximedia/" class="inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-brand-700 hover:bg-brand-800 text-white shadow-sm transition">
+          <i class="fa-solid fa-graduation-cap"></i>
+          دليل التوثيق والاعتماد
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="flex-grow">
-    <!-- Hero Section -->
-    <section class="relative bg-grid-pattern pt-10 pb-14 px-4 sm:px-6 lg:px-8 border-b border-slate-200 dark:border-slate-800/80">
-      <div class="max-w-5xl mx-auto text-center">
-        
-        <!-- Academic Badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-50 dark:bg-slate-800 border border-brand-200/80 dark:border-slate-700 text-brand-700 dark:text-sky-300 text-xs font-semibold mb-5 badge-glow">
-          <i class="fa-solid fa-certificate text-emerald-500"></i>
-          <span>محكّم أكاديميًا وموجّه للباحثين والممارسين وصنّاع الاتصال</span>
-        </div>
-
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight mb-4">
-          قاموس المصطلحات الأكاديمية والمهنية <br class="hidden sm:block">
-          <span class="text-transparent bg-clip-text bg-gradient-to-l from-brand-600 via-sky-600 to-indigo-600">للإعلام والعلاقات العامة والاتصال المؤسسي</span>
-        </h1>
-        
-        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed mb-6">
-          دليلك الأكاديمي لتحرير مصطلحات الاتصال والإعلام؛ صياغة اصطلاحية منضبطة تتجاوز النقل الحرفي إلى المقابل المعتمد في الأدبيات والدراسات العلمية.
-        </p>
-
-        <!-- Academic Authority Card (Lexicon Identity) -->
-        <div class="max-w-2xl mx-auto mb-8 p-5 rounded-3xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-brand-200/80 dark:border-slate-800 shadow-lg shadow-brand-900/5 flex flex-col sm:flex-row items-center gap-5 text-right">
-          <!-- Lexicon Emblem Icon -->
-          <div class="flex-shrink-0">
-            <div class="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl bg-gradient-to-tr from-brand-800 via-brand-600 to-sky-500 flex flex-col items-center justify-center text-white shadow-md shadow-brand-700/20 ring-4 ring-brand-100 dark:ring-slate-800">
-              <i class="fa-solid fa-book-atlas text-3xl mb-1"></i>
-              <span class="text-[10px] font-mono tracking-widest font-black uppercase">LEXIMEDIA</span>
-            </div>
-          </div>
-
-          <div class="flex-grow">
-            <div class="flex flex-wrap items-center gap-2 justify-center sm:justify-start mb-1">
-              <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-brand-100 dark:bg-brand-900/60 text-brand-800 dark:text-brand-300">
-                إشراف وتحكيم علمي
-              </span>
-              <span class="text-xs font-semibold text-slate-400"></span>
-            </div>
-            <h3 class="text-lg sm:text-xl font-black text-slate-900 dark:text-white text-center sm:text-right">
-              د. هبة أحمد الديب
-            </h3>
-            <p class="text-xs sm:text-sm font-semibold text-brand-700 dark:text-sky-400 text-center sm:text-right mt-0.5">
-              أستاذ مساعد بكلية الإعلام والعلاقات العامة — جامعة ليوا (Liwa University)
-            </p>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed text-center sm:text-right">
-              متخصصة في بحوث الإعلام الرقمي والاتصال الاستراتيجي والمؤسسي، والمشرفة على ضبط المقابلات الاصطلاحية وتأصيلها الأكاديمي في المعجم.
-            </p>
-          </div>
-        </div>
-
-        <!-- Search Bar Area -->
-        <div class="max-w-3xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl shadow-brand-900/5 border border-slate-200 dark:border-slate-800 p-3 sm:p-4 text-right">
-          <div class="relative flex items-center">
-            <span class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400 text-lg">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </span>
-            <input 
-              id="searchInput" 
-              type="text" 
-              autocomplete="off"
-              placeholder="ابحث بالعربية أو بالإنجليزية (مثال: Framing Theory، الاتصال الاستراتيجي، أصحاب المصلحة...)" 
-              class="w-full pr-12 pl-24 sm:pl-28 py-3.5 sm:py-4 bg-slate-50 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium text-sm sm:text-base transition-all"
-            >
-            <div class="absolute left-2 flex items-center gap-1">
-              <button 
-                id="clearSearchBtn" 
-                onclick="clearSearch()"
-                class="hidden p-2 text-xs rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-700">
-                <i class="fa-solid fa-xmark text-sm"></i>
-              </button>
-              <span class="text-[11px] font-mono font-semibold px-2 py-1 bg-slate-200/70 dark:bg-slate-700 rounded text-slate-500 dark:text-slate-400 hidden sm:inline-block">ع / En</span>
-            </div>
-          </div>
-
-          <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 text-xs">
-            <div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
-              <i class="fa-solid fa-filter text-brand-600 dark:text-brand-400"></i>
-              <span class="font-bold">المستوى المقصود:</span>
-            </div>
-            
-            <div class="flex items-center flex-wrap gap-1.5" id="scopeFilterContainer">
-              <button onclick="setScopeFilter('all')" data-scope="all" class="scope-btn px-2.5 py-1 rounded-lg bg-brand-600 text-white font-semibold shadow-xs">الكل</button>
-              <button onclick="setScopeFilter('academic')" data-scope="academic" class="scope-btn px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">نظري وأكاديمي</button>
-              <button onclick="setScopeFilter('professional')" data-scope="professional" class="scope-btn px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">ممارسة مهنية وتطبيقية</button>
-              <button onclick="setScopeFilter('methodology')" data-scope="methodology" class="scope-btn px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">مناهج وبحوث إعلامية</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quick Trending Term Tags -->
-        <div class="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs">
-          <span class="text-slate-400 dark:text-slate-500 font-semibold"><i class="fa-solid fa-arrow-trend-up ml-1"></i>الأكثر بحثاً:</span>
-          <button onclick="quickSearch('Agenda-Setting Theory')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 text-slate-700 dark:text-slate-300 transition-colors">ترتيب الأولويات (Agenda-Setting)</button>
-          <button onclick="quickSearch('Stakeholder Engagement')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 text-slate-700 dark:text-slate-300 transition-colors">إشراك أصحاب المصلحة</button>
-          <button onclick="quickSearch('Crisis Communication')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 text-slate-700 dark:text-slate-300 transition-colors">إدارة اتصالات الأزمات</button>
-          <button onclick="quickSearch('Echo Chambers')" class="px-2.5 py-1 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500 text-slate-700 dark:text-slate-300 transition-colors">غرف الصدى الرقمية</button>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Categories Tabs Bar -->
-    <section class="sticky top-18 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-3 shadow-xs">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between gap-3 overflow-x-auto no-scrollbar py-1" id="categoriesScroll">
-          <!-- Dynamic Categories Generated by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Main Results Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <!-- Hero & Supervisor Section -->
+  <section class="relative pt-10 pb-8 grid-bg border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
       
-      <!-- Statistics & View Bar -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-        <div>
-          <h2 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
-            <span id="currentCategoryTitle">جميع المصطلحات والمجالات</span>
-            <span id="resultsCount" class="text-xs px-2.5 py-0.5 rounded-full bg-brand-100 dark:bg-brand-900/60 text-brand-700 dark:text-brand-300 font-bold">12 مصطلح متوفر</span>
+      <!-- Academic Supervisor Banner (تم حذف الكلية والإبقاء على الشارة واسمك الموقر) -->
+      <div class="bg-gradient-to-r from-blue-50/90 via-white to-sky-50/90 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-900 border border-brand-200/60 dark:border-brand-900/40 rounded-3xl p-6 sm:p-7 shadow-sm mb-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex-1 text-center md:text-right">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-950/80 border border-brand-300 dark:border-brand-800 text-brand-800 dark:text-brand-300 text-xs font-bold mb-3">
+            <i class="fa-solid fa-user-graduate"></i>
+            <span>إشراف وتحكيم علمي</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mb-1.5">
+            د. هبة أحمد الديب
           </h2>
-          <p id="categoryDescription" class="text-xs text-slate-500 dark:text-slate-400 mt-1">تصفح المصطلحات الأكاديمية المعتمدة مع سياقات الاستخدام ومصادر التوثيق.</p>
-        </div>
-
-        <!-- Sorting & Display Toggles -->
-        <div class="flex items-center gap-3">
-          <div class="flex items-center gap-2 text-xs">
-            <label for="sortBy" class="text-slate-500 font-medium">الترتيب:</label>
-            <select id="sortBy" onchange="handleSortChange()" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-brand-500">
-              <option value="alpha-ar">أبجديًا (عربي)</option>
-              <option value="alpha-en">أبجديًا (English)</option>
-              <option value="popular">الأكثر استشهادًا</option>
-            </select>
-          </div>
-
-          <button onclick="toggleCardMode()" id="toggleViewBtn" title="تبديل حجم العرض (موجز/مفصل)" class="p-2 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs">
-            <i class="fa-solid fa-table-list"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Main Results Grid -->
-      <div id="termsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Rendered dynamically -->
-      </div>
-
-      <!-- Empty State -->
-      <div id="emptyState" class="hidden py-16 text-center">
-        <div class="w-16 h-16 mx-auto rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 mb-4 text-2xl">
-          <i class="fa-solid fa-magnifying-glass-chart"></i>
-        </div>
-        <h3 class="text-lg font-bold text-slate-800 dark:text-white">لم يتم العثور على مصطلحات مطابقة</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto mt-1 mb-4">
-          جرّب البحث بكلمة مفتاحية بديلة أو باللغة الإنجليزية، أو تصفح باقي التصنيفات.
-        </p>
-        <button onclick="resetFilters()" class="px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white hover:bg-brand-700 transition">إعادة ضبط الفلاتر</button>
-      </div>
-
-    </section>
-
-    <!-- Beneficiary Pillars Section -->
-    <section class="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800/80 py-12 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-10">
-          <span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-wider">مُصمم ومُحكّم ليخدم المنظومة الشاملة</span>
-          <h3 class="text-2xl font-black text-slate-900 dark:text-white mt-1">تلبية احتياجات مجتمع الإعلام والاتصال المتنوعة</h3>
-          <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">كيف يستفيد الباحثون والممارسون من الدقة الأكاديمية لمعجم LexiMedia؟</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="bg-white dark:bg-slate-800/70 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-xs">
-            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-3 text-lg">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5">طلبة وباحثو الدراسات العليا</h4>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              تحديد المتغيرات البحثية، والتأصيل النظري للأطروحات، وتجنب اللبس المفاهيمي في الدراسات والأدبيات السابقة.
-            </p>
-          </div>
-
-          <div class="bg-white dark:bg-slate-800/70 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-xs">
-            <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-3 text-lg">
-              <i class="fa-solid fa-building-columns"></i>
-            </div>
-            <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5">ممارسو الاتصال والعلاقات العامة</h4>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              بناء استراتيجيات الهوية المؤسسية، خطط إدارة الأزمات، والتخاطب مع بيوت الخبرة العالمية بلغة مهنية معيارية موحدة.
-            </p>
-          </div>
-
-          <div class="bg-white dark:bg-slate-800/70 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-xs">
-            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-3 text-lg">
-              <i class="fa-solid fa-language"></i>
-            </div>
-            <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5">المترجمون والمحررون الصحفيون</h4>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              إيجاد البدائل الاصطلاحية المعربة المعترف بها في وكالات الأنباء، بعيداً عن أخطاء الترجمات الحرفية المشوهة للمعنى.
-            </p>
-          </div>
-
-          <div class="bg-white dark:bg-slate-800/70 p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 shadow-xs">
-            <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-3 text-lg">
-              <i class="fa-solid fa-landmark"></i>
-            </div>
-            <h4 class="font-bold text-slate-900 dark:text-white text-sm mb-1.5">الاتصال الحكومي والإعلام الرقمي</h4>
-            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-              فهم أطر الدبلوماسية العامة، حملات كسب التأييد والوعي، وصياغة الخطاب العام بكفاءة ومصداقية وطنية.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- Term Details Modal -->
-  <div id="termDetailModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 w-full max-w-3xl rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-8 max-h-[90vh] flex flex-col animate-in fade-in zoom-in-95 duration-200 text-right">
-      
-      <div class="px-6 py-5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/50 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <span id="modalCategoryBadge" class="text-xs font-bold px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900/60 text-brand-700 dark:text-brand-300">
-            العلاقات العامة
-          </span>
-          <span id="modalScopeBadge" class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
-            أكاديمي
-          </span>
-        </div>
-        <button onclick="closeModal('termDetailModal')" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-800 transition">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-      </div>
-
-      <div id="modalBody" class="p-6 overflow-y-auto space-y-6 text-slate-700 dark:text-slate-200 text-sm">
-        <!-- Rendered by JS -->
-      </div>
-
-      <div class="px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex flex-wrap items-center justify-between gap-3 text-xs">
-        <div class="flex items-center gap-2 text-slate-500">
-          <i class="fa-solid fa-quote-right text-brand-600"></i>
-          <span>توثيق معتمد بصيغة APA للدراسات العلمية</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <button id="modalCopyBtn" onclick="copyTermCitation()" class="px-3.5 py-2 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 font-bold text-slate-800 dark:text-slate-200 transition">
-            <i class="fa-regular fa-copy ml-1"></i>نسخ الاقتباس الأكاديمي
-          </button>
-          <button onclick="closeModal('termDetailModal')" class="px-4 py-2 rounded-xl bg-brand-700 hover:bg-brand-800 text-white font-bold transition">
-            إغلاق
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Comparison Modal -->
-  <div id="compareModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 w-full max-w-4xl rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-8 max-h-[90vh] flex flex-col text-right">
-      
-      <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 flex items-center justify-center">
-            <i class="fa-solid fa-scale-balanced"></i>
-          </div>
-          <div>
-            <h3 class="font-extrabold text-base text-slate-900 dark:text-white">مقارنة المفاهيم والمصطلحات المتشابهة</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400">إزالة الالتباس الاصطلاحي الشائع في الأبحاث والممارسة اليومية</p>
-          </div>
-        </div>
-        <button onclick="closeModal('compareModal')" class="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-      </div>
-
-      <div class="p-4 bg-slate-50 dark:bg-slate-800/40 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center gap-3 text-xs">
-        <span class="font-bold text-slate-700 dark:text-slate-300">اختر حالة مقارنة جاهزة:</span>
-        <button onclick="loadComparison('pr_vs_marketing')" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:border-brand-500 font-semibold text-slate-800 dark:text-slate-200">
-          العلاقات العامة مقابل التسويق
-        </button>
-        <button onclick="loadComparison('agenda_vs_framing')" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:border-brand-500 font-semibold text-slate-800 dark:text-slate-200">
-          ترتيب الأولويات مقابل التأطير الإعلامي
-        </button>
-        <button onclick="loadComparison('corp_vs_strat')" class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:border-brand-500 font-semibold text-slate-800 dark:text-slate-200">
-          الاتصال المؤسسي مقابل الاتصال الاستراتيجي
-        </button>
-      </div>
-
-      <div id="compareContent" class="p-6 overflow-y-auto">
-        <!-- Rendered by JS -->
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Academic Methodology Modal -->
-  <div id="academicCitationModal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 w-full max-w-2xl rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden text-right">
-      <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-brand-100 dark:bg-brand-900/40 text-brand-600 dark:text-brand-300 flex items-center justify-center">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <div>
-            <h3 class="font-extrabold text-base text-slate-900 dark:text-white">منهجية التوثيق والتعريب الأكاديمي</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400">معايير اعتماد الترجمة الاصطلاحية في LexiMedia</p>
-          </div>
-        </div>
-        <button onclick="closeModal('academicCitationModal')" class="p-2 text-slate-400 hover:text-slate-700 dark:hover:text-white">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-      </div>
-      <div class="p-6 text-sm text-slate-600 dark:text-slate-300 space-y-4">
-        <div class="p-4 rounded-2xl bg-brand-50 dark:bg-brand-950/50 border border-brand-200 dark:border-brand-900 text-xs text-brand-900 dark:text-brand-200 leading-relaxed">
-          <i class="fa-solid fa-circle-info ml-1 text-brand-600"></i>
-          تخضع كافة المصطلحات المدرجة لمعايير المقاربة المزدوجة: اعتماد المعنى الوارد في الدوريات العالمية المصنفة (Clarivate / Scopus) مع مراعاة الاصطلاح المعرّب المقر من مجامع اللغة العربية والجمعيات الأكاديمية للإعلام (مثل ICA وAEJMC).
-        </div>
-        <h4 class="font-bold text-slate-900 dark:text-white">صيغة التوثيق الموصى بها في الأبحاث (APA 7th):</h4>
-        <div class="p-3 bg-slate-100 dark:bg-slate-800 rounded-xl font-mono text-xs text-slate-700 dark:text-slate-300 dir-ltr select-all">
-          الديب، هبة أحمد. (2026). معجم مصطلحات الإعلام والاتصال المؤسسي ، جامعة ليوا. LexiMedia Platform.
-        </div>
-        <h4 class="font-bold text-slate-900 dark:text-white">مراحل تدقيق المصطلح:</h4>
-        <ul class="list-disc list-inside space-y-1.5 text-xs text-slate-500 dark:text-slate-400">
-          <li>فحص الأصل الاشتقاقي في حقل الاتصال والإعلام (Etymology).</li>
-          <li>تحديد المفهوم في المدرسة السلوكية والمدرسة النقدية والثقافية.</li>
-          <li>فصل المفهوم الإداري العام عن التطبيق الاتصالي والمؤسسي.</li>
-          <li>تقديم البدائل المقبولة دون إغفال المصطلح المتداول في سوق العمل.</li>
-        </ul>
-      </div>
-      <div class="px-6 py-3 bg-slate-50 dark:bg-slate-800/60 border-t border-slate-200 dark:border-slate-800 text-left">
-        <button onclick="closeModal('academicCitationModal')" class="px-4 py-1.5 rounded-lg bg-brand-700 text-white text-xs font-bold">فهمت ذلك</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Notification Toast -->
-  <div id="toast" class="fixed bottom-6 left-6 z-50 hidden bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-xs font-bold transition-all transform duration-300">
-    <i class="fa-solid fa-check-circle text-emerald-500 text-base"></i>
-    <span id="toastMessage">تم نسخ النص بنجاح</span>
-  </div>
-
-  <!-- Login Modal (Custom Rule: 1 Uppercase + 5 Digits) -->
-  <div id="loginModal" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-    <div class="bg-white dark:bg-slate-900 w-full max-w-md rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-auto flex flex-col text-right animate-in fade-in zoom-in-95 duration-200">
-      
-      <!-- Modal Header -->
-      <div class="px-6 py-5 border-b border-slate-100 dark:border-slate-800 bg-gradient-to-r from-brand-50/70 via-sky-50/50 to-white dark:from-slate-800/80 dark:to-slate-900 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-700 to-sky-500 flex items-center justify-center text-white shadow-md shadow-brand-700/20">
-            <i class="fa-solid fa-id-badge text-lg"></i>
-          </div>
-          <div>
-            <h3 class="text-base font-black text-slate-900 dark:text-white">بوابة الأكاديميين والمشتركين</h3>
-            <p class="text-[11px] text-slate-500 dark:text-slate-400">سجّل دخولك للوصول إلى التحليلات والميزات التخصصية</p>
-          </div>
-        </div>
-        <button onclick="closeModal('loginModal')" class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 transition">
-          <i class="fa-solid fa-xmark text-lg"></i>
-        </button>
-      </div>
-
-      <!-- Modal Form Body -->
-      <div class="p-6">
-        
-        <div class="mb-5 p-3 rounded-2xl bg-brand-50/80 dark:bg-brand-950/40 border border-brand-200/80 dark:border-brand-900/60 flex items-start gap-2.5 text-xs text-brand-900 dark:text-brand-200">
-          <i class="fa-solid fa-shield-halved text-brand-600 mt-0.5 text-sm"></i>
-          <span>معيار الأمان الأكاديمي للمشترك: تشترط كلمة المرور <strong>حرفاً كبيراً واحداً بالإنجليزية وخمسة أرقام (حرف كبير + 5 أرقام)</strong> (مثال: <code class="dir-ltr px-1 bg-white dark:bg-slate-800 rounded font-bold">H12345</code> أو <code class="dir-ltr px-1 bg-white dark:bg-slate-800 rounded font-bold">A54321</code>).</span>
-        </div>
-
-        <form id="academicLoginForm" onsubmit="handleAcademicLogin(event)" class="space-y-4">
-          
-          <!-- Username input -->
-          <div>
-            <label for="loginUsername" class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1.5">
-              اسم المستخدم للمشترك:
-            </label>
-            <div class="relative flex items-center">
-              <span class="absolute right-3.5 text-slate-400 pointer-events-none text-sm">
-                <i class="fa-regular fa-user"></i>
-              </span>
-              <input 
-                type="text" 
-                id="loginUsername" 
-                required
-                placeholder="أدخل اسم المستخدم (مثال: heba_eldeeb أو user_2026)" 
-                class="w-full pr-10 pl-4 py-2.5 bg-slate-50 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium transition"
-              >
-            </div>
-          </div>
-
-          <!-- Password input with eye toggle -->
-          <div>
-            <div class="flex items-center justify-between mb-1.5">
-              <label for="loginPassword" class="block text-xs font-bold text-slate-700 dark:text-slate-300">
-                كلمة المرور:
-              </label>
-              <span class="text-[10px] text-slate-400 font-mono">حرف كبير + 5 أرقام (6 خانات)</span>
-            </div>
-            
-            <div class="relative flex items-center">
-              <span class="absolute right-3.5 text-slate-400 pointer-events-none text-sm">
-                <i class="fa-solid fa-key"></i>
-              </span>
-              <input 
-                type="password" 
-                id="loginPassword" 
-                required
-                maxlength="20"
-                oninput="validatePasswordFormat(this.value)"
-                placeholder="حرف كبير و5 أرقام (مثال: H12345)" 
-                class="w-full pr-10 pl-11 py-2.5 bg-slate-50 dark:bg-slate-800/80 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-xs sm:text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium font-mono dir-ltr text-right transition"
-              >
-              <button 
-                type="button" 
-                onclick="togglePasswordVisibility()" 
-                id="togglePassBtn"
-                class="absolute left-2.5 p-1.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition text-xs">
-                <i class="fa-solid fa-eye" id="passEyeIcon"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Live Rule Validation Checklist -->
-          <div class="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200/80 dark:border-slate-700/60 space-y-1.5 text-xs">
-            <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400 block mb-1">شروط كلمة المرور المطلوبة:</span>
-            
-            <div id="ruleUppercase" class="flex items-center gap-2 text-slate-500 transition-colors">
-              <i class="fa-solid fa-circle-xmark text-slate-400" id="ruleUpperIcon"></i>
-              <span>يحتوي على حرف إنجليزي كبير واحد على الأقل (A-Z)</span>
-            </div>
-
-            <div id="ruleDigits" class="flex items-center gap-2 text-slate-500 transition-colors">
-              <i class="fa-solid fa-circle-xmark text-slate-400" id="ruleDigitsIcon"></i>
-              <span>يحتوي على 5 أرقام بالتحديد (0-9)</span>
-            </div>
-
-            <div id="ruleExactStructure" class="flex items-center gap-2 text-slate-500 transition-colors">
-              <i class="fa-solid fa-circle-xmark text-slate-400" id="ruleStructureIcon"></i>
-              <span>إجمالي التركيبة: حرف كبير + 5 أرقام (مثل: H12345)</span>
-            </div>
-          </div>
-
-          <div id="loginStatusMessage" class="hidden p-3 rounded-xl text-xs font-bold text-center"></div>
-
-          <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 pt-1">
-            <label class="flex items-center gap-2 cursor-pointer select-none">
-              <input type="checkbox" id="rememberMeCheckbox" checked class="rounded border-slate-300 text-brand-600 focus:ring-brand-500">
-              <span>تذكر تسجيل الدخول</span>
-            </label>
-            <a href="javascript:void(0)" onclick="fillDemoCredentials()" class="text-brand-600 dark:text-sky-400 hover:underline font-semibold">
-              تجربة ببيانات جاهزة
-            </a>
-          </div>
-
-          <button 
-            type="submit" 
-            id="submitLoginBtn"
-            class="w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-l from-brand-700 via-brand-600 to-sky-600 hover:from-brand-800 hover:to-sky-700 text-white shadow-lg shadow-brand-700/25 transition-all transform active:scale-[0.99] flex items-center justify-center gap-2">
-            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-            <span>دخول المشترك</span>
-          </button>
-        </form>
-
-        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
-          <span>النظام الأكاديمي الموحد</span>
-          <span class="font-bold text-brand-600 dark:text-sky-400">كلية الإعلام — جامعة ليوا</span>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-10 transition-colors">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-        
-        <div class="md:col-span-2">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="w-9 h-9 rounded-xl bg-brand-700 flex items-center justify-center text-white">
-              <i class="fa-solid fa-book-bookmark"></i>
-            </div>
-            <span class="text-lg font-black text-slate-900 dark:text-white">مِعجم الاتصال والإعلام (LexiMedia)</span>
-          </div>
-          <div class="flex items-center gap-3 mb-3 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 max-w-md">
-            <div class="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-900/60 text-brand-700 dark:text-brand-300 flex items-center justify-center text-lg flex-shrink-0">
-              <i class="fa-solid fa-user-graduate"></i>
-            </div>
-            <div>
-              <p class="text-xs font-bold text-slate-800 dark:text-slate-200">إشراف وتحكيم علمي: د. هبة أحمد الديب</p>
-              <p class="text-[11px] text-slate-500 dark:text-slate-400">أستاذ مساعد بكلية الإعلام والعلاقات العامة — جامعة ليوا</p>
-            </div>
-          </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md leading-relaxed">
+          <p class="text-xs sm:text-sm font-semibold text-brand-700 dark:text-brand-400 mb-3">
+            أستاذ مساعد الإعلام والعلاقات العامة — جامعة ليوا (Liwa University)
+          </p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
             مبادرة معرفية وأكاديمية متخصصة تهدف إلى توحيد وضبط المصطلح العلمي في تخصصات العلاقات العامة، الإعلام الرقمي، والاتصال الاستراتيجي والمؤسسي في الوطن العربي لدعم الباحثين والممارسين.
           </p>
         </div>
-
-        <div>
-          <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">المجالات الرئيسية</h4>
-          <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
-            <li><a href="#" onclick="filterByCategory('pr'); return false;" class="hover:text-brand-600">العلاقات العامة (PR)</a></li>
-            <li><a href="#" onclick="filterByCategory('corp-comm'); return false;" class="hover:text-brand-600">الاتصال المؤسسي (Corp Comm)</a></li>
-            <li><a href="#" onclick="filterByCategory('strat-comm'); return false;" class="hover:text-brand-600">الاتصال الاستراتيجي</a></li>
-            <li><a href="#" onclick="filterByCategory('digital-media'); return false;" class="hover:text-brand-600">الإعلام الرقمي والجديد</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-3">دعم الباحثين والمؤسسات</h4>
-          <ul class="space-y-2 text-xs text-slate-500 dark:text-slate-400">
-            <li><a href="#" onclick="openModal('academicCitationModal'); return false;" class="hover:text-brand-600">دليل التوثيق المعياري</a></li>
-            <li><a href="#" onclick="openModal('compareModal'); return false;" class="hover:text-brand-600">مصفوفة الفروق المفاهيمية</a></li>
-            <li><span class="text-slate-400">تحكيم ومراجعة دورية</span></li>
-            <li><span class="text-brand-600 dark:text-brand-400 font-semibold">إشراف: د. هبة أحمد الديب</span></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="pt-6 border-t border-slate-100 dark:border-slate-800 text-center sm:flex sm:justify-between sm:items-center text-xs text-slate-400">
-        <p>© 2026 جميع الحقوق الفكرية والأكاديمية محفوظة لـ: <span class="font-bold text-slate-700 dark:text-slate-200">د. هبة أحمد الديب</span> — أستاذ مساعد بكلية الإعلام والعلاقات العامة، <span class="text-brand-600 dark:text-brand-400 font-semibold">جامعة ليوا</span>.</p>
-        <p class="mt-2 sm:mt-0 font-medium">مُصمم ومُنسق وفق أرقى معايير تجربة الاستخدام الأكاديمية (UX/UI)</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Application Logic & Term Database -->
-  <script>
-    const scientificCategories = [
-      { id: 'all', titleAr: 'الكل', titleEn: 'All Fields', icon: 'fa-globe' },
-      { id: 'pr', titleAr: 'العلاقات العامة', titleEn: 'Public Relations', icon: 'fa-handshake' },
-      { id: 'corp-comm', titleAr: 'الاتصال المؤسسي', titleEn: 'Corporate Communication', icon: 'fa-building' },
-      { id: 'strat-comm', titleAr: 'الاتصال الاستراتيجي', titleEn: 'Strategic Communication', icon: 'fa-chess' },
-      { id: 'gov-comm', titleAr: 'الاتصال الحكومي', titleEn: 'Government Communication', icon: 'fa-landmark' },
-      { id: 'org-comm', titleAr: 'الاتصال التنظيمي', titleEn: 'Organizational Communication', icon: 'fa-sitemap' },
-      { id: 'digital-media', titleAr: 'الإعلام الرقمي والجديد', titleEn: 'Digital & New Media', icon: 'fa-hashtag' },
-      { id: 'journalism', titleAr: 'الصحافة والنشر', titleEn: 'Journalism', icon: 'fa-newspaper' },
-      { id: 'advertising', titleAr: 'الإعلان والترويج', titleEn: 'Advertising', icon: 'fa-bullhorn' },
-      { id: 'marcomm', titleAr: 'الاتصال التسويقي المتكامل', titleEn: 'Marketing & IMC', icon: 'fa-chart-pie' }
-    ];
-
-    const mediaGlossary = [
-      {
-        id: 'term-1',
-        termAr: 'إدارة اتصالات الأزمات',
-        termEn: 'Crisis Communication Management',
-        pronunciation: '/ˈkraɪsɪs kəˌmjuːnɪˈkeɪʃən/',
-        category: 'corp-comm',
-        categoryNameAr: 'الاتصال المؤسسي',
-        scope: 'professional',
-        scopeNameAr: 'ممارسة مهنية واستراتيجية',
-        citationsCount: 1420,
-        alternativesAr: ['اتصال الطوارئ', 'الاتصال في حالات التأزم', 'إدارة السمعة أثناء الأزمات'],
-        definitionAr: 'منظومة تفاعلية واستراتيجية من الإجراءات والرسائل الاتصالية المُصممة لمنع حدوث الضرر، أو تقليص آثاره السلبية على سمعة المؤسسة وأصحاب المصلحة، واستعادة الثقة العامة عقب وقوع حدث مفاجئ وغير متوقع.',
-        definitionEn: 'A strategic sub-discipline of corporate communication designed to protect and defend an individual, company, or organization facing a public challenge to its reputation and operations.',
-        academicContext: 'يُبحث هذا المصطلح في إطار نظرية الاستجابة الاتصالية للأزمات الموقفية (SCCT) لعالم الاتصال دبليو. تيموثي كومبس (W. Timothy Coombs)، حيث يتم فحص نسب المسؤولية ووقع الأزمة على استجابة الجماهير.',
-        practicalUsage: 'يستخدمه مديرو العلاقات العامة لإعداد كتيب الأزمات (Crisis Manual)، وتدريب المتحدث الرسمي على صياغة بيانات الاعتذار أو التوضيح الفوري دون الوقوع في مآزق قانونية.',
-        practicalExample: '«قامت شركة الطيران بتفعيل منظومة Crisis Communication فور وقوع الحادث عبر عقد مؤتمر صحفي مباشر وتخصيص خط ساخن لأسر الركاب لإيقاف الشائعات».',
-        differentiatingNote: 'يختلف عن "إدارة الأزمات" العامة (Crisis Management)؛ فالأخيرة تشمل الجوانب اللوجستية والتشغيلية والمادية، بينما اتصالات الأزمات تركز حصرًا على تدفق المعلومات، والخطاب الإعلامي، وإدارة السمعة.',
-        primaryReference: 'Coombs, W. T. (2014). Ongoing Crisis Communication: Planning, Managing, and Responding. SAGE Publications.',
-        tags: ['Crisis', 'Reputation', 'SCCT', 'السمعة', 'إدارة المخاطر']
-      },
-      {
-        id: 'term-2',
-        termAr: 'إشراك أصحاب المصلحة',
-        termEn: 'Stakeholder Engagement',
-        pronunciation: '/ˈsteɪkˌhoʊldər ɪnˈɡeɪdʒmənt/',
-        category: 'pr',
-        categoryNameAr: 'العلاقات العامة',
-        scope: 'academic',
-        scopeNameAr: 'نظري وأكاديمي',
-        citationsCount: 2310,
-        alternativesAr: ['تفاعل الأطراف المعنية', 'مشاركة ذوي الشأن', 'إدماج الفئات المتأثرة'],
-        definitionAr: 'العملية المنهجية التي تقوم المؤسسة من خلالها بفتح قنوات حوار ثنائية الاتجاه مع الأفراد أو المجموعات الذين يؤثرون في قرارات المؤسسة أو يتأثرون بها، لبناء علاقة قائمة على الشفافية والمسؤولية المتبادلة.',
-        definitionEn: 'The systematic process by which an organization involves those who may be affected by the decisions it makes or can influence the implementation of its decisions.',
-        academicContext: 'يرتكز على نظرية أصحاب المصلحة (Stakeholder Theory) لإدوارد فريمان (1984)، ونموذج العلاقات العامة ثنائي الاتجاه المتماثل لـ (Grunig & Hunt 1984)، والذي يرى العلاقات العامة كأداة للتفاوض وحل النزاعات.',
-        practicalUsage: 'تصميم خرائط أصحاب المصلحة (Stakeholder Matrix) في تقارير الاستدامة والمسؤولية الاجتماعية (CSR) لتحديد الأولويات والتوقعات المجتمعية.',
-        practicalExample: '«عقدت وزارة النقل جلسات استماع مع سكان الحي كجزء من خطة Stakeholder Engagement قبل الشروع في مد مسار القطار السريع».',
-        differentiatingNote: 'يختلف عن "العلاقات مع المساهمين" (Shareholder Relations)؛ فالمساهم يملك حصة مالية في الشركة، بينما صاحب المصلحة (Stakeholder) يشمل الموظفين، السكان، الحكومة، البيئة، والمجتمع المدني.',
-        primaryReference: 'Freeman, R. E. (2010). Strategic Management: A Stakeholder Approach. Cambridge University Press.',
-        tags: ['Stakeholders', 'Symmetrical Model', 'CSR', 'المسؤولية الاجتماعية']
-      },
-      {
-        id: 'term-3',
-        termAr: 'نظرية تأطير الرسالة الإعلامية',
-        termEn: 'Framing Theory',
-        pronunciation: '/ˈfreɪmɪŋ ˈθɪəri/',
-        category: 'journalism',
-        categoryNameAr: 'الصحافة والنشر',
-        scope: 'academic',
-        scopeNameAr: 'نظري وأكاديمي',
-        citationsCount: 4500,
-        alternativesAr: ['نظرية الأطر الخبرية', 'التأطير الدلالي', 'صناعة الإطار الإعلامي'],
-        definitionAr: 'منظور نظري يفترض أن وسائل الإعلام لا تخبر الجماهير بما يفكرون به فحسب، بل بكيفية التفكير فيه؛ وذلك من خلال تركيز الضوء على جوانب وسياقات محددة واستبعاد أخرى في صياغة القصة الإعلامية.',
-        definitionEn: 'A theoretical approach suggesting that how something is presented to the audience (called "the frame") influences the choices people make about how to process that information.',
-        academicContext: 'بلورها إرفينغ غوفمان (1974) وطورها روبرت إنتمن (Robert Entman 1993) الذي عرّف التأطير بأنه: اختيار جوانب محددة من واقع مدرك وجعلها أكثر بروزاً في النص الاتصالي لتشجيع تعريف محدد للمشكلة وتفسير أسبابها.',
-        practicalUsage: 'يُستخدم هذا المصطلح على نطاق واسع في تحليل المضمون الصحفي، وفي صياغة الخطاب السياسي وحملات العلاقات العامة الحكومية لإضفاء صبغة معينة على القرارات السيادية أو الاقتصادية.',
-        practicalExample: '«أبرز الباحث كيف اعتمدت الصحيفة على إطار الصراع (Conflict Frame) بدلاً من الإطار الإنساني في تغطية قضية الهجرة».',
-        differentiatingNote: 'يختلف عن "نظرية الأجندة" (Agenda-Setting)؛ فالأجندة تركز على "كمية" و"أولوية" الظهور للموضوع (ماذا يفكر الجمهور؟)، بينما التأطير يركز على "زاوية المعالجة" (كيف ينظر الجمهور للموضوع؟).',
-        primaryReference: 'Entman, R. M. (1993). Framing: Toward clarification of a fractured paradigm. Journal of Communication, 43(4), 51-58.',
-        tags: ['Framing', 'Entman', 'Media Effects', 'التأثير الإعلامي']
-      },
-      {
-        id: 'term-4',
-        termAr: 'غرف الصدى الرقمية',
-        termEn: 'Echo Chambers',
-        pronunciation: '/ˈekoʊ ˌtʃeɪmbərz/',
-        category: 'digital-media',
-        categoryNameAr: 'الإعلام الرقمي والجديد',
-        scope: 'methodology',
-        scopeNameAr: 'مناهج وبحوث إعلامية',
-        citationsCount: 1890,
-        alternativesAr: ['حجرات الصدى', 'فقاعات العزلة الفكرية', 'دوائر الاستقطاب الذاتي'],
-        definitionAr: 'بيئات رقمية أو شبكات اجتماعية يتعرض فيها المستخدم لمعلومات وأفكار تؤكد وتعزز معتقداته وآراءه السابقة فقط، مع حجب أو استبعاد أي آراء معارضة نتيجة خوارزميات التخصيص أو الاختيار الانتقائي للمستخدم.',
-        definitionEn: 'An environment where a person only encounters information or opinions that reflect and reinforce their own, typically fueled by algorithmic curation and selective exposure.',
-        academicContext: 'ترتبط هذه الظاهرة بالتعرض الانتقائي (Selective Exposure) ونظرية التنافر المعرفي لـ فيستنغر، وتُدرس في أبحاث الإعلام الرقمي كأحد مسببات الاستقطاب السياسي وانتشار المعلومات المضللة (Disinformation).',
-        practicalUsage: 'يحللها استراتيجيو الاتصال الرقمي عند قياس الرأي العام حول قضية حساسة، لإدراك ما إذا كانت الحملة تخاطب مؤيدي المؤسسة فقط أم تخترق الفضاءات المعارضة.',
-        practicalExample: '«أظهرت دراسة سلوك المغردين أن النقاش حول الضريبة محاصر داخل Echo Chambers متطرفة تحجب الحقائق الاقتصادية الموثقة».',
-        differentiatingNote: 'تتقارب مع "فقاعة الترشيح" (Filter Bubble)؛ إلا أن فقاعة الترشيح ناتجة في الغالب عن خوارزميات المنصات والبحث التلقائي، بينما غرف الصدى تشمل أيضاً العامل النفسي والاجتماعي للاختيار الطوعي للأقران.',
-        primaryReference: 'Sunstein, C. R. (2018). #Republic: Divided Democracy in the Age of Social Media. Princeton University Press.',
-        tags: ['Algorithms', 'Polarization', 'Social Media', 'الرأي العام']
-      },
-      {
-        id: 'term-5',
-        termAr: 'الاتصال التسويقي المتكامل',
-        termEn: 'Integrated Marketing Communication (IMC)',
-        pronunciation: '/ˈɪntɪɡreɪtɪd ˈmɑːrkɪtɪŋ kəˌmjuːnɪˈkeɪʃən/',
-        category: 'marcomm',
-        categoryNameAr: 'الاتصال التسويقي المتكامل',
-        scope: 'professional',
-        scopeNameAr: 'ممارسة مهنية واستراتيجية',
-        citationsCount: 3100,
-        alternativesAr: ['الاتصالات التسويقية المدمجة', 'التكامل الاتصالي التسويقي'],
-        definitionAr: 'نهج استراتيجي شامل يهدف إلى توجيه وتنسيق جميع الرسائل الصادرة عن المنظمة عبر مختلف القنوات (إعلانات، علاقات عامة، ترويج المبيعات، تسويق رقمي) لتبدو كصوت واحد متسق وواضح.',
-        definitionEn: 'A strategic business process used to develop, execute, and evaluate coordinated, measurable, persuasive brand communication programs over time with consumers and prospects.',
-        academicContext: 'طور مفهومه الأكاديمي دون شولتز (Don Schultz) في جامعة نورث وسترن، حيث دعا إلى كسر الحواجز التقليدية بين أقسام الإعلان والعلاقات العامة لصالح تجربة جمهور موحدة.',
-        practicalUsage: 'تطوير الهوية البصرية واللفظية للمؤسسة عند إطلاق منتج أو مبادرة كبرى، بحيث تتوافق رسائل المؤتمر الصحفي مع إعلانات الفيديو ومنشورات شبكات التواصل.',
-        practicalExample: '«نجحت الشركة في إطلاق حملتها باستخدام نموذج IMC؛ حيث عزز البيان الصحفي نفس القيم التي أبرزتها حملة المؤثرين والإعلانات الرقمية».',
-        differentiatingNote: 'يختلف عن "الإعلان التقليدي" (Advertising)؛ فالإعلان مدفوع الثمن وأحادي الاتجاه في الغالب، بينما الـ IMC يدمج أدوات العلاقات العامة غير المدفوعة مع أدوات الترويج الرقمي المباشر.',
-        primaryReference: 'Schultz, D. E., & Schultz, H. F. (2004). IMC, the Next Generation. McGraw-Hill.',
-        tags: ['IMC', 'Branding', 'Advertising', 'الاتساق الاتصالي']
-      },
-      {
-        id: 'term-6',
-        termAr: 'الدبلوماسية العامة وتطوير السمعة الوطنية',
-        termEn: 'Public Diplomacy',
-        pronunciation: '/ˈpʌblɪk dɪˈploʊməsi/',
-        category: 'gov-comm',
-        categoryNameAr: 'الاتصال الحكومي',
-        scope: 'academic',
-        scopeNameAr: 'نظري وأكاديمي',
-        citationsCount: 2800,
-        alternativesAr: ['دبلوماسية الشعوب', 'الاتصال الحكومي الدولي', 'القوة الناعمة الاتصالية'],
-        definitionAr: 'الاتصال المباشر الذي تمارسه دولة أو حكومة مع شعوب وجماهير دول أخرى (وليس مع حكوماتها فقط)، بهدف التأثير على مواقفهم وبناء صورة ذهنية إيجابية تعزز مصالح الدولة وسياستها الخارجية.',
-        definitionEn: 'Government-sponsored efforts aimed at communicating directly with foreign publics to inform and influence them in order to advance national interests.',
-        academicContext: 'ترتبط بمفهوم "القوة الناعمة" (Soft Power) لجوزيف ناي (Joseph Nye)، وتطورت إلى ما يعرف بـ "الدبلوماسية العامة الجديدة" التي تعتمد على التبادل الثقافي والإعلام الرقمي وشبكات المجتمع المدني.',
-        practicalUsage: 'تنظيم المعارض العالمية (مثل إكسبو)، إطلاق القنوات التلفزيونية والمنصات الموجهة للخارج بلغات متعددة، والبرامج الأكاديمية للمنح والتبادل الطلابي الدولي.',
-        practicalExample: '«يُعد تنظيم البطولات الرياضية العالمية أداة فاعلة من أدوات Public Diplomacy لتعزيز المكانة الدولية وإعادة تشكيل الصورة النمطية».',
-        differentiatingNote: 'تختلف عن "الدبلوماسية التقليدية" (Traditional Diplomacy)؛ فالتقليدية تتم في الغرف المغلقة بين سفراء ومسؤولين رسميين، أما العامة فتتوجه مباشرة للرأي العام والمجتمعات الخارجية.',
-        primaryReference: 'Nye, J. S. (2008). Public diplomacy and soft power. The Annals of the American Academy of Political and Social Science, 616(1), 94-109.',
-        tags: ['Soft Power', 'Nation Branding', 'Diplomacy', 'الاتصال الحكومي']
-      },
-      {
-        id: 'term-7',
-        termAr: 'الهوية المؤسسية والصورة الذهنية',
-        termEn: 'Corporate Identity vs. Corporate Image',
-        pronunciation: '/ˈkɔːrpərət aɪˈdɛntɪti/',
-        category: 'corp-comm',
-        categoryNameAr: 'الاتصال المؤسسي',
-        scope: 'professional',
-        scopeNameAr: 'ممارسة مهنية واستراتيجية',
-        citationsCount: 3200,
-        alternativesAr: ['الشخصية المؤسسية والانطباع الذهني'],
-        definitionAr: 'الهوية المؤسسية (Corporate Identity) هي ما تقدمه المنظمة وتحدده عن نفسها (القيم، الرسالة، السلوك، الشعار). أما الصورة الذهنية (Corporate Image) فهي الانطباع والمدركات الفعلية المستقرة في أذهان الجماهير حول تلك المنظمة.',
-        definitionEn: 'Identity is the internal reality and strategic projection of an organization; Image is the external perception of that identity held by stakeholders over time.',
-        academicContext: 'طرح هذا التمييز كوان فان ريل (Cees van Riel) وجون بالمر، حيث يكمن دور الاتصال المؤسسي في تضييق "الفجوة" (Perception Gap) بين ما تظن المؤسسة أنها تمثله وبين ما يراه الجمهور فعلياً.',
-        practicalUsage: 'تُستعمل في دراسات التدقيق الاتصالي (Communication Audit) لقياس مدى نجاح الحملات في نقل القيم الأصلية للشركة إلى مشاعر الجمهور.',
-        practicalExample: '«رغم أن الهوية المؤسسية تروج لحماية البيئة، فإن الصورة الذهنية تأثرت سلبًا بعد تقرير انبعاثات المصانع».',
-        differentiatingNote: 'الهوية تصنعها وترسلها المنظمة (Sender-controlled)، بينما الصورة يدركها ويكونها المتلقي (Receiver-interpreted).',
-        primaryReference: 'Van Riel, C. B., & Fombrun, C. J. (2007). Essentials of Corporate Communication. Routledge.',
-        tags: ['Identity', 'Image', 'Reputation', 'Audit']
-      },
-      {
-        id: 'term-8',
-        termAr: 'حارس البوابة الإعلامية',
-        termEn: 'Gatekeeping Theory',
-        pronunciation: '/ˈɡeɪtˌkiːpɪŋ ˈθɪəri/',
-        category: 'journalism',
-        categoryNameAr: 'الصحافة والنشر',
-        scope: 'academic',
-        scopeNameAr: 'نظري وأكاديمي',
-        citationsCount: 3900,
-        alternativesAr: ['حراسة البوابة الصحفية', 'تنظيم تدفق الأخبار'],
-        definitionAr: 'العملية التي يتم من خلالها تصفية الرسائل والمعلومات واختيار ما يصلح منها للنشر والوصول إلى الجمهور، من خلال قرارات يتخذها رؤساء التحرير والمحررون ومالكو وسائل الإعلام وخوارزميات المنصات.',
-        definitionEn: 'The process through which information is filtered for dissemination, whether for publication, broadcasting, the Internet, or some other mode of communication.',
-        academicContext: 'أطلقها ديفيد مانينغ وايت (1950) استناداً إلى أفكار عالم النفس كورت ليفين، وشهدت تحولاً جذرياً في عصر شبكات التواصل حيث تحول الجمهور العادي إلى حراس بوابة مساعدين أو مستقلين.',
-        practicalUsage: 'تُستخدم في رسائل الماجستير لدراسة السياسات التحريرية، والضغوط الإعلانية أو السياسية التي تحدد أسباب نشر خبر دون غيره.',
-        practicalExample: '«غيّرت خوارزميات الذكاء الاصطناعي مفهوم Gatekeeping ليتحول من مقص الرقيب البشري إلى معادلات التفضيل والظهور الرقمي».',
-        differentiatingNote: 'تختلف عن الرقابة (Censorship)؛ فالرقابة غالباً ما تكون قسرية وخارجية (من سلطة سياسية)، أما حراسة البوابة فتشمل معايير الجودة، القيمة الإخبارية، والمساحة المتاحة.',
-        primaryReference: 'Shoemaker, P. J., & Vos, T. P. (2009). Gatekeeping Theory. Routledge.',
-        tags: ['Gatekeeper', 'News Values', 'Media Sociology']
-      },
-      {
-        id: 'term-9',
-        termAr: 'نظرية الغرس الثقافي',
-        termEn: 'Cultivation Theory',
-        pronunciation: '/ˌkʌltɪˈveɪʃən ˈθɪəri/',
-        category: 'journalism',
-        categoryNameAr: 'الصحافة والنشر',
-        scope: 'academic',
-        scopeNameAr: 'نظري وأكاديمي',
-        citationsCount: 4100,
-        alternativesAr: ['الإنماء الثقافي', 'التنشئة الإعلامية طويلة المدى'],
-        definitionAr: 'نظرية تبحث التأثيرات التراكمية طويلة المدى للتعرض المكثف لوسائل الإعلام (التلفزيون والمنصات المرئية)، حيث يميل المشاهدون الشرهون إلى إدراك العالم الحقيقي بطريقة تتطابق مع الصور النمطية المنقولة عبر الشاشات.',
-        definitionEn: 'Suggests that long-term immersion in a media environment subtly leads to a shared worldview and common perceptions of reality among consumers.',
-        academicContext: 'أسسها جورج غيربنر (George Gerbner) عبر مشروع المؤشرات الثقافية، وطور من خلالها مفهوم "متلازمة العالم الشرير" (Mean World Syndrome).',
-        practicalUsage: 'يستعين بها الباحثون في قياس أثر مسلسلات الجريمة أو المنصات الترفيهية على رفع معدلات الخوف والقلق لدى شرائح المراهقين والشباب.',
-        practicalExample: '«أكدت نتائج الاستبانة صحة Cultivation Theory؛ إذ يعتقد متابعو دراما العنف أن نسب الجريمة في مجتمعهم أعلى بـ 5 أضعاف من الواقع الفعلي».',
-        differentiatingNote: 'تركز على التأثير "التراكمي والبطيء" عبر سنوات، خلافاً لنظريات الرصاصة أو التأثير المباشر السريع للحملات الإعلانية.',
-        primaryReference: 'Gerbner, G., et al. (2002). Growing up with television: Cultivation processes. Media Effects: Advances in Theory and Research, 43-67.',
-        tags: ['Cultivation', 'Gerbner', 'TV Effects', 'Mean World']
-      },
-      {
-        id: 'term-10',
-        termAr: 'التضليل الإعلامي والمعلومات المغلوطة',
-        termEn: 'Disinformation vs. Misinformation',
-        pronunciation: '/ˌdɪsˌɪnfərˈmeɪʃən/',
-        category: 'digital-media',
-        categoryNameAr: 'الإعلام الرقمي والجديد',
-        scope: 'methodology',
-        scopeNameAr: 'مناهج وبحوث إعلامية',
-        citationsCount: 2950,
-        alternativesAr: ['الأخبار الزائفة', 'التضليل الممنهج والخطأ غير المقصود'],
-        definitionAr: 'المعلومات المغلوطة (Misinformation) هي معلومات غير صحيحة ولكن يتم تداولها دون نية خبيثة لإلحاق الضرر. أما التضليل الإعلامي (Disinformation) فهو معلومات كاذبة أو مضللة تُصنع وتُنشر عمداً وعن قصد لخداع الجمهور والتأثير على الرأي العام.',
-        definitionEn: 'Misinformation is false information shared without harmful intent, whereas Disinformation is intentionally fabricated and weaponized falsehood.',
-        academicContext: 'أصبح التمييز بينهما معياراً في دراسات اليونسكو ومعهد رويترز لدراسة الصحافة لتحليل حروب السرديات والحملات السيبرانية المنظمة.',
-        practicalUsage: 'تأسيس منصات التحقق من الأخبار (Fact-checking units) في غرف الأخبار وصياغة سياسات إدارة السمعة في المؤسسات العامة.',
-        practicalExample: '«المستخدم الذي أعاد نشر التغريدة وقع ضحية Misinformation، بينما الجهة التي فبركت الفيديو مارست Disinformation متعمد».',
-        differentiatingNote: 'الفارق الجوهري هو "النية والقصد" (Intent): التضليل (Dis) يتضمن سوء نية مسبق وتخطيطاً، بينما المغالطة (Mis) قد تكون ناتجة عن إهمال أو سوء فهم.',
-        primaryReference: 'Wardle, C., & Derakhshan, H. (2017). Information Disorder: Toward an interdisciplinary framework. Council of Europe report.',
-        tags: ['Fact-checking', 'Fake News', 'Verification', 'التحقق']
-      },
-      {
-        id: 'term-11',
-        termAr: 'المسؤولية الاجتماعية للمؤسسات',
-        termEn: 'Corporate Social Responsibility (CSR)',
-        pronunciation: '/ˈkɔːrpərət ˈsoʊʃəl rɪˌspɑːnsəˈbɪləti/',
-        category: 'pr',
-        categoryNameAr: 'العلاقات العامة',
-        scope: 'professional',
-        scopeNameAr: 'ممارسة مهنية واستراتيجية',
-        citationsCount: 3800,
-        alternativesAr: ['المسؤولية المجتمعية للشركات', 'المواطنة المؤسسية'],
-        definitionAr: 'التزام أخلاقي واقتصادي وقانوني تتبناه المؤسسة للمساهمة في التنمية المستدامة، من خلال العمل مع موظفيها، وعائلاتهم، والمجتمع المحلي، لتحسين جودة الحياة والمحافظة على البيئة.',
-        definitionEn: 'A self-regulating business model that helps a company be socially accountable to itself, its stakeholders, and the public.',
-        academicContext: 'يستند إلى هرم كارول (Archie Carroll 1991) الذي يقسم المسؤولية إلى أربع طبقات: اقتصادية، قانونية، أخلاقية، وإنسانية (خيرية).',
-        practicalUsage: 'تطوير مبادرات نوعية تتجاوز التبرعات المالية المباشرة إلى مشاريع مستدامة مثل تمكين الشباب أو تحييد البصمة الكربونية للمؤسسة.',
-        practicalExample: '«تحولت استراتيجية CSR في المصرف من مجرد رعاية احتفالات خيرية إلى تمويل مشاريع الطاقة الشمسية للمدارس النائية».',
-        differentiatingNote: 'تختلف عن "العمل الخيري الفردي" (Philanthropy)؛ فالأخير غير مرتبط باستراتيجية المؤسسة أو أهداف استدامتها، بينما الـ CSR مدمجة في صميم الحوكمة والأعمال اليومية.',
-        primaryReference: 'Carroll, A. B. (1991). The pyramid of corporate social responsibility. Business Horizons, 34(4), 39-48.',
-        tags: ['CSR', 'Sustainability', 'Ethics', 'الحوكمة']
-      },
-      {
-        id: 'term-12',
-        termAr: 'التفكير الجمعي في إدارة الأزمات',
-        termEn: 'Groupthink in Communication',
-        pronunciation: '/ˈɡruːpˌθɪŋk/',
-        category: 'org-comm',
-        categoryNameAr: 'الاتصال التنظيمي',
-        scope: 'academic',
-        scopeNameAr: 'نظري وأكاديمي',
-        citationsCount: 2200,
-        alternativesAr: ['الانسياق الجماعي', 'أحادية التفكير الإداري'],
-        definitionAr: 'ظاهرة نفسية واتصالية تحدث داخل الفرق المغلقة، حيث يؤدي السعي المفرط نحو الإجماع وتجنب النزاع إلى قمع الآراء النقدية والمخالفة، مما يترتب عليه اتخاذ قرارات اتصالية كارثية وغير محسوبة.',
-        definitionEn: 'A psychological phenomenon in which people strive for consensus within a group, leading to flawed communication and catastrophic strategic decisions.',
-        academicContext: 'صاغه عالم النفس إيرفينغ جانيس (Irving Janis 1972) لتحليل إخفاقات السياسة الخارجية مثل أزمة خليج الخنازير، وتوسعت دراسته في الاتصال التنظيمي.',
-        practicalUsage: 'يتم علاجه في أقسام العلاقات العامة بتعيين شخص يلعب دور "محامي الشيطان" (Devil\'s Advocate) لنقد البيانات والخطط الإعلامية قبل نشرها.',
-        practicalExample: '«أدى ظاهرة Groupthink بين مستشاري الحملة إلى تجاهل غضب الجمهور المحلي حتى تفاقمت الأزمة في وسائل الإعلام».',
-        differentiatingNote: 'يختلف عن "العمل الجماعي الإيجابي" (Teamwork)؛ فالأخير يرحب بتعدد الآراء والنقد البناء، بينما التفكير الجمعي يضغط لا شعورياً لتبني رأي القائد وتهميش الشكوك.',
-        primaryReference: 'Janis, I. L. (1982). Groupthink: Psychological studies of policy decisions and fiascoes. Cengage Learning.',
-        tags: ['Groupthink', 'Decision Making', 'Org Comm']
-      }
-    ];
-
-    const comparisonPairs = {
-      'pr_vs_marketing': {
-        title: 'العلاقات العامة (PR) مقابل التسويق (Marketing)',
-        itemA: {
-          name: 'العلاقات العامة (Public Relations)',
-          objective: 'بناء وحماية السمعة وتوطيد العلاقات طويلة المدى مع كل أصحاب المصلحة.',
-          audience: 'جمهور عريض: مستثمرون، موظفون، حكومة، وسائل إعلام، ومجتمع.',
-          metrics: 'الصورة الذهنية، الثقة المؤسسية، حصة الصوت (SOV)، وإدارة الأزمات.',
-          tone: 'إخباري، حواري، موثوق، يعتمد على المصداقية والطرف الثالث (Third-Party Endorsement).'
-        },
-        itemB: {
-          name: 'التسويق (Marketing)',
-          objective: 'تلبية رغبات المستهلك وتحقيق أهداف المبيعات والربحية ونمو الحصة السوقية.',
-          audience: 'العملاء الحاليون والمحتملون (Target Consumers / Buyers).',
-          metrics: 'العائد على الاستثمار الإعلاني (ROAS)، تكلفة اكتساب العميل (CAC)، والمبيعات.',
-          tone: 'إقناعي، تحفيزي، ترويجي، يدعو المستهلك لاتخاذ قرار شراء فوري (Call to Action).'
-        },
-        takeaway: '«التسويق يقنع العميل بشراء المنتج اليوم؛ أما العلاقات العامة فتبني البيئة الاجتماعية والأخلاقية التي تجعل المجتمع والعميل يثقون في الشركة لسنوات».'
-      },
-      'agenda_vs_framing': {
-        title: 'ترتيب الأولويات (Agenda-Setting) مقابل التأطير الإعلامي (Framing)',
-        itemA: {
-          name: 'الأجندة الإعلامية (Agenda-Setting)',
-          objective: 'تحديد القضايا والموضوعات التي تشغل بال الرأي العام.',
-          audience: 'عامة الجمهور والمستهلكون للأخبار.',
-          metrics: 'تكرار التغطية، المساحة الإخبارية، موقع الصدارة في النشرات والصفحات الأولى.',
-          tone: '«تخبرك وسائل الإعلام عما تفكر فيه» (What to think about).'
-        },
-        itemB: {
-          name: 'التأطير الإعلامي (Framing)',
-          objective: 'تحديد زاوية الرؤية، وتفسير أسباب المشكلة، وتقديم حكم أخلاقي محدد لها.',
-          audience: 'المتلقي الذي يبحث عن معنى وسياق للحدث المعروض.',
-          metrics: 'المصطلحات المستعملة، الاستعارات، الأطر (إطار صراع، إطار إنساني، إطار اقتصادي).',
-          tone: '«تخبرك وسائل الإعلام كيف تفكر في هذه القضية» (How to think about it).'
-        },
-        takeaway: 'تضع الأجندة مسألة معينة في واجهة الأخبار (مثل قضية المناخ)، بينما يحدد التأطير ما إذا كنا نراها "كارثة تستوجب فرض ضرائب" أو "مؤامرة لتعطيل الصناعة".'
-      },
-      'corp_vs_strat': {
-        title: 'الاتصال المؤسسي (Corp Comm) مقابل الاتصال الاستراتيجي (Strat Comm)',
-        itemA: {
-          name: 'الاتصال المؤسسي (Corporate Communication)',
-          objective: 'إدارة الهوية الشاملة للكيان المؤسسي، ورسائله الداخلية والخارجية كمنظومة واحدة.',
-          audience: 'الأطراف ذات العلاقة المباشرة بنشاط الشركة وشركاء الاستدامة.',
-          metrics: 'اتساق الرسائل، رضا الموظفين، وتقارير الحوكمة السنوية.',
-          tone: 'مهني، حذر، منظم، يحمي العلامة المؤسسية الرسمية.'
-        },
-        itemB: {
-          name: 'الاتصال الاستراتيجي (Strategic Communication)',
-          objective: 'توظيف كل أشكال الاتصال لخدمة هدف سياسي، عسكري، أو وطني بعيد المدى.',
-          audience: 'أطراف متغيرة بحسب المهمة والهدف المرحلي للحملة.',
-          metrics: 'تحقيق الغاية الاستراتيجية الكبرى (كسب التأييد العام، إقرار قانون، تغيير نمط حياة).',
-          tone: 'تكتيكي، هادف، متكيف، يجمع أدوات الإعلام والعلاقات العامة والتأثير المجتمعي.'
-        },
-        takeaway: 'الاتصال الاستراتيجي هو الإطار الأعم الذي يرسم البوصلة والهدف؛ والاتصال المؤسسي هو الذراع التخصصي الذي يدير منظومة المؤسسة وبيئتها التنظيمية.'
-      }
-    };
-
-    let currentCategory = 'all';
-    let currentScope = 'all';
-    let searchQuery = '';
-    let sortMode = 'alpha-ar';
-    let isCompactMode = false;
-    let selectedTermForModal = null;
-    let currentUserSession = null;
-
-    document.addEventListener('DOMContentLoaded', () => {
-      initTheme();
-      initUserSession();
-      renderCategoryTabs();
-      renderTerms();
-      setupSearchListeners();
-    });
-
-    function openLoginModal() {
-      if (currentUserSession) {
-        logoutUser();
-        return;
-      }
-      const msgBox = document.getElementById('loginStatusMessage');
-      msgBox.classList.add('hidden');
-      document.getElementById('academicLoginForm').reset();
-      validatePasswordFormat('');
-      openModal('loginModal');
-    }
-
-    function togglePasswordVisibility() {
-      const passInput = document.getElementById('loginPassword');
-      const eyeIcon = document.getElementById('passEyeIcon');
-      if (passInput.type === 'password') {
-        passInput.type = 'text';
-        eyeIcon.classList.remove('fa-eye');
-        eyeIcon.classList.add('fa-eye-slash');
-      } else {
-        passInput.type = 'password';
-        eyeIcon.classList.remove('fa-eye-slash');
-        eyeIcon.classList.add('fa-eye');
-      }
-    }
-
-    function validatePasswordFormat(val) {
-      const uppercaseMatches = val.match(/[A-Z]/g) || [];
-      const digitMatches = val.match(/[0-9]/g) || [];
-      const totalLen = val.trim().length;
-      
-      const hasUppercase = uppercaseMatches.length === 1;
-      const hasFiveDigits = digitMatches.length === 5;
-      const isExactStructure = hasUppercase && hasFiveDigits && totalLen === 6;
-
-      const ruleUpper = document.getElementById('ruleUppercase');
-      const ruleUpperIcon = document.getElementById('ruleUpperIcon');
-      const ruleDigits = document.getElementById('ruleDigits');
-      const ruleDigitsIcon = document.getElementById('ruleDigitsIcon');
-      const ruleStructure = document.getElementById('ruleExactStructure');
-      const ruleStructureIcon = document.getElementById('ruleStructureIcon');
-
-      if (hasUppercase) {
-        ruleUpper.classList.remove('text-slate-500');
-        ruleUpper.classList.add('text-emerald-600', 'font-bold');
-        ruleUpperIcon.className = "fa-solid fa-circle-check text-emerald-500";
-      } else {
-        ruleUpper.classList.add('text-slate-500');
-        ruleUpper.classList.remove('text-emerald-600', 'font-bold');
-        ruleUpperIcon.className = "fa-solid fa-circle-xmark text-slate-400";
-      }
-
-      if (hasFiveDigits) {
-        ruleDigits.classList.remove('text-slate-500');
-        ruleDigits.classList.add('text-emerald-600', 'font-bold');
-        ruleDigitsIcon.className = "fa-solid fa-circle-check text-emerald-500";
-      } else {
-        ruleDigits.classList.add('text-slate-500');
-        ruleDigits.classList.remove('text-emerald-600', 'font-bold');
-        ruleDigitsIcon.className = "fa-solid fa-circle-xmark text-slate-400";
-      }
-
-      if (isExactStructure) {
-        if (ruleStructure) {
-          ruleStructure.classList.remove('text-slate-500');
-          ruleStructure.classList.add('text-emerald-600', 'font-bold');
-          ruleStructureIcon.className = "fa-solid fa-circle-check text-emerald-500";
-        }
-      } else {
-        if (ruleStructure) {
-          ruleStructure.classList.add('text-slate-500');
-          ruleStructure.classList.remove('text-emerald-600', 'font-bold');
-          ruleStructureIcon.className = "fa-solid fa-circle-xmark text-slate-400";
-        }
-      }
-
-      return isExactStructure;
-    }
-
-    function fillDemoCredentials() {
-      document.getElementById('loginUsername').value = 'Heba_Eldeeb';
-      const passInput = document.getElementById('loginPassword');
-      passInput.value = 'H12345';
-      validatePasswordFormat(passInput.value);
-      showToast('تم إدراج بيانات تجريبية: Heba_Eldeeb / H12345');
-    }
-
-    function handleAcademicLogin(event) {
-      event.preventDefault();
-      const username = document.getElementById('loginUsername').value.trim();
-      const password = document.getElementById('loginPassword').value.trim();
-
-      if (!username) {
-        showStatusMessage('يرجى إدخال اسم المستخدم الأكاديمي', 'error');
-        return;
-      }
-
-      const isValid = validatePasswordFormat(password);
-      if (!isValid) {
-        showStatusMessage('كلمة المرور غير مطابقة: يجب أن تتكون من حرف كبير واحد و 5 أرقام (المجموع 6 خانات، مثال: H12345 أو A98765)', 'error');
-        return;
-      }
-
-      currentUserSession = {
-        username: username,
-        loginTime: new Date().toLocaleTimeString('ar-AE')
-      };
-
-      try {
-        localStorage.setItem('lexi_user_session', JSON.stringify(currentUserSession));
-      } catch (e) {
-        console.warn('Storage failed');
-      }
-
-      updateUserNavbar();
-      showStatusMessage('تم التحقق بنجاح! مرحباً بك في بوابة المعجم الأكاديمي', 'success');
-
-      setTimeout(() => {
-        closeModal('loginModal');
-        showToast(`أهلاً بك يا ${username}، تم تسجيل الدخول بنجاح`);
-      }, 1000);
-    }
-
-    function showStatusMessage(text, type) {
-      const msgBox = document.getElementById('loginStatusMessage');
-      msgBox.classList.remove('hidden', 'bg-rose-100', 'text-rose-700', 'bg-emerald-100', 'text-emerald-700', 'dark:bg-rose-950/60', 'dark:text-rose-300', 'dark:bg-emerald-950/60', 'dark:text-emerald-300');
-      
-      if (type === 'error') {
-        msgBox.classList.add('bg-rose-100', 'text-rose-700', 'dark:bg-rose-950/60', 'dark:text-rose-300');
-        msgBox.innerHTML = `<i class="fa-solid fa-circle-exclamation ml-1"></i>${text}`;
-      } else {
-        msgBox.classList.add('bg-emerald-100', 'text-emerald-700', 'dark:bg-emerald-950/60', 'dark:text-emerald-300');
-        msgBox.innerHTML = `<i class="fa-solid fa-circle-check ml-1"></i>${text}`;
-      }
-    }
-
-    function initUserSession() {
-      const stored = localStorage.getItem('lexi_user_session');
-      if (stored) {
-        try {
-          currentUserSession = JSON.parse(stored);
-          updateUserNavbar();
-        } catch (e) {
-          currentUserSession = null;
-        }
-      }
-    }
-
-    function updateUserNavbar() {
-      const navBtn = document.getElementById('loginNavBtn');
-      const navStatus = document.getElementById('navUserStatus');
-      if (currentUserSession) {
-        navStatus.textContent = `${currentUserSession.username} (خروج)`;
-        navBtn.classList.add('border-emerald-500', 'text-emerald-700', 'dark:text-emerald-300');
-      } else {
-        navStatus.textContent = 'بوابة المشتركين';
-        navBtn.classList.remove('border-emerald-500', 'text-emerald-700', 'dark:text-emerald-300');
-      }
-    }
-
-    function logoutUser() {
-      currentUserSession = null;
-      localStorage.removeItem('lexi_user_session');
-      updateUserNavbar();
-      showToast('تم تسجيل الخروج بنجاح');
-    }
-
-    function initTheme() {
-      const savedTheme = localStorage.getItem('lexi_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-
-      document.getElementById('themeToggleBtn').addEventListener('click', () => {
-        const isDark = document.documentElement.classList.toggle('dark');
-        localStorage.setItem('lexi_theme', isDark ? 'dark' : 'light');
-      });
-    }
-
-    function renderCategoryTabs() {
-      const container = document.getElementById('categoriesScroll');
-      container.innerHTML = scientificCategories.map(cat => `
-        <button 
-          onclick="filterByCategory('${cat.id}')"
-          id="cat-tab-${cat.id}"
-          class="category-tab flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${cat.id === currentCategory ? 'bg-brand-700 text-white shadow-md shadow-brand-700/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'}">
-          <i class="fa-solid ${cat.icon} text-sm"></i>
-          <span>${cat.titleAr}</span>
-        </button>
-      `).join('');
-    }
-
-    function filterByCategory(categoryId) {
-      currentCategory = categoryId;
-      document.querySelectorAll('.category-tab').forEach(tab => {
-        tab.classList.remove('bg-brand-700', 'text-white', 'shadow-md', 'shadow-brand-700/20');
-        tab.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
-      });
-      const activeTab = document.getElementById(`cat-tab-${categoryId}`);
-      if (activeTab) {
-        activeTab.classList.add('bg-brand-700', 'text-white', 'shadow-md', 'shadow-brand-700/20');
-        activeTab.classList.remove('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
-      }
-
-      const catObj = scientificCategories.find(c => c.id === categoryId);
-      document.getElementById('currentCategoryTitle').textContent = catObj ? catObj.titleAr : 'جميع المصطلحات';
-      renderTerms();
-    }
-
-    function setScopeFilter(scope) {
-      currentScope = scope;
-      document.querySelectorAll('.scope-btn').forEach(btn => {
-        if (btn.dataset.scope === scope) {
-          btn.className = "scope-btn px-2.5 py-1 rounded-lg bg-brand-600 text-white font-semibold shadow-xs";
-        } else {
-          btn.className = "scope-btn px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700";
-        }
-      });
-      renderTerms();
-    }
-
-    function setupSearchListeners() {
-      const input = document.getElementById('searchInput');
-      const clearBtn = document.getElementById('clearSearchBtn');
-
-      input.addEventListener('input', (e) => {
-        searchQuery = e.target.value.trim().toLowerCase();
-        clearBtn.classList.toggle('hidden', searchQuery === '');
-        renderTerms();
-      });
-    }
-
-    function clearSearch() {
-      const input = document.getElementById('searchInput');
-      input.value = '';
-      searchQuery = '';
-      document.getElementById('clearSearchBtn').classList.add('hidden');
-      renderTerms();
-      input.focus();
-    }
-
-    function quickSearch(term) {
-      const input = document.getElementById('searchInput');
-      input.value = term;
-      searchQuery = term.toLowerCase();
-      document.getElementById('clearSearchBtn').classList.remove('hidden');
-      renderTerms();
-      window.scrollTo({ top: input.offsetTop - 120, behavior: 'smooth' });
-    }
-
-    function resetFilters() {
-      currentCategory = 'all';
-      currentScope = 'all';
-      searchQuery = '';
-      document.getElementById('searchInput').value = '';
-      document.getElementById('clearSearchBtn').classList.add('hidden');
-      renderCategoryTabs();
-      setScopeFilter('all');
-      renderTerms();
-    }
-
-    function handleSortChange() {
-      sortMode = document.getElementById('sortBy').value;
-      renderTerms();
-    }
-
-    function toggleCardMode() {
-      isCompactMode = !isCompactMode;
-      const btn = document.getElementById('toggleViewBtn');
-      if (isCompactMode) {
-        btn.innerHTML = '<i class="fa-solid fa-grip"></i>';
-        btn.classList.add('bg-brand-50', 'text-brand-600');
-      } else {
-        btn.innerHTML = '<i class="fa-solid fa-table-list"></i>';
-        btn.classList.remove('bg-brand-50', 'text-brand-600');
-      }
-      renderTerms();
-    }
-
-    function renderTerms() {
-      const grid = document.getElementById('termsGrid');
-      const emptyState = document.getElementById('emptyState');
-      const countEl = document.getElementById('resultsCount');
-
-      let filtered = mediaGlossary.filter(item => {
-        const matchesCat = (currentCategory === 'all') || (item.category === currentCategory);
-        const matchesScope = (currentScope === 'all') || (item.scope === currentScope);
-        
-        const q = searchQuery;
-        const matchesSearch = !q || 
-          item.termAr.toLowerCase().includes(q) ||
-          item.termEn.toLowerCase().includes(q) ||
-          item.definitionAr.toLowerCase().includes(q) ||
-          item.definitionEn.toLowerCase().includes(q) ||
-          item.tags.some(t => t.toLowerCase().includes(q)) ||
-          item.alternativesAr.some(a => a.toLowerCase().includes(q));
-
-        return matchesCat && matchesScope && matchesSearch;
-      });
-
-      filtered.sort((a, b) => {
-        if (sortMode === 'alpha-ar') {
-          return a.termAr.localeCompare(b.termAr, 'ar');
-        } else if (sortMode === 'alpha-en') {
-          return a.termEn.localeCompare(b.termEn, 'en');
-        } else if (sortMode === 'popular') {
-          return b.citationsCount - a.citationsCount;
-        }
-        return 0;
-      });
-
-      countEl.textContent = `${filtered.length} مصطلح متوفر`;
-
-      if (filtered.length === 0) {
-        grid.innerHTML = '';
-        emptyState.classList.remove('hidden');
-        return;
-      }
-
-      emptyState.classList.add('hidden');
-
-      grid.innerHTML = filtered.map(term => {
-        if (isCompactMode) {
-          return `
-            <div class="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-slate-200 dark:border-slate-800 hover:border-brand-500 hover:shadow-md transition-all flex flex-col justify-between cursor-pointer" onclick="openTermDetails('${term.id}')">
-              <div>
-                <div class="flex items-center justify-between text-xs mb-2">
-                  <span class="px-2 py-0.5 rounded-md bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-300 font-bold">${term.categoryNameAr}</span>
-                  <span class="text-slate-400 font-mono text-[11px]"><i class="fa-solid fa-quote-left ml-1"></i>${term.citationsCount}</span>
-                </div>
-                <h3 class="font-black text-slate-900 dark:text-white text-base">${term.termAr}</h3>
-                <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 en-text mt-0.5">${term.termEn}</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">${term.definitionAr}</p>
-              </div>
-              <div class="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs">
-                <span class="text-slate-400 text-[11px]">${term.scopeNameAr}</span>
-                <span class="text-brand-600 dark:text-brand-400 font-bold hover:underline">عرض الشرح المكتمل <i class="fa-solid fa-arrow-left text-[10px] mr-1"></i></span>
-              </div>
-            </div>
-          `;
-        }
-
-        return `
-          <article class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200/90 dark:border-slate-800 hover:border-brand-500/80 shadow-xs hover:shadow-xl hover:shadow-brand-900/5 transition-all duration-200 flex flex-col justify-between overflow-hidden group">
-            <div class="p-6">
-              <div class="flex items-start justify-between gap-2 mb-3">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-brand-50 dark:bg-slate-800 text-brand-700 dark:text-brand-300 border border-brand-100 dark:border-slate-700">
-                  <i class="fa-solid fa-tag text-[10px]"></i>
-                  ${term.categoryNameAr}
-                </span>
-
-                <div class="flex items-center gap-1.5">
-                  <span class="text-[11px] font-semibold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded" title="معدل الاستشهاد والتوثيق الأكاديمي">
-                    <i class="fa-solid fa-graduation-cap ml-1 text-brand-500"></i>${term.citationsCount}
-                  </span>
-                  <button onclick="event.stopPropagation(); quickCopyText('${term.termAr} - ${term.termEn}')" class="p-1.5 rounded-lg text-slate-400 hover:text-brand-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 text-xs transition" title="نسخ المصطلحين">
-                    <i class="fa-regular fa-copy"></i>
-                  </button>
-                </div>
-              </div>
-
-              <h3 class="text-lg font-black text-slate-900 dark:text-white leading-snug group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
-                ${term.termAr}
-              </h3>
-              
-              <div class="mt-1 flex items-baseline gap-2 flex-wrap">
-                <span class="text-sm font-bold text-slate-700 dark:text-slate-300 en-text">${term.termEn}</span>
-                <span class="text-xs text-slate-400 font-mono en-text">${term.pronunciation}</span>
-              </div>
-
-              <p class="mt-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed text-justify line-clamp-3">
-                ${term.definitionAr}
-              </p>
-
-              <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80">
-                <span class="text-[11px] font-bold text-slate-400 block mb-1.5">البدائل الترجمية المتداولة:</span>
-                <div class="flex flex-wrap gap-1">
-                  ${term.alternativesAr.map(alt => `
-                    <span class="text-[11px] px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-medium">${alt}</span>
-                  `).join('')}
-                </div>
-              </div>
-            </div>
-
-            <div class="px-6 py-4 bg-slate-50/80 dark:bg-slate-800/40 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-              <div class="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
-                <i class="fa-solid fa-microscope text-brand-600 dark:text-brand-400"></i>
-                <span class="text-[11px] truncate max-w-[140px]">${term.scopeNameAr}</span>
-              </div>
-
-              <button 
-                onclick="openTermDetails('${term.id}')"
-                class="inline-flex items-center gap-1 text-xs font-bold text-brand-700 dark:text-brand-300 hover:text-brand-900 dark:hover:text-white transition-colors">
-                <span>التحليل الأكاديمي والاستشهاد</span>
-                <i class="fa-solid fa-angle-left text-xs transition-transform group-hover:-translate-x-1"></i>
-              </button>
-            </div>
-          </article>
-        `;
-      }).join('');
-    }
-
-    function openTermDetails(termId) {
-      const term = mediaGlossary.find(t => t.id === termId);
-      if (!term) return;
-      selectedTermForModal = term;
-
-      document.getElementById('modalCategoryBadge').textContent = term.categoryNameAr;
-      document.getElementById('modalScopeBadge').textContent = term.scopeNameAr;
-
-      const body = document.getElementById('modalBody');
-      body.innerHTML = `
-        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div>
-            <h2 class="text-2xl font-black text-slate-900 dark:text-white">${term.termAr}</h2>
-            <div class="flex items-center gap-2 mt-1">
-              <span class="text-base font-bold text-brand-700 dark:text-brand-300 en-text">${term.termEn}</span>
-              <span class="text-xs font-mono text-slate-400 en-text bg-white dark:bg-slate-900 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700">${term.pronunciation}</span>
-            </div>
+        <div class="shrink-0 flex flex-col items-center gap-2">
+          <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center text-white shadow-lg shadow-brand-500/20 text-3xl">
+            <i class="fa-solid fa-certificate"></i>
           </div>
-          <button onclick="quickCopyText('${term.termAr} | ${term.termEn}')" class="self-start sm:self-center px-3 py-1.5 rounded-xl text-xs font-bold bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition">
-            <i class="fa-regular fa-copy ml-1"></i>نسخ التسميتين
+          <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">LexiMedia 2026</span>
+        </div>
+      </div>
+
+      <!-- Live Search & Filter Bar -->
+      <div class="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none space-y-4">
+        <div class="relative">
+          <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+          <input type="text" id="searchInput" placeholder="ابحث بالعربية أو بالإنجليزية (مثال: Framing Theory، الاتصال الاستراتيجي، أصحاب المصلحة...)" class="w-full pr-12 pl-12 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white transition">
+          <button id="clearSearch" class="hidden absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+            <i class="fa-solid fa-xmark text-lg"></i>
           </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800">
-            <div class="flex items-center gap-2 text-xs font-bold text-slate-500 mb-2">
-              <i class="fa-solid fa-book text-brand-600"></i>
-              <span>التعريف الاصطلاحي الأكاديمي (العربية)</span>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed text-justify">
-              ${term.definitionAr}
-            </p>
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+          <div class="flex flex-wrap items-center gap-2" id="filterPills">
+            <button data-cat="all" class="cat-pill active-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-700 text-white shadow-sm transition">
+              الكل (<span id="count-all">0</span>)
+            </button>
+            <button data-cat="public-relations" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+              العلاقات العامة والاتصال المؤسسي
+            </button>
+            <button data-cat="theories" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+              نظريات الإعلام والإعلام الذكي
+            </button>
+            <button data-cat="ethics" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+              أخلاقيات الإعلام والذكاء الاصطناعي
+            </button>
           </div>
 
-          <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-left" dir="ltr">
-            <div class="flex items-center gap-2 text-xs font-bold text-slate-500 mb-2">
-              <i class="fa-solid fa-earth-americas text-brand-600"></i>
-              <span>English Conceptual Definition</span>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed font-sans text-justify">
-              ${term.definitionEn}
-            </p>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold flex items-center gap-1.5">
+            <i class="fa-solid fa-layer-group text-brand-500"></i>
+            عدد المصطلحات المطابقة: <span id="filteredCount" class="font-bold text-brand-700 dark:text-brand-400">0</span>
           </div>
         </div>
+      </div>
 
-        <div class="p-4 rounded-2xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/60">
-          <div class="flex items-center gap-2 text-xs font-bold text-amber-800 dark:text-amber-300 mb-2">
-            <i class="fa-solid fa-graduation-cap text-base"></i>
-            <span>التأصيل النظري في الدراسات والبحوث (Academic Context)</span>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            ${term.academicContext}
-          </p>
+    </div>
+  </section>
+
+  <!-- Terms Grid Section -->
+  <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+    <div id="termsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Dynamic Term Cards Inserted Here via JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="noResults" class="hidden text-center py-20">
+      <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 text-2xl mx-auto mb-4">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <h3 class="text-base font-bold text-slate-700 dark:text-slate-200 mb-1">لم يتم العثور على أي نتائج</h3>
+      <p class="text-xs text-slate-500 dark:text-slate-400">يرجى تجربة كلمات بحث أخرى أو تغيير تصنيف الفلترة.</p>
+    </div>
+  </main>
+
+  <!-- Statistics & Analytics -->
+  <section id="statsSection" class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+          <div class="text-3xl font-black text-brand-700 dark:text-brand-400 mb-1" id="stat-total">46</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">مصطلحاً أكاديمياً موثقاً</div>
         </div>
-
-        <div class="space-y-3">
-          <div class="flex items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
-            <i class="fa-solid fa-briefcase text-emerald-600"></i>
-            <span>الاستخدام في الممارسة المهنية وصناعة القرار الاتصالي:</span>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-800/40 p-3.5 rounded-xl border border-slate-100 dark:border-slate-800">
-            ${term.practicalUsage}
-          </p>
-          
-          <div class="p-3.5 rounded-xl bg-blue-50/50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900/40 text-xs">
-            <span class="font-bold text-blue-700 dark:text-blue-300 block mb-1"><i class="fa-solid fa-terminal ml-1"></i>مثال سياقي من واقع العمل الإعلامي:</span>
-            <p class="text-slate-700 dark:text-slate-300 font-medium italic">${term.practicalExample}</p>
-          </div>
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+          <div class="text-3xl font-black text-emerald-600 dark:text-emerald-400 mb-1">APA 7</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">معيار التوثيق المعتمد</div>
         </div>
-
-        <div class="p-4 rounded-2xl bg-rose-50/60 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/60">
-          <div class="flex items-center gap-2 text-xs font-bold text-rose-800 dark:text-rose-300 mb-1.5">
-            <i class="fa-solid fa-triangle-exclamation"></i>
-            <span>تنبيه دلالي لتجنب الخلط مع المصطلحات المشابهة:</span>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-            ${term.differentiatingNote}
-          </p>
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400 mb-1">3</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">محاور علمية وتطبيقية</div>
         </div>
-
-        <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-xs">
-          <span class="font-bold text-slate-600 dark:text-slate-400 block mb-1">المصدر الأكاديمي المعتمد للاستشهاد (Primary Source):</span>
-          <p class="font-mono text-slate-700 dark:text-slate-300 dir-ltr select-all text-[11px]">${term.primaryReference}</p>
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+          <div class="text-3xl font-black text-brand-600 dark:text-brand-300 mb-1">100%</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">ثنائي اللغة (عربي/إنجليزي)</div>
         </div>
-      `;
+      </div>
+    </div>
+  </section>
 
-      openModal('termDetailModal');
-    }
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-300 text-xs py-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-right">
+      <div>
+        <p class="font-bold text-white mb-1">معجم الاتصال والإعلام (LexiMedia)</p>
+        <p class="text-slate-400 text-[11px]">إشراف وتحكيم علمي: د. هبة أحمد الديب — أستاذ مساعد الإعلام والعلاقات العامة — جامعة ليوا.</p>
+      </div>
+      <p class="text-slate-500 text-[11px]">© 2026 جميع الحقوق الفكرية والأكاديمية محفوظة.</p>
+    </div>
+  </footer>
 
-    function loadComparison(key) {
-      const data = comparisonPairs[key];
-      if (!data) return;
+  <!-- Term Data & Logic Scripts -->
+  <script>
+    // Database of 46 Terms
+    const termsData = [
+      {
+        id: 1,
+        term_ar: "الاتصال الاستراتيجي",
+        term_en: "Strategic Communication",
+        category: "public-relations",
+        definition_ar: "الاستخدام الواعي والمخطط للاتصال من قِبل المنظمة لتحقيق أهدافها طويلة المدى، وتوجيه الرسائل للجمهور المستهدف عبر قنوات متعددة لتعزيز الهوية والسمعة المؤسسية.",
+        definition_en: "The purposeful use of communication by an organization to fulfill its overall mission, engaging specific audiences with synchronized messaging.",
+        citation: "Hallahan, K., et al. (2007). Defining strategic communication. International Journal of Strategic Communication, 1(1), 3-35."
+      },
+      {
+        id: 2,
+        term_ar: "إدارة السمعة المؤسسية",
+        term_en: "Corporate Reputation Management",
+        category: "public-relations",
+        definition_ar: "التقييم التراكمي الشامل لأداء المنظمة وسلوكها ومسؤوليتها عبر الزمن من جانب أصحاب المصلحة، والجهود الممنهجة لتطوير هذا الانطباع وحمايته.",
+        definition_en: "The aggregate perception of an organization's past actions and future prospects by key stakeholders, managed through consistent performance and communication.",
+        citation: "Fombrun, C. J. (1996). Reputation: Realizing value from the corporate image. Harvard Business School Press."
+      },
+      {
+        id: 3,
+        term_ar: "أصحاب المصلحة",
+        term_en: "Stakeholders",
+        category: "public-relations",
+        definition_ar: "أي فرد أو مجموعة تؤثر قرارات المنظمة وسياساتها في مصالحهم، أو يمتلكون القدرة على التأثير في مسار المنظمة ونجاحها (كالموظفين، العملاء، والمجتمع).",
+        definition_en: "Any group or individual who can affect or is affected by the achievement of the organization's objectives.",
+        citation: "Freeman, R. E. (1984). Strategic Management: A Stakeholder Approach. Pitman."
+      },
+      {
+        id: 4,
+        term_ar: "نظرية ترتيب الأولويات",
+        term_en: "Agenda-Setting Theory",
+        category: "theories",
+        definition_ar: "قدرة وسائل الإعلام الجماهيرية على توجيه انتباه الرأي العام نحو قضايا بعينها من خلال تكرار التغطية وكثافتها، وتحديد 'ما يفكر فيه الجمهور'.",
+        definition_en: "The ability of mass media to influence the importance placed on the topics of the public agenda through prominence and frequency of coverage.",
+        citation: "McCombs, M. E., & Shaw, D. L. (1972). The agenda-setting function of mass media. Public Opinion Quarterly, 36(2), 176-187."
+      },
+      {
+        id: 5,
+        term_ar: "الاتصال ثنائي الاتجاه المتماثل",
+        term_en: "Two-Way Symmetrical Model",
+        category: "public-relations",
+        definition_ar: "أرقى نماذج جرونيج في العلاقات العامة، ويعتمد على الحوار المتكافئ والتفاهم المشترك لحل النزاعات وتعديل سياسات المؤسسة وسلوك الجمهور معاً.",
+        definition_en: "A PR model focusing on balanced dialogue, mutual understanding, and negotiation between organizations and publics to achieve win-win outcomes.",
+        citation: "Grunig, J. E., & Hunt, T. (1984). Managing Public Relations. Holt, Rinehart and Winston."
+      },
+      {
+        id: 6,
+        term_ar: "المسؤولية الاجتماعية للمؤسسات",
+        term_en: "Corporate Social Responsibility (CSR)",
+        category: "public-relations",
+        definition_ar: "التزام المنظمة الأخلاقي والقانوني بالمساهمة في التنمية الاقتصادية المستدامة والارتقاء بنوعية حياة المجتمع والبيئة المحيطة بما يتجاوز مجرد تحقيق الربح.",
+        definition_en: "A self-regulating business model that helps an organization be socially accountable to itself, its stakeholders, and the public.",
+        citation: "Carroll, A. B. (1991). The pyramid of corporate social responsibility. Business Horizons, 34(4), 39-48."
+      },
+      {
+        id: 7,
+        term_ar: "نظرية الاستخدامات والإشباعات",
+        term_en: "Uses and Gratifications Theory (U&G)",
+        category: "theories",
+        definition_ar: "مدخل نظري يركز على الجمهور النشط الذي ينتقي وسائل الإعلام والمضامين لتلبية دوافع وحاجات نفسية ومعرفية واجتماعية محددة.",
+        definition_en: "An audience-centered approach that seeks to understand why and how people actively seek out specific media to satisfy specific needs.",
+        citation: "Katz, E., Blumler, J. G., & Gurevitch, M. (1973). Uses and gratifications research. Public Opinion Quarterly, 37(4), 509-523."
+      },
+      {
+        id: 8,
+        term_ar: "الهوية المؤسسية",
+        term_en: "Corporate Identity",
+        category: "public-relations",
+        definition_ar: "الشخصية الفعلية للمنظمة وقيمها الجوهرية وفلسفتها ورسالتها، وتنعكس بصرياً وسلوكياً واتصالياً في كافة نقاط التماس مع الجمهور.",
+        definition_en: "The visible and behavioral manifestation of an organization's core values, mission, and philosophy presented to its target audiences.",
+        citation: "Van Riel, C. B., & Balmer, J. M. (1997). Corporate identity: The concept, its measurement and management. European Journal of Marketing, 31(5/6), 340-355."
+      },
+      {
+        id: 9,
+        term_ar: "التضليل الإعلامي",
+        term_en: "Disinformation",
+        category: "ethics",
+        definition_ar: "المعلومات الكاذبة أو المحرفة التي تُصمم وتُنشر عمداً بقصد إلحاق الضرر أو التلاعب بالرأي العام أو جني مكاسب سياسية واقتصادية غير مشروعة.",
+        definition_en: "False information that is deliberately created and spread with malicious intent to deceive, mislead, or harm a target audience.",
+        citation: "Wardle, C., & Derakhshan, H. (2017). Information disorder: Toward an interdisciplinary framework. Council of Europe."
+      },
+      {
+        id: 10,
+        term_ar: "بناء التحالفات المجتمعية",
+        term_en: "Coalition Building in PR",
+        category: "public-relations",
+        definition_ar: "التحالف التشاركي الاستراتيجي بين منظمات متعددة أو مجموعات اهتمام لتحقيق أهداف اتصالية أو قضايا مجتمعية مشتركة وحشد الرأي العام حولها.",
+        definition_en: "The strategic formation of alliances among multiple organizations or interest groups to combine resources and advocate for common causes.",
+        citation: "Cutlip, S. M., Center, A. H., & Broom, G. M. (2000). Effective Public Relations (8th ed.). Prentice Hall."
+      },
+      {
+        id: 11,
+        term_ar: "توليد المحتوى بالذكاء الاصطناعي",
+        term_en: "AI-Generated Content (AIGC)",
+        category: "theories",
+        definition_ar: "إنتاج المواد الإعلامية والنصوص والصور والوسائط المتعددة آلياً بالاعتماد على خوارزميات التعلّم العميق والشبكات العصبية، مع توظيفها في تسريع دورة العمل الصحفي وصناعة الحملات الإبداعية.",
+        definition_en: "The automated creation of digital media content—including text, images, and audiovisual assets—leveraging deep learning algorithms to optimize news production workflows and marketing campaigns.",
+        citation: "Cao, Y., et al. (2023). A Comprehensive Survey on AI-Generated Content (AIGC): A History from Generative AI to Metaverse. arXiv preprint arXiv:2303.04226."
+      },
+      {
+        id: 12,
+        term_ar: "التزييف العميق والتحقق الإخباري",
+        term_en: "Deepfake & Media Forensics",
+        category: "theories",
+        definition_ar: "تقنيات تزييف الوسائط الرقمية المعتمدة على الذكاء الاصطناعي لاستبدال الوجوه أو الأصوات بواقعية فائقة، ويقابلها التحقق الجنائي الرقمي عبر تحليل البصمات الخوارزمية لرصد التضليل الإعلامي.",
+        definition_en: "Synthetic media generated via deep neural networks to manipulate identities, voices, or events realistically, countered by digital forensics tools designed to authenticate veracity and counter disinformation.",
+        citation: "Farid, H. (2019). Digital Image Forensics: An Introduction. Media Forensics and Security, 21(2), 1-15."
+      },
+      {
+        id: 13,
+        term_ar: "الصحافة الخوارزمية",
+        term_en: "Algorithmic Journalism",
+        category: "theories",
+        definition_ar: "أتمتة إنتاج القصص والتقارير الصحفية استناداً إلى تدفقات البيانات الضخمة والمعالجة الآلية للغة الطبيعية (NLP) دون تدخل بشري مباشر في صياغة المسودة الأولى للخبر.",
+        definition_en: "The algorithmic process of automatically converting structured datasets into narrative journalistic stories through natural language processing without direct human editorial drafting.",
+        citation: "Dörr, K. N. (2016). Mapping the field of Algorithmic Journalism. Digital Journalism, 4(6), 700-722."
+      },
+      {
+        id: 14,
+        term_ar: "إدارة القضايا والأزمات الاتصالية",
+        term_en: "Issue & Crisis Management",
+        category: "public-relations",
+        definition_ar: "نهج استباقي استراتيجي في العلاقات العامة يقوم على الرصد المبكر للقضايا الناشئة قبل تفاقمها، وصياغة خطط الاتصال الوقائي لاحتواء تداعيات الأزمات وحماية سمعة المؤسسة.",
+        definition_en: "A proactive public relations framework focused on early detection of emerging societal and industry trends, formulating preventative communication responses to mitigate reputational risks.",
+        citation: "Regester, M., & Larkin, J. (2008). Risk Issues and Crisis Management in Public Relations: A Casebook of Best Practice. Kogan Page."
+      },
+      {
+        id: 15,
+        term_ar: "اتصال المسؤولية الاجتماعية والاستدامة",
+        term_en: "ESG & Sustainability Communication",
+        category: "public-relations",
+        definition_ar: "ممارسة اتصالية استراتيجية تركز على إبراز التزام المؤسسة بالمعايير البيئية والمجتمعية وحوكمة الشركات (ESG)، لتعزيز الثقة وبناء رأس مال اجتماعي مستدام مع أصحاب المصلحة.",
+        definition_en: "Strategic dissemination of an organization’s commitments to environmental stewardship, social equity, and corporate governance (ESG) to foster stakeholder trust and long-term goodwill.",
+        citation: "Allen, M. W. (2016). Strategic Communication for Sustainable Organizations: Theory and Practice. Springer International Publishing."
+      },
+      {
+        id: 16,
+        term_ar: "رسم خرائط أصحاب المصلحة",
+        term_en: "Stakeholder Mapping",
+        category: "public-relations",
+        definition_ar: "أداة تحليلية بصرية واستراتيجية لتصنيف وتحديد الأفراد والجماعات التي تؤثر أو تتأثر بسياسات المنظمة، وترتيب أولويات الاتصال معهم بناءً على مصفوفة القوة ومستوى الاهتمام.",
+        definition_en: "A strategic analytical technique used to visually identify, classify, and prioritize internal and external stakeholders based on their influence, power, and interest in organizational outcomes.",
+        citation: "Freeman, R. E. (2010). Strategic Management: A Stakeholder Approach. Cambridge University Press."
+      },
+      {
+        id: 17,
+        term_ar: "نظرية التأطير الإعلامي",
+        term_en: "Framing Theory",
+        category: "theories",
+        definition_ar: "نظرية اتصالية تفسر كيف تنتقي وسائل الإعلام جوانب معينة من واقع قضية ما وتبرزها في سياق النص الإخباري، لتشجيع تفسير معرفي محدد لدى الجمهور والتأثير في تقييمه.",
+        definition_en: "A communication paradigm positing that media highlights select aspects of a perceived reality to promote a specific problem definition, causal interpretation, and moral evaluation.",
+        citation: "Entman, R. M. (1993). Framing: Toward Clarification of a Fractured Paradigm. Journal of Communication, 43(4), 51-58."
+      },
+      {
+        id: 18,
+        term_ar: "نظرية انتشار المبتكرات",
+        term_en: "Diffusion of Innovations",
+        category: "theories",
+        definition_ar: "نظرية وضعها إيفريت روجرز تشرح كيفية انتشار الأفكار والتقنيات والممارسات الجديدة عبر القنوات الاتصالية بين أفراد النظام الاجتماعي عبر مراحل زمنية محددة وفئات تبنٍّ متتابعة.",
+        definition_en: "A foundational theory explaining the process and rate by which novel ideas, practices, or technologies spread through distinct communication channels within a social system over time.",
+        citation: "Rogers, E. M. (2003). Diffusion of Innovations (5th ed.). Free Press."
+      },
+      {
+        id: 19,
+        term_ar: "اقتصاد الانتباه",
+        term_en: "Attention Economy",
+        category: "theories",
+        definition_ar: "نموذج نظري يتعامل مع الانتباه البشري كأندر الموارد الاقتصادية في عصر وفرة المعلومات الرقمية، حيث تتنافس المنصات الإعلامية على جذب تركيز المستخدم واحتجازه لأطول فترة.",
+        definition_en: "An economic perspective that treats human attention as a scarce and valuable commodity in an information-rich digital environment, shaping platform architecture and content distribution.",
+        citation: "Davenport, T. H., & Beck, J. C. (2001). The Attention Economy: Understanding the New Currency of Business. Harvard Business School Press."
+      },
+      {
+        id: 20,
+        term_ar: "اتصال الأزمات الرقمي",
+        term_en: "Digital Crisis Communication",
+        category: "public-relations",
+        definition_ar: "إدارة وتوجيه التدفق الاتصالي للمؤسسة عبر المنصات الرقمية وشبكات التواصل خلال أوقات التهديد، لحماية السمعة المؤسسية والرد الفوري على الشائعات واحتواء ردود الفعل العامة.",
+        definition_en: "The strategic management of organizational communication across digital and social platforms during disruptive events, aimed at mitigating reputational damage and maintaining stakeholder trust.",
+        citation: "Coombs, W. T. (2015). Ongoing Crisis Communication: Planning, Managing, and Responding. SAGE Publications."
+      },
+      {
+        id: 21,
+        term_ar: "أخلاقيات الذكاء الاصطناعي في الإعلام",
+        term_en: "AI Ethics in Media",
+        category: "ethics",
+        definition_ar: "منظومة المبادئ والمعايير المهنية والقانونية التي تحكم تطبيق تقنيات الذكاء الاصطناعي في الصحافة والاتصال؛ بما يضمن النزاهة، والعدالة الخوارزمية، وحماية الملكية الفكرية، والشفافية.",
+        definition_en: "A normative framework of professional and legal standards governing artificial intelligence in journalism and media, ensuring algorithmic accountability, IP protection, and mandatory transparency.",
+        citation: "Floridi, L., & Cowls, J. (2019). A Unified Framework of Five Principles for AI in Society. Harvard Data Science Review, 1(1)."
+      },
+      {
+        id: 22,
+        term_ar: "العلاقات العامة الذكية",
+        term_en: "Smart Public Relations (Smart PR)",
+        category: "public-relations",
+        definition_ar: "إعادة هيكلة ممارسة العلاقات العامة بالاعتماد على خوارزميات الذكاء الاصطناعي، وتحليلات البيانات الضخمة، لتقديم استجابات اتصالية تكيفية واستباقية تبني الثقة وتعزز سمعة المنظمة عبر البيئات الرقمية المتغيرة.",
+        definition_en: "The strategic transformation of public relations leveraging artificial intelligence and big data analytics to deliver adaptive, predictive, and personalized communication that strengthens organizational reputation.",
+        citation: "Galloway, C., & Swiatek, L. (2018). Public relations and artificial intelligence: It's not about robots—it's about information, influence and control. Public Relations Review, 44(5), 734-740."
+      },
+      {
+        id: 23,
+        term_ar: "ممارس العلاقات العامة المعزز خوارزمياً",
+        term_en: "Algorithmically Augmented PR Practitioner",
+        category: "public-relations",
+        definition_ar: "المحترف الاتصالي الذي يدمج أدوات الذكاء الاصطناعي التوليدي والتحليلي في مهامه اليومية (كصياغة الرسائل، ورصد المشاعر، والتنبؤ بالأزمات) مع الاحتفاظ بالتحكيم الأخلاقي والعمق الاستراتيجي البشري.",
+        definition_en: "A communication professional who integrates generative and predictive AI tools into strategic workflows—such as sentiment analysis and stakeholder mapping—while maintaining human ethical reasoning.",
+        citation: "Valin, J. (2018). Humans still needed: An analysis of skills and tools in public relations. Chartered Institute of Public Relations (CIPR)."
+      },
+      {
+        id: 24,
+        term_ar: "الإعلام الذكي",
+        term_en: "Smart Media",
+        category: "theories",
+        definition_ar: "المنظومة الإعلامية القائمة على تقاطع الذكاء الاصطناعي، وإنترنت الأشياء، والحوسبة السحابية؛ لإنتاج وتوزيع محتوى إعلامي فائق التخصيص والتفاعل يتكيف لحظياً مع سلوك واحتياجات المتلقي.",
+        definition_en: "An interconnected media ecosystem powered by AI, IoT, and cloud computing that produces and disseminates hyper-personalized, interactive content adapting dynamically to user behavior.",
+        citation: "Pavlik, J. V. (2023). The Emergence of Smart Media: How Artificial Intelligence and Big Data Are Transforming Journalism. Columbia University Press."
+      },
+      {
+        id: 25,
+        term_ar: "تحليل مشاعر الجمهور الرقمي",
+        term_en: "Automated Sentiment Analysis",
+        category: "public-relations",
+        definition_ar: "استخدام تقنيات معالجة اللغة الطبيعية (NLP) والتعلّم الآلي لتصنيف مشاعر الجماهير وآرائهم (إيجابية، سلبية، محايدة) المنشورة عبر شبكات التواصل، لتقييم السمعة المؤسسية لحظياً.",
+        definition_en: "The application of natural language processing and machine learning to analyze, categorize, and quantify public sentiment and opinions toward an organization across digital platforms in real time.",
+        citation: "Liu, B. (2020). Sentiment Analysis: Mining Opinions, Sentiments, and Emotions (2nd ed.). Cambridge University Press."
+      },
+      {
+        id: 26,
+        term_ar: "غرف الأخبار المؤتمتة",
+        term_en: "Automated Newsrooms",
+        category: "theories",
+        definition_ar: "بيئات التحرير الصحفي التي تعتمد على برمجيات الروبوت والذكاء الاصطناعي في جمع البيانات الإخبارية، والتحقق من الحقائق، وكتابة المسودات الصحفية المباشرة في الموضوعات المعتمدة على الأرقام كالاقتصاد والرياضة.",
+        definition_en: "News production environments utilizing AI software bots for real-time data aggregation, automated fact-checking, and routine story drafting, particularly in data-dense beats like finance and sports.",
+        citation: "Carlson, M. (2015). The robotic reporter: Automated journalism and the redefinition of journalistic labor. Digital Journalism, 3(3), 416-431."
+      },
+      {
+        id: 27,
+        term_ar: "التخصيص الفائق للرسالة الاتصالية",
+        term_en: "Hyper-Personalization in Communication",
+        category: "public-relations",
+        definition_ar: "استراتيجية اتصالية تستند إلى تحليلات الذكاء الاصطناعي لتصميم رسائل ومضامين فردية وموجهة لكل مستقبل على حدة، استناداً إلى بياناته اللحظية واهتماماته وسلوكه التفاعلي السابق.",
+        definition_en: "A communication strategy that leverages AI predictive analytics to deliver deeply individualized messaging to target audience members based on real-time data, preferences, and behavioral history.",
+        citation: "Montgomery, K. C., & Chester, J. (2019). Data-Driven Marketing and the Transformation of Digital Publics. Journal of Advertising Research, 59(2), 125-139."
+      },
+      {
+        id: 28,
+        term_ar: "المؤثرون الافتراضيون المولّدون بالذكاء الاصطناعي",
+        term_en: "Virtual & AI Influencers",
+        category: "public-relations",
+        definition_ar: "شخصيات رقمية ومحاكاة بصرية مصممة كلياً عبر الحاسوب وخوارزميات الذكاء الاصطناعي، تمتلك حسابات ذات تأثير جماهيري وتُدار استراتيجياً من قِبل وكالات العلاقات العامة في حملات التسويق والترويج.",
+        definition_en: "Computer-generated digital personas created through 3D CGI and generative AI algorithms, managed by agencies to engage audiences and endorse corporate brands across social ecosystems.",
+        citation: "Moustakas, E., et al. (2020). Virtual influencers: What are they and how do they work? Cogent Social Sciences, 6(1), 1789401."
+      },
+      {
+        id: 29,
+        term_ar: "التحيز الخوارزمي في الإعلام",
+        term_en: "Algorithmic Bias in Media",
+        category: "ethics",
+        definition_ar: "أخطاء منهجية وقابلة للتكرار في مخرجات أنظمة الذكاء الاصطناعي الإعلامية تؤدي إلى تفضيل أو تهميش فئات معينة، نتيجة التحيزات المسبقة الموجودة في بيانات التدريب أو في طريقة تصميم الخوارزمية.",
+        definition_en: "Systematic and repeatable errors in AI-driven media algorithms that produce unfair outcomes, such as stereotyping or marginalizing specific social groups due to flawed training datasets.",
+        citation: "Noble, S. U. (2018). Algorithms of Oppression: How Search Engines Reinforce Racism. NYU Press."
+      },
+      {
+        id: 30,
+        term_ar: "الاستماع الاجتماعي الذكي",
+        term_en: "AI Social Listening",
+        category: "public-relations",
+        definition_ar: "عملية التتبع والاستقصاء الذكي للمحادثات الرقمية عبر الإنترنت باستخدام تقنيات الذكاء الاصطناعي؛ لتحديد اتجاهات الرأي العام، واستكشاف إشارات التحذير المبكرة للأزمات السمعية للمنظمة.",
+        definition_en: "The AI-driven practice of tracking online conversations and social dialogues to identify public opinion patterns, sentiment shifts, and early warning signals of emerging organizational crises.",
+        citation: "Buhmann, A., & Likely, F. (2018). Evaluation and measurement in public relations and corporate communication. In Public Relations (pp. 235-256). Routledge."
+      },
+      {
+        id: 31,
+        term_ar: "الشفافية وقابلية التفسير في الإعلام الآلي",
+        term_en: "Explainability & Transparency in Automated Media",
+        category: "ethics",
+        definition_ar: "مبدأ أخلاقي وتشريعي يفرض على المؤسسات الإعلامية توضيح الأسس الخوارزمية التي يتم بناءً عليها ترشيح وتوليد المحتوى للجمهور، مع الإفصاح الصريح عن استخدام الذكاء الاصطناعي في المادة الصحفية.",
+        definition_en: "An ethical and regulatory requirement mandating media entities to explain algorithmic decision-making behind content distribution and clearly disclose automated content creation to audiences.",
+        citation: "Diakopoulos, N. (2019). Automating the News: How Algorithms Are Rewriting the Media. Harvard University Press."
+      },
+      {
+        id: 32,
+        term_ar: "الاتصال المؤسسي المتكامل",
+        term_en: "Integrated Corporate Communication (ICC)",
+        category: "public-relations",
+        definition_ar: "إطار استراتيجي يهدف إلى توحيد وتنسيق كافة الرسائل الاتصالية الصادرة عن المؤسسة (داخلياً وخارجياً) عبر مختلف المنصات، لضمان اتساق الصورة الذهنية والهوية المؤسسية لدى كافة الجماهير.",
+        definition_en: "A strategic framework designed to harmonize and synchronize all internal and external communication across diverse channels, ensuring a cohesive corporate identity and brand image.",
+        citation: "Cornelissen, J. (2020). Corporate Communication: A Guide to Theory and Practice (6th ed.). SAGE Publications."
+      },
+      {
+        id: 33,
+        term_ar: "رأس المال السمعي",
+        term_en: "Reputational Capital",
+        category: "public-relations",
+        definition_ar: "القيمة المعنوية والاقتصادية المتراكمة للثقة والمصداقية التي تحظى بها المنظمة لدى أصحاب المصلحة، والتي تعمل كدرع وقائي يمتص الصدمات الاتصالية أثناء فترات الأزمات.",
+        definition_en: "The accumulated intangible asset of stakeholder trust and goodwill that shields an organization and preserves stakeholder confidence during operational and public crises.",
+        citation: "Fombrun, C. J., & van Riel, C. B. (2004). Fame & Fortune: How Successful Companies Build Winning Reputations. FT Press."
+      },
+      {
+        id: 34,
+        term_ar: "الرواية الرقمية للعلامة المؤسسية",
+        term_en: "Corporate Digital Storytelling",
+        category: "public-relations",
+        definition_ar: "توظيف تقنيات السرد القصصي المعززة بالوسائط المتعددة والبيانات لنقل قيم المؤسسة، ورؤيتها، وتأثيرها الاجتماعي بطريقة سردية تفاعلية تعزز الارتباط العاطفي لدى المتلقي.",
+        definition_en: "The strategic use of multimedia-driven narrative techniques to convey corporate values and mission, fostering meaningful emotional engagement and brand loyalty across digital channels.",
+        citation: "Fog, K., Budtz, C., Munch, P., & Blanchette, S. (2010). Storytelling: Branding in Practice. Springer Science & Business Media."
+      },
+      {
+        id: 35,
+        term_ar: "إدارة الاتصال الداخلي",
+        term_en: "Internal Communication Management",
+        category: "public-relations",
+        definition_ar: "التخطيط الاستراتيجي لتبادل المعلومات وبناء الحوار داخل المنظمة بين القيادة والموظفين، بهدف تعزيز الانتماء الوظيفي، وتوضيح الأهداف، وتمكين العاملين كسفراء للعلامة المؤسسية.",
+        definition_en: "The strategic management of internal interactions and information flow between leadership and employees, driving organizational alignment, trust, and employee brand advocacy.",
+        citation: "Ruck, K. (2020). Exploring Internal Communication: Towards Informed Employee Voice. Routledge."
+      },
+      {
+        id: 36,
+        term_ar: "فقاعات التصفية وغرف الصدى",
+        term_en: "Filter Bubbles & Echo Chambers",
+        category: "theories",
+        definition_ar: "ظاهرة رقمية ناجمة عن خوارزميات التخصيص التي تعزل المستخدم في بيئة معلوماتية تتوافق فقط مع آرائه وتفضيلاته المسبقة، مما يحد من تعرضه لوجهات نظر متباينة ويعزز الاستقطاب الفكري.",
+        definition_en: "A digital phenomenon wherein algorithmic filtering isolates users in an informational ecosystem conforming only to preexisting beliefs, narrowing ideological exposure and intensifying polarization.",
+        citation: "Pariser, E. (2011). The Filter Bubble: How the New Personalized Web Is Changing What We Read and How We Think. Penguin."
+      },
+      {
+        id: 37,
+        term_ar: "إشراك أصحاب المصلحة رقمياً",
+        term_en: "Digital Stakeholder Engagement",
+        category: "public-relations",
+        definition_ar: "بناء علاقات تفاعلية ثنائية الاتجاه ومستمرة بين المؤسسة ومختلف فئات الجمهور عبر القنوات الرقمية، لتشجيع المشاركة في صنع القرار وترسيخ مبادئ الشفافية والمساءلة.",
+        definition_en: "The practice of establishing ongoing, two-way interactive dialogues with internal and external publics via digital interfaces, fostering collaborative decision-making and transparency.",
+        citation: "Kent, M. L., & Taylor, M. (2016). From craft to science: The evolution of digital relationship building in public relations. Public Relations Review, 42(1), 60-67."
+      },
+      {
+        id: 38,
+        term_ar: "دبلوماسية الشركات الاتصالية",
+        term_en: "Corporate Diplomacy",
+        category: "public-relations",
+        definition_ar: "قدرة المؤسسة على إدارة علاقاتها الاستراتيجية مع الحكومات، والمجتمعات الدولية، والمنظمات غير الحكومية باستخدام أدوات التفاوض والاتصال الدولي لحماية مصالحها ومكانتها العالمية.",
+        definition_en: "An organization's strategic capability to navigate complex relationships with foreign governments, international bodies, and NGOs using diplomatic dialogue to safeguard international interests.",
+        citation: "White, C. (2015). Exploring the role of corporate diplomacy in public relations. PRism, 12(1), 1-13."
+      },
+      {
+        id: 39,
+        term_ar: "التقارب الإعلامي",
+        term_en: "Media Convergence",
+        category: "theories",
+        definition_ar: "اندماج وتداخل الوسائط التقليدية مع المنصات الرقمية وشبكات الاتصال، مما ينتج عنه تدفق موحد للمضامين الإعلامية عبر قنوات متعددة وتحول الجمهور من متلقٍّ سلبي إلى صانع محتوى مشارك.",
+        definition_en: "The blending of traditional media systems with digital networks, driving cross-platform content flow and transforming passive audiences into active, participatory co-creators.",
+        citation: "Jenkins, H. (2006). Convergence Culture: Where Old and New Media Collide. NYU Press."
+      },
+      {
+        id: 40,
+        term_ar: "إدارة الهوية البصرية المؤسسية",
+        term_en: "Corporate Visual Identity Management (CVI)",
+        category: "public-relations",
+        definition_ar: "الضبط المنهجي لكافة العناصر البصرية والرمزية للمؤسسة (الشعار، الألوان، الخطوط، التصاميم الرقمية) لضمان تقديم تمثيل بصري متناسق يعكس شخصية المنظمة ومكانتها المهنية.",
+        definition_en: "The strategic governance of an organization's visual assets and branding elements across all physical and digital touchpoints to project a coherent, distinctive corporate persona.",
+        citation: "Van den Bosch, A. L., et al. (2005). How corporate visual identity supports reputation. Corporate Communications: An International Journal, 10(2), 108-116."
+      },
+      {
+        id: 41,
+        term_ar: "صحافة البيانات",
+        term_en: "Data Journalism",
+        category: "theories",
+        definition_ar: "ممارسة صحفية ترتكز على استخراج، وتحليل، وتدقيق قواعد البيانات الضخمة، وتحويلها إلى تحقيقات استقصائية ورسوم بيانية تفاعلية تكشف عن أنماط وحقائق ذات بعد للمصلحة العامة.",
+        definition_en: "A journalistic methodology centered on filtering, analyzing, and visualizing large numerical datasets to uncover public-interest stories and produce interactive visualizations.",
+        citation: "Bradshaw, P. (2017). The Online Journalism Handbook: Skills to survive and thrive in the digital age. Routledge."
+      },
+      {
+        id: 42,
+        term_ar: "اتصال القيادة المؤسسية",
+        term_en: "Executive & Leadership Communication",
+        category: "public-relations",
+        definition_ar: "بناء الحضور الاتصالي والفكري للقيادات العليا داخل المؤسسة (Thought Leadership) لتوجيه فرق العمل، والتعبير عن مواقف المنظمة إزاء القضايا المحورية، وبناء الثقة في كفاءة إدارتها.",
+        definition_en: "Strategic positioning and dissemination of executive leadership's vision and thought leadership, inspiring internal teams and projecting managerial competence to the market.",
+        citation: "Men, L. R., & Stacks, D. W. (2014). The effects of authentic leadership on strategic internal communication. Journal of Public Relations Research, 26(4), 301-324."
+      },
+      {
+        id: 43,
+        term_ar: "الذكاء الاصطناعي والمواطنة الرقمية",
+        term_en: "AI & Digital Citizenship",
+        category: "ethics",
+        definition_ar: "القواعد والمهارات المعرفية والأخلاقية التي تُمكّن الأفراد من التعامل المسؤول والناقد مع التقنيات الخوارزمية، والتمييز بين المحتوى الأصيل والمزيّف، وحماية الخصوصية الرقمية.",
+        definition_en: "The cognitive and ethical competencies enabling individuals to engage responsibly and critically with algorithmic media, discerning synthesized realities and protecting personal data privacy.",
+        citation: "Mossberger, K., Tolbert, C. J., & Stansbury, M. (2008). Digital Citizenship: The Internet, Society, and Participation. MIT Press."
+      },
+      {
+        id: 44,
+        term_ar: "محو الأمية الإعلامية والمعلوماتية المتقدمة",
+        term_en: "Critical Media & Information Literacy (MIL)",
+        category: "ethics",
+        definition_ar: "القدرة النقدية على الوصول إلى الرسائل الإعلامية، وتفكيك أطرها الأيديولوجية والتحريرية، والتحقق من مصادر المعلومات الرقمية، ومواجهة حملات التضليل الممنهجة.",
+        definition_en: "The critical capability to access, evaluate, and deconstruct media messages, exposing latent ideological framing, verifying source credibility, and resisting manipulative disinformation.",
+        citation: "Kellner, D., & Share, J. (2019). The Critical Media Literacy Guide: Engaging Media and Transforming Education. Brill."
+      },
+      {
+        id: 45,
+        term_ar: "الاتصال الحكومي التنموي",
+        term_en: "Government Development Communication",
+        category: "public-relations",
+        definition_ar: "منظومة الاتصال الاستراتيجي التي توظفها الهيئات والوزارات الحكومية لتوعية المواطنين بالسياسات الوطنية، وتحفيز المشاركة المجتمعية في الخطط التنموية ومشاريع التحول الرقمي.",
+        definition_en: "Strategic communication deployed by public sector entities to articulate national policies, foster public engagement, and build collective support for sustainable national development.",
+        citation: "Canel, M. J., & Luoma-aho, V. (2019). Public Sector Communication: Closing Gaps Between Citizens and Public Organizations. Wiley-Blackwell."
+      },
+      {
+        id: 46,
+        term_ar: "التحقق المتقاطع والمصادر المفتوحة",
+        term_en: "Open-Source Intelligence Verification (OSINT)",
+        category: "theories",
+        definition_ar: "منهجية جمع وتحليل البيانات والمعلومات المتاحة علناً عبر الإنترنت (كالصور، وبيانات الأقمار الصناعية، والموقع الجغرافي) للتحقق من صحة الأحداث والادعاءات الإخبارية ميدانياً.",
+        definition_en: "The methodological collection and forensic analysis of publicly available online information—such as geolocation metadata and satellite imagery—to verify the factual accuracy of breaking events.",
+        citation: "Silverman, C. (2020). Verification Handbook for Disinformation and Media Manipulation. European Journalism Centre."
+      }
+    ];
 
-      const container = document.getElementById('compareContent');
-      container.innerHTML = `
-        <div class="mb-4 text-center">
-          <h4 class="text-lg font-black text-slate-900 dark:text-white">${data.title}</h4>
-        </div>
+    // Rendering & Interaction Logic
+    let currentCategory = 'all';
+    let searchQuery = '';
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-5 rounded-2xl bg-brand-50/50 dark:bg-brand-950/30 border border-brand-200 dark:border-brand-900">
-            <h5 class="font-black text-brand-700 dark:text-brand-300 text-base mb-3 pb-2 border-b border-brand-200 dark:border-brand-800">${data.itemA.name}</h5>
-            <div class="space-y-3 text-xs">
-              <div>
-                <strong class="text-slate-900 dark:text-white block">الهدف الاستراتيجي:</strong>
-                <p class="text-slate-600 dark:text-slate-300 mt-0.5">${data.itemA.objective}</p>
-              </div>
-              <div>
-                <strong class="text-slate-900 dark:text-white block">الجمهور المستهدف:</strong>
-                <p class="text-slate-600 dark:text-slate-300 mt-0.5">${data.itemA.audience}</p>
-              </div>
-              <div>
-                <strong class="text-slate-900 dark:text-white block">مؤشرات القياس (KPIs):</strong>
-                <p class="text-slate-600 dark:text-slate-300 mt-0.5">${data.itemA.metrics}</p>
-              </div>
-              <div>
-                <strong class="text-slate-900 dark:text-white block">طبيعة النبرة والرسالة:</strong>
-                <p class="text-slate-600 dark:text-slate-300 mt-0.5">${data.itemA.tone}</p>
-              </div>
-            </div>
-          </div>
+    const container = document.getElementById('termsContainer');
+    const noResults = document.getElementById('noResults');
+    const filteredCount = document.getElementById('filteredCount');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearch = document.getElementById('clearSearch');
 
-          <div class="p-5 rounded-2xl bg-amber-50/50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900">
-            <h5 class="font-black text-amber-700 dark:text-amber-300 text-base mb-3 pb-2 border-b border-amber-200 dark:border-amber-800">${data.itemB.name}</h5>
-            <div class="space-y-3 text-xs">
-              <div>
-                <strong class="text-slate-900 dark:text-white block">الهدف الاستراتيجي:</strong>
-                <p class="text-slate-600 dark:text-slate-300 mt-0.5">${data.itemB.objective}</p>
-              </div>
-              <div>
-                <strong class="text-slate-900 dark:text-white block">الجمهور المستهدف:</strong>
-                <p class="text-slate-600 dark:text-slate-300 mt-0.5">${data.itemB.audience}</p>
-              </div>
-              <div>
-                <strong class="text-slate-900 dark:text-white block">مؤشرات القياس (KPIs):</strong>
-                <p class="text-slate-600 dark:text-slate-300 mt-0.5">${data.itemB.metrics}</p>
-              </div>
-              <div>
-                <strong class="text-slate-900 dark:text-white block">طبيعة النبرة والرسالة:</strong>
-                <p class="text-slate-600 dark:text-slate-300 mt-0.5">${data.itemB.tone}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-5 p-4 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs">
-          <span class="font-bold text-brand-600 dark:text-brand-400 block mb-1"><i class="fa-solid fa-lightbulb ml-1"></i>خلاصة التمييز الأكاديمي:</span>
-          <p class="text-slate-700 dark:text-slate-200 leading-relaxed font-medium">${data.takeaway}</p>
-        </div>
-      `;
-    }
-
-    function openModal(id) {
-      const modal = document.getElementById(id);
-      if (modal) {
-        modal.classList.remove('hidden');
-        document.body.classList.add('overflow-hidden');
-        if (id === 'compareModal') {
-          loadComparison('pr_vs_marketing');
-        }
+    function getCategoryBadge(cat) {
+      switch(cat) {
+        case 'public-relations':
+          return `<span class="px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200/60 dark:border-sky-800 text-[11px] font-bold">علاقات عامة واتصال مؤسسي</span>`;
+        case 'theories':
+          return `<span class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800 text-[11px] font-bold">إعلام ذكي ونظريات اتصال</span>`;
+        case 'ethics':
+          return `<span class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800 text-[11px] font-bold">أخلاقيات وذكاء اصطناعي</span>`;
+        default:
+          return `<span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-bold">مصطلح تخصصي</span>`;
       }
     }
 
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      if (modal) {
-        modal.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
+    function renderTerms() {
+      const q = searchQuery.toLowerCase().trim();
+      const filtered = termsData.filter(item => {
+        const matchesCategory = (currentCategory === 'all' || item.category === currentCategory);
+        const matchesSearch = !q || 
+          item.term_ar.toLowerCase().includes(q) || 
+          item.term_en.toLowerCase().includes(q) || 
+          item.definition_ar.toLowerCase().includes(q) ||
+          item.definition_en.toLowerCase().includes(q);
+        return matchesCategory && matchesSearch;
+      });
+
+      filteredCount.textContent = filtered.length;
+      document.getElementById('count-all').textContent = termsData.length;
+
+      if (filtered.length === 0) {
+        container.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
       }
+
+      noResults.classList.add('hidden');
+      container.innerHTML = filtered.map(item => `
+        <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700 transition flex flex-col justify-between group">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              ${getCategoryBadge(item.category)}
+              <span class="text-[11px] font-mono text-slate-400">#${item.id}</span>
+            </div>
+            
+            <h3 class="text-lg font-black text-slate-900 dark:text-white group-hover:text-brand-600 transition mb-1">
+              ${item.term_ar}
+            </h3>
+            <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 en-font mb-4">
+              ${item.term_en}
+            </p>
+
+            <div class="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+              <p class="text-xs leading-relaxed text-slate-700 dark:text-slate-300 font-medium">
+                ${item.definition_ar}
+              </p>
+              <p class="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400 en-font bg-slate-50 dark:bg-slate-800/40 p-2.5 rounded-xl border border-slate-100 dark:border-slate-800">
+                ${item.definition_en}
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-dashed border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+            <span class="truncate max-w-[200px]" title="${item.citation}">
+              <i class="fa-solid fa-book-open text-brand-500 ml-1"></i> ${item.citation}
+            </span>
+            <button onclick="navigator.clipboard.writeText('${item.term_ar} (${item.term_en}): ${item.citation}'); alert('تم نسخ بيانات المصطلح والتوثيق المعتمد بنجاح');" class="text-brand-600 hover:text-brand-700 font-bold" title="نسخ التوثيق">
+              <i class="fa-regular fa-copy"></i>
+            </button>
+          </div>
+        </article>
+      `).join('');
     }
 
-    window.addEventListener('click', (e) => {
-      ['termDetailModal', 'compareModal', 'academicCitationModal', 'loginModal'].forEach(id => {
-        const modal = document.getElementById(id);
-        if (e.target === modal) {
-          closeModal(id);
-        }
+    // Filter Buttons Handlers
+    document.querySelectorAll('.cat-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-pill').forEach(b => {
+          b.className = 'cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition';
+        });
+        btn.className = 'cat-pill active-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-700 text-white shadow-sm transition';
+        currentCategory = btn.getAttribute('data-cat');
+        renderTerms();
       });
     });
 
-    function copyTermCitation() {
-      if (!selectedTermForModal) return;
-      const citation = `الديب، هبة أحمد. (2026). "${selectedTermForModal.termAr} (${selectedTermForModal.termEn})". معجم الإعلام والاتصال المؤسسي، كلية الإعلام والعلاقات العامة - جامعة ليوا. المرجع الأصلي: ${selectedTermForModal.primaryReference}`;
-      quickCopyText(citation, 'تم نسخ الاقتباس الأكاديمي المعتمد بنجاح');
-    }
-
-    function quickCopyText(text, message = 'تم النسخ بنجاح') {
-      const tempInput = document.createElement('textarea');
-      tempInput.value = text;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      try {
-        document.execCommand('copy');
-        showToast(message);
-      } catch (err) {
-        showToast('تعذر النسخ تلقائياً');
-      }
-      document.body.removeChild(tempInput);
-    }
-
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toastMessage');
-      toastMsg.textContent = message;
-      toast.classList.remove('hidden');
-      toast.classList.add('flex');
-      
-      setTimeout(() => {
-        toast.classList.add('hidden');
-        toast.classList.remove('flex');
-      }, 3000);
-    }
-  </script>
-</body>
-</html>
-{
-{
+    // Search Input Handlers
+    searchInput.addEventListener('input', (e) => {
+      searchQuery
