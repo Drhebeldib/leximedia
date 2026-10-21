@@ -116,7 +116,7 @@
           <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-600 to-brand-800 flex items-center justify-center text-white shadow-lg shadow-brand-500/20 text-3xl">
             <i class="fa-solid fa-certificate"></i>
           </div>
-          <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">LexiMedia Academic</span>
+          <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">LexiMedia 200</span>
         </div>
       </div>
 
@@ -133,7 +133,7 @@
         <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
           <div class="flex flex-wrap items-center gap-2" id="filterPills">
             <button data-cat="all" class="cat-pill active-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-700 text-white shadow-sm transition">
-              الكل (<span id="count-all">0</span>)
+              الكل (<span id="count-all">200</span>)
             </button>
             <button data-cat="top20" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 hover:bg-amber-100 transition">
               ⭐ أهم 20 مصطلحاً بحثياً
@@ -151,7 +151,7 @@
 
           <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold flex items-center gap-1.5">
             <i class="fa-solid fa-layer-group text-brand-500"></i>
-            عدد النتائج المطابقة: <span id="filteredCount" class="font-bold text-brand-700 dark:text-brand-400">0</span>
+            عدد النتائج المطابقة: <span id="filteredCount" class="font-bold text-brand-700 dark:text-brand-400">200</span>
           </div>
         </div>
       </div>
@@ -219,7 +219,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-          <div class="text-3xl font-black text-brand-700 dark:text-brand-400 mb-1" id="stat-total">96</div>
+          <div class="text-3xl font-black text-brand-700 dark:text-brand-400 mb-1" id="stat-total">200</div>
           <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">مصطلحاً أكاديمياً مدققاً</div>
         </div>
         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
@@ -249,7 +249,7 @@
     </div>
   </footer>
 
-  <!-- Complete Database Script -->
+  <!-- Complete Database Script (200 Terms) -->
   <script>
     const termsData = [
       {
@@ -1115,6 +1115,942 @@
         definition_ar: "القياس المنهجي المبني على مؤشرات واضحة لتقييم مخرجات الحملات الاتصالية وتأثيرها على معارف ومواقف وسلوكيات الجمهور المستهدف.",
         definition_en: "The systematic application of empirical research methods to measure the outputs, outtakes, and behavioral outcomes of public communication initiatives.",
         citation: "Macnamara, J. (2018). Evaluating Public Communication: New Models, Standards, and Best Practice. Routledge."
+      },
+      {
+        id: 97,
+        term_ar: "الصحافة الرقمية المتنقلة",
+        term_en: "Mobile Journalism (MoJo)",
+        category: "theories",
+        definition_ar: "ممارسة صحفية ميدانية متكاملة يعتمد فيها المراسل على الهاتف الذكي كأداة حصرية لتصوير وتسجيل وتحرير وبث المواد الإخبارية في الوقت الفعلي بجودة بث قياسية.",
+        definition_en: "A form of digital newsgathering and storytelling where journalists use smartphones as primary workstations to film, edit, and broadcast broadcast-quality stories.",
+        citation: "Burum, I., & Quinn, S. (2015). MOJO: The Mobile Journalism Handbook: How to Make Broadcast Videos with an iPhone or iPad. Focal Press."
+      },
+      {
+        id: 98,
+        term_ar: "الاتصال الحكومي الاستباقي",
+        term_en: "Proactive Government Communication",
+        category: "public-relations",
+        definition_ar: "استراتيجية اتصال حكومية تعتمد على التنبؤ باتجاهات الرأي العام وتقديم البيانات الرسمية قبل انتشار التساؤلات والشائعات، لبناء الثقة وترسيخ الشفافية الوطنية.",
+        definition_en: "A strategic public sector communication framework anticipating public discourse and releasing official data pre-emptively to manage perceptions and foster institutional trust.",
+        citation: "Canel, M. J., & Luoma-aho, V. (2019). Public Sector Communication: Closing Gaps Between Citizens and Public Organizations. Wiley-Blackwell."
+      },
+      {
+        id: 99,
+        term_ar: "البث التلفزيوني عبر الإنترنت",
+        term_en: "Over-The-Top Media Services (OTT)",
+        category: "theories",
+        definition_ar: "منصات تقديم المحتوى السمعي البصري والتلفزيوني للجمهور مباشرة عبر شبكة الإنترنت دون الحاجة إلى وسطاء الكيبل أو شبكات البث الفضائي التقليدية.",
+        definition_en: "Media services offering video streams directly to viewers via high-speed Internet connections, bypassing broadcast TV, satellite, and cable infrastructure.",
+        citation: "Lotz, A. D. (2017). Portals: A Treatise on Internet-Distributed Television. University of Michigan Press."
+      },
+      {
+        id: 100,
+        term_ar: "التدفق الصوتي الرقمي والبودكاست",
+        term_en: "Digital Podcasting Ecology",
+        category: "theories",
+        definition_ar: "منظومة إنتاج وتوزيع الملفات الإذاعية الصوتية حسب الطلب (On-Demand) عبر موجز التلقيم (RSS)، متيحة سرديات عميقة وتفاعلية تكسر قيود البرمجة الإذاعية التقليدية.",
+        definition_en: "An on-demand digital audio ecosystem distributed via RSS architecture, enabling episodic, niche, and serialized content decoupled from linear radio constraints.",
+        citation: "Bonini, T. (2015). The 'second age' of podcasting: Reframing podcasting as a new digital mass medium. Quaderns del CAC, 18(41), 21-30."
+      },
+      {
+        id: 101,
+        term_ar: "العلاقات العامة عبر صحافة العلامة",
+        term_en: "Brand Journalism",
+        category: "public-relations",
+        definition_ar: "توظيف مهارات التحقيق والتحرير الصحفي الاحترافي لإنتاج محتوى إخباري ومعرفي مستقل يعبر عن منظومة قيم المنظمة وتطلعات قطاعها دون الترويج الإعلاني الفج.",
+        definition_en: "The strategic application of journalistic methodologies and editorial storytelling by corporate entities to cover industry narratives reflecting organizational values.",
+        citation: "Bull, A. (2013). Brand Journalism: How to Create and Distribute Compelling Content for Your Enterprise. Routledge."
+      },
+      {
+        id: 102,
+        term_ar: "توجيه الأسئلة والمحاكمة الخوارزمية",
+        term_en: "Prompt Engineering in Media",
+        category: "theories",
+        definition_ar: "صياغة وهندسة الأوامر والمدخلات النصية بدقة عالية لتوجيه النماذج التوليدية اللغوية (LLMs) للحصول على أفضل صياغات إعلامية وترجمات وسيناريوهات دقيقة.",
+        definition_en: "The practice of structuring, refining, and optimizing natural language inputs to guide generative AI models toward accurate, context-aware communicative outputs.",
+        citation: "White, J., et al. (2023). A prompt pattern catalog to enhance prompt engineering with ChatGPT. arXiv preprint arXiv:2302.11382."
+      },
+      {
+        id: 103,
+        term_ar: "إدارة سمعة محركات البحث",
+        term_en: "Search Engine Reputation Management (SERM)",
+        category: "public-relations",
+        definition_ar: "الممارسات المنهجية لتهيئة وتحسين ظهور النتائج والصفحات الإيجابية للمؤسسة في الصفحات الأولى لمحركات البحث، وإزاحة الروابط السلبية والمضللة.",
+        definition_en: "Strategic optimization methodologies applied to suppress negative search engine rankings and elevate credible, verified content regarding an organization.",
+        citation: "Jones, R. B. (2011). Search Engine Optimization: Your Visual Blueprint for Effective Internet Marketing. Wiley."
+      },
+      {
+        id: 104,
+        term_ar: "سرديات الواقع المعزز الإخباري",
+        term_en: "Augmented Reality News Narratives",
+        category: "theories",
+        definition_ar: "دمج المجسمات والرسوم ثلاثية الأبعاد اللحظية في المشهد الحقيقي للمتلقي عبر الهواتف أو الشاشات لتجسيد الإحصائيات والمعارك والكوارث بوضوح فائق.",
+        definition_en: "The overlay of computer-generated data, 3D graphics, and spatial context onto a user's real-world camera view to illustrate complex news events.",
+        citation: "Pavlik, J. V., & Bridges, F. (2013). The emergence of augmented reality (AR) as a storytelling medium in journalism. Journalism & Communication Monographs, 15(1), 4-59."
+      },
+      {
+        id: 105,
+        term_ar: "صوتيات الذكاء الاصطناعي والتوليف الإذاعي",
+        term_en: "AI Voice Cloning in Radio Broadcasting",
+        category: "theories",
+        definition_ar: "استنساخ البصمة الصوتية البشرية وتوليد النشرات الإخبارية والفواصل الإذاعية بنبرات بشرية طبيعية عبر الشبكات العصبية العميقة المتخصصة في التوليف الصوتي.",
+        definition_en: "The computational synthesis and cloning of human vocal acoustic characteristics using deep neural architectures for automated radio broadcasts.",
+        citation: "Arik, S. Ö., et al. (2017). Deep Voice: Real-time neural text-to-speech for production. International Conference on Machine Learning, 196-204."
+      },
+      {
+        id: 106,
+        term_ar: "التأطير الاتصالي للأزمات الحكومية",
+        term_en: "Governmental Crisis Situational Framing",
+        category: "public-relations",
+        definition_ar: "استراتيجية المتحدث الرسمي للجهات السيادية في حصر وتحديد سياق الأزمة الوطنية عبر خطابات طمأنة وتوجيهات عملية تحد من انتشار الهلع والارتباك العام.",
+        definition_en: "The strategic deployment of institutional rhetoric and messaging protocols by public officials to define reality, reassure citizens, and manage civil stability.",
+        citation: "Boin, A., 't Hart, P., Stern, E., & Sundelius, B. (2016). The Politics of Crisis Management: Public Leadership Under Pressure (2nd ed.). Cambridge University Press."
+      },
+      {
+        id: 107,
+        term_ar: "صحافة النقر الإغرائي",
+        term_en: "Clickbait Journalism",
+        category: "ethics",
+        definition_ar: "صياغة عناوين إخبارية مضللة أو مفرطة في الإثارة الحسية والعاطفية لحث القارئ على النقر ورفع معدلات الزيارات الرقمية على حساب القيمة المعرفية والمصداقية.",
+        definition_en: "Sensationalist, emotionally manipulative headlines engineered deliberately to exploit user curiosity and drive digital traffic, degrading news integrity.",
+        citation: "Blom, J. N., & Hansen, K. R. (2015). Click bait: Forward-reference as lure in online news headlines. Journal of Pragmatics, 76, 87-100."
+      },
+      {
+        id: 108,
+        term_ar: "التوثيق الموزع للمحتوى عبر البلوك تشين",
+        term_en: "Blockchain Media Provenance",
+        category: "ethics",
+        definition_ar: "توظيف دفاتر الحسابات الموزعة غير القابلة للتعديل لتوثيق تاريخ التقاط الصور وتوقيت نشر الأخبار، لإثبات أصالة المحتوى ومكافحة التزييف الرقمي.",
+        definition_en: "The application of decentralized, immutable distributed ledgers to cryptographically verify the authorship, timestamp, and edit trail of journalistic assets.",
+        citation: "Underwood, S. (2016). Blockchain beyond bitcoin. Communications of the ACM, 59(11), 15-17."
+      },
+      {
+        id: 109,
+        term_ar: "الاتصال الدبلوماسي الرقمي",
+        term_en: "Digital Diplomacy (Twiplomacy)",
+        category: "public-relations",
+        definition_ar: "استخدام سفارات ووزارات الخارجية لمنصات التواصل الاجتماعي والتطبيقات الرقمية للتواصل المباشر مع الرأي العام الخارجي وإدارة القوة الناعمة الدولية.",
+        definition_en: "The strategic adoption of digital networks and social media platforms by state apparatuses to project soft power and conduct public diplomacy.",
+        citation: "Bjola, C., & Holmes, M. (2015). Digital Diplomacy: Theory and Practice. Routledge."
+      },
+      {
+        id: 110,
+        term_ar: "الترجمة الآلية العصبية للإعلام",
+        term_en: "Neural Machine Translation in Media (NMT)",
+        category: "theories",
+        definition_ar: "تطبيقات الترجمة الفورية للأخبار والتقارير التلفزيونية القائمة على الشبكات العصبية العميقة التي تفهم السياق الثقافي والاصطلاحي للغة المصدر بدقة.",
+        definition_en: "Deep learning approaches using end-to-end neural network models to predict and translate media texts while preserving stylistic and contextual nuances.",
+        citation: "Vaswani, A., et al. (2017). Attention is all you need. Advances in Neural Information Processing Systems, 30, 5998-6008."
+      },
+      {
+        id: 111,
+        term_ar: "إنتاج المحتوى بالمصادر الجماهيرية",
+        term_en: "Crowdsourced Journalism",
+        category: "theories",
+        definition_ar: "إشراك جمهور القراء والمواطنين في جمع الوثائق والصور الميدانية أو تدقيق ملفات البيانات الضخمة لدعم التحقيقات الصحفية الاستقصائية.",
+        definition_en: "A collaborative reporting model leveraging the distributed collective intelligence of online communities to aggregate, filter, and analyze datasets.",
+        citation: "Aitamurto, T. (2016). Crowdsourcing as a knowledge-search method in digital journalism. Digital Journalism, 4(2), 280-297."
+      },
+      {
+        id: 112,
+        term_ar: "إدارة الهوية الرقمية للمؤسسة",
+        term_en: "Enterprise Digital Identity Architecture",
+        category: "public-relations",
+        definition_ar: "التصميم الموحد للسمات الرقمية للمؤسسة ونبرة صوتها وتصميماتها عبر مواقع الويب وتطبيقات الهاتف الذكي وشبكات التواصل بما يمنع الانقسام السمعي.",
+        definition_en: "The comprehensive configuration of corporate visual markers, discursive tone, and interactive interfaces across all networked virtual assets.",
+        citation: "Melewar, T. C., & Karaosmanoglu, E. (2006). Seven dimensions of corporate identity. European Journal of Marketing, 40(7/8), 846-869."
+      },
+      {
+        id: 113,
+        term_ar: "التلفزيون التفاعلي المبرمج",
+        term_en: "Addressable & Connected TV (CTV)",
+        category: "theories",
+        definition_ar: "منظومة التلفزيون الرقمي المتصل بالإنترنت التي تتيح بث إعلانات ومحتويات موجهة بدقة لكل منزل وجهاز بناءً على تفضيلات واهتمامات كل مستخدم.",
+        definition_en: "Networked television technology enabling programmatic delivery of segmented video content and targeted advertisements to distinct viewing households.",
+        citation: "Taylor, C. R. (2020). The growth of addressable TV: Opportunities and challenges. International Journal of Advertising, 39(8), 1145-1148."
+      },
+      {
+        id: 114,
+        term_ar: "الاستقصاء الرقمي مفتوح المصدر المتقدم",
+        term_en: "Advanced Open-Source Data Forensics",
+        category: "theories",
+        definition_ar: "التنقيب في البيانات المفتوحة والبيانات الوصفية للصور والأقمار الصناعية لكشف مسارات الجرائم والانتهاكات الدولية وتقديم أدلة إخبارية دامغة.",
+        definition_en: "The forensic collection and computational interrogation of public geodata, EXIF metadata, and satellite imagery to verify human rights abuses.",
+        citation: "Dubberley, S., Koenig, A., & Murray, D. (2020). Digital Witness: Using Open Source Information for Human Rights Investigation, Documentation, and Accountability. Oxford University Press."
+      },
+      {
+        id: 115,
+        term_ar: "الاتصال التعاطفي المؤسسي",
+        term_en: "Empathetic Institutional Communication",
+        category: "public-relations",
+        definition_ar: "صياغة الرسائل العامة للمنظمة بلغة تبدي تفهماً حقيقياً لمشاعر ومخاوف واحتياجات الجمهور في أوقات التضخم أو التحديات الصحية والاقتصادية.",
+        definition_en: "Strategic communicative interactions explicitly recognizing, validating, and addressing stakeholder emotional vulnerabilities and public anxiety.",
+        citation: "Coombs, W. T., & Holladay, S. J. (2012). The Handbook of Crisis Communication. Wiley-Blackwell."
+      },
+      {
+        id: 116,
+        term_ar: "توليد العناوين الخوارزمي واختبار أ/ب",
+        term_en: "Automated A/B Headline Testing",
+        category: "theories",
+        definition_ar: "نشر مسودات لعناوين وصور متعددة لنفس الخبر آلياً لقياس أيها يحقق تفاعلاً وقراءة أعمق لدى عينة من الجمهور قبل اعتماد العنوان الرئيسي.",
+        definition_en: "Algorithmic multivariate testing dynamically comparing performance variations of headlines and visual thumbnails to maximize reader retention.",
+        citation: "Kohavi, R., Tang, D., & Xu, Y. (2020). Trustworthy Online Controlled Experiments: A Practical Guide to A/B Testing. Cambridge University Press."
+      },
+      {
+        id: 117,
+        term_ar: "الاستهلاك الإخباري غير المتزامن",
+        term_en: "Asynchronous News Consumption",
+        category: "theories",
+        definition_ar: "تلقي ومتابعة المواد الصحفية والبرامج التلفزيونية في أوقات تناسب جدول المستخدم الشخصي عبر التطبيقات والحفظ اللاحق دون التقيد بموعد النشرة.",
+        definition_en: "The pattern of accessing journalistic broadcasts and articles at user-determined time intervals via time-shifting interfaces and on-demand platforms.",
+        citation: "Livingstone, S. (2004). The challenge of changing audiences: Or, what is the audience researcher to do in the age of the internet? European Journal of Communication, 19(1), 75-86."
+      },
+      {
+        id: 118,
+        term_ar: "حرب المعلومات الخوارزمية",
+        term_en: "Algorithmic Information Warfare",
+        category: "ethics",
+        definition_ar: "التوظيف العسكري والاستخباراتي للروبوتات والذكاء الاصطناعي لاختراق الفضاء الرقمي للدول المعادية وتوجيه الرأي العام وإثارة الفتن المجتمعية.",
+        definition_en: "The deliberate operational use of automated botnets, generative computational propaganda, and deepfakes to destabilize sovereign civic spaces.",
+        citation: "Bradshaw, S., & Howard, P. N. (2019). The Global Disorder of Organized Social Media Manipulation. Computational Propaganda Project, University of Oxford."
+      },
+      {
+        id: 119,
+        term_ar: "إدارة الاتصال الداخلي التعاوني",
+        term_en: "Enterprise Social Network Communication",
+        category: "public-relations",
+        definition_ar: "إدارة الحوار المؤسسي وتبادل الأفكار داخل بيئات العمل عبر منصات شبكية تعاونية تزيد الإنتاجية وتكسر الحواجز البيروقراطية بين الإدارات.",
+        definition_en: "The strategic deployment of internal collaboration software to flatten communicative hierarchies and stimulate knowledge flows.",
+        citation: "Leonardi, P. M., Huysman, M., & Steinfield, C. (2013). Enterprise social media: Definition, history, and prospects. Journal of Computer-Mediated Communication, 19(1), 1-19."
+      },
+      {
+        id: 120,
+        term_ar: "الإذاعة الرقمية المدمجة في السيارات",
+        term_en: "Connected Dashboard Radio Ecosystem",
+        category: "theories",
+        definition_ar: "منظومة البث الإذاعي الحديثة المعتمدة على أنظمة تشغيل السيارات الذكية التي تدمج البث الأرضي بالبث الشبكي والمحتوى التفاعلي المخصص.",
+        definition_en: "The integrated automotive infotainment environment combining digital terrestrial audio (DAB+) and cloud-delivered podcasts directly to vehicular consoles.",
+        citation: "Lax, S. (2009). Beyond the Horizon? The future of radio in the digital age. Observatorio (OBS*), 3(4), 185-199."
+      },
+      {
+        id: 121,
+        term_ar: "التتبع الإعلاني دون ملفات تعريف",
+        term_en: "Cookieless Digital Advertising",
+        category: "ethics",
+        definition_ar: "الاستهداف الرقمي للجمهور بالاعتماد على السياق اللحظي للمحتوى وتجمعات الاهتمام المشترك بدلاً من تتبع البيانات الشخصية عبر ملفات الارتباط الطرف الثالث.",
+        definition_en: "Digital targeting models that respect privacy regulations by deploying first-party data and contextual relevance rather than third-party tracking cookies.",
+        citation: "Mayer, J. R., & Mitchell, J. C. (2012). Third-party web tracking: Policy and technology. IEEE Symposium on Security and Privacy, 413-427."
+      },
+      {
+        id: 122,
+        term_ar: "الإنتاج التلفزيوني السحابي الافتراضي",
+        term_en: "Cloud-Native Virtual TV Production",
+        category: "theories",
+        definition_ar: "إدارة الاستوديوهات وغرف التحكم التلفزيونية كلياً عبر خوادم الحوسبة السحابية دون الحاجة لشاحنات نقل خارجية أو أجهزة تحكم مادية باهظة.",
+        definition_en: "Television production architecture wherein video routing, vision mixing, and master control switching operate within decentralized cloud servers.",
+        citation: "Evans, C. (2020). The Future of Cloud in Media and Entertainment. SMPTE Motion Imaging Journal, 129(4), 30-38."
+      },
+      {
+        id: 123,
+        term_ar: "الاتصال الحكومي التوجيهي السلوكي",
+        term_en: "Nudge Theory in Government Communication",
+        category: "public-relations",
+        definition_ar: "صياغة الرسائل العامة وتصميم الخيارات بأسلوب يحفز المواطنين على اتخاذ قرارات إيجابية مرغوبة (كالتطعيم أو ترشيد الطاقة) دون فرض إلزامي.",
+        definition_en: "The strategic architecture of public choice and messaging designed to alter people's behavior predictably without forbidding any options or incentives.",
+        citation: "Thaler, R. H., & Sunstein, C. R. (2008). Nudge: Improving Decisions About Health, Wealth, and Happiness. Yale University Press."
+      },
+      {
+        id: 124,
+        term_ar: "الشفافية في خوارزميات محركات البحث",
+        term_en: "Search Engine Algorithmic Accountability",
+        category: "ethics",
+        definition_ar: "مطالبة شركات التكنولوجيا بفتح الصندوق الأسود لخوارزميات البحث وتوضيح معايير فرز النتائج لمنع طمس وجهات النظر المستقلة والأكاديمية.",
+        definition_en: "The institutional demand for regulatory visibility into the indexing parameters and ranking criteria executed by dominant search engine algorithms.",
+        citation: "Introna, L. D., & Nissenbaum, H. (2000). Shaping the Web: Why the politics of search engines matters. The Information Society, 16(3), 169-185."
+      },
+      {
+        id: 125,
+        term_ar: "السرد الصوتي ثلاثي الأبعاد",
+        term_en: "Binaural & Spatial Audio Storytelling",
+        category: "theories",
+        definition_ar: "هندسة الصوت الإذاعي والبودكاست بتقنية الصوت المحيطي ثلاثي الأبعاد لمنح المستمع تجربة انغماس واقعية وكأنه يتواجد وسط مسرح الحدث.",
+        definition_en: "An acoustic recording and mixing method creating a 3D stereo sound sensation for the listener, replicating human auditory depth perception.",
+        citation: "Rumsey, F. (2011). Spatial Audio: Sound and Space. Focal Press."
+      },
+      {
+        id: 126,
+        term_ar: "العلاقات العامة المرتكزة على البيانات",
+        term_en: "Data-Driven Public Relations",
+        category: "public-relations",
+        definition_ar: "اتخاذ القرارات وتخطيط الحملات الاتصالية استناداً إلى المعالجة الإحصائية لبيانات سلوك الجمهور والشبكات بدلاً من الاعتماد على الحدس المهني فقط.",
+        definition_en: "The systematic alignment of public relations strategy, audience segmentation, and channel allocation based on rigorous data telemetry.",
+        citation: "Weiner, M. (2021). PR Technology, Data and Insights: Igniting a Positive Return on Investment. Kogan Page."
+      },
+      {
+        id: 127,
+        term_ar: "أخلاقيات تمثيل الفئات الضعيفة في الإعلام",
+        term_en: "Ethical Representation of Marginalized Groups",
+        category: "ethics",
+        definition_ar: "الضوابط التحريرية التي تضمن تصوير أصحاب الهمم والأقليات في الأخبار والدراما بعدالة وكرامة، وتمنع تنميطهم أو استغلالهم لجلب التعاطف التجاري.",
+        definition_en: "Normative editorial codes ensuring dignified, nuanced portrayal of vulnerable populations while actively discarding patronizing tropes.",
+        citation: "Ward, S. J. (2011). Ethics and the Media: An Introduction. Cambridge University Press."
+      },
+      {
+        id: 128,
+        term_ar: "المنصات الإخبارية متناهية التخصيص",
+        term_en: "Algorithmic Niche News Aggregation",
+        category: "theories",
+        definition_ar: "تطبيقات الأخبار الذكية التي تعيد تشكيل واجهتها ومحتواها لكل قارئ في كل زيارة بناءً على نمط استهلاكه وتفضيلاته القرائية المتطورة.",
+        definition_en: "Computational mobile news aggregators curating highly customized stream flows based on ongoing machine learning assessment of reading behavior.",
+        citation: "Thurman, N., & Schifferes, S. (2012). The future of personal news aggregators. Digital Journalism, 1(1), 134-150."
+      },
+      {
+        id: 129,
+        term_ar: "المتحدث الرسمي الرقمي والوكيل الآلي",
+        term_en: "AI Conversational Spokesperson",
+        category: "public-relations",
+        definition_ar: "شخصية افتراضية تفاعلية مدعومة بالذكاء الاصطناعي تمثل المؤسسة رسمياً وتقدم إجابات موثوقة وموحدة لاستفسارات الجمهور والعملاء على مدار الساعة.",
+        definition_en: "An interactive, LLM-driven digital avatar officially mandated to field citizen queries and disseminate vetted institutional announcements 24/7.",
+        citation: "Guzman, A. L., & Lewis, S. C. (2020). Artificial intelligence and communication: A Human-Machine Communication research agenda. New Media & Society, 22(1), 70-87."
+      },
+      {
+        id: 130,
+        term_ar: "صحافة التحري عن التزييف والتدقيق الرقمي",
+        term_en: "Automated Digital Fact-Checking",
+        category: "theories",
+        definition_ar: "أنظمة برمجية تفحص النصوص وتطابق التصريحات والبيانات الإحصائية لحظياً بقواعد بيانات المعرفة الموثوقة للتنبيه الفوري للأخطاء والمغالطات.",
+        definition_en: "Computational platforms executing semantic verification of claims against validated structured repositories to surface inaccuracies in real time.",
+        citation: "Graves, L. (2018). Understanding the promise and limits of automated fact-checking. Reuters Institute for the Study of Journalism."
+      },
+      {
+        id: 131,
+        term_ar: "التعهيد الاتصالي المفتوح",
+        term_en: "Crowdsourced PR ideation",
+        category: "public-relations",
+        definition_ar: "دعوة المؤسسة للجمهور وأصحاب المصلحة للمساهمة في ابتكار أفكار الحملات التوعوية أو تحسين الخدمات عبر مسابقات ومنصات رقمية تشاركية.",
+        definition_en: "The practice of soliciting public participation to co-create communication themes, solve institutional problems, and inform CSR campaign planning.",
+        citation: "Howe, J. (2008). Crowdsourcing: Why the Power of the Crowd Is Driving the Future of Business. Crown Business."
+      },
+      {
+        id: 132,
+        term_ar: "حجب المحتوى الخوارزمي في الظل",
+        term_en: "Shadowbanning in Social Media",
+        category: "ethics",
+        definition_ar: "تقييد وصول منشورات المستخدم وتخفيض ظهورها للآخرين خوارزمياً دون إشعاره، مما يثير تساؤلات قانونية وأخلاقية حول حرية التعبير الرقمي.",
+        definition_en: "The algorithmic suppression of an account’s content visibility to other users without formal notification or transparent due process.",
+        citation: "Gillespie, T. (2018). Custodians of the Internet: Platforms, Content Moderation, and the Hidden Decisions That Shape Social Media. Yale University Press."
+      },
+      {
+        id: 133,
+        term_ar: "الهندسة الصوتية الرقمية المعيارية للبث",
+        term_en: "Loudness Normalization (LUFS) in Radio",
+        category: "theories",
+        definition_ar: "المعايير الرقمية الدولية لضبط ومساواة مستويات علو الصوت عبر المحطات الإذاعية والبودكاست لتفادي إزعاج المستمع بالاختلافات المفاجئة.",
+        definition_en: "International broadcast standards (EBU R128 / ITU-R BS.1770) standardizing perceived audio loudness across digital transmission and streaming media.",
+        citation: "Brixen, E. B. (2011). Metering and Loudness: Sound Assessment in Broadcast. Focal Press."
+      },
+      {
+        id: 134,
+        term_ar: "إدارة الاتصال بالأزمات عبر الواتساب والرسائل الفورية",
+        term_en: "Instant Messaging Crisis PR",
+        category: "public-relations",
+        definition_ar: "بناء قنوات بث ومجموعات اتصال فورية وموثقة عبر تطبيقات المراسلة لموافاة أصحاب المصلحة والشركاء بالتعليمات الرسمية المباشرة أثناء الكوارث.",
+        definition_en: "The strategic deployment of direct, encrypted messaging groups and channels to deliver verified status alerts to affected cohorts during crises.",
+        citation: "Utz, S., Schultz, F., & Glocka, S. (2013). Crisis communication online: How medium, information type and emotions matter. Public Relations Review, 39(1), 40-46."
+      },
+      {
+        id: 135,
+        term_ar: "المواطنة الإخبارية التفاعلية",
+        term_en: "Participatory Citizen Journalism",
+        category: "theories",
+        definition_ar: "قيام الأفراد العاديين بنقل وتوثيق الأخبار المحلية ومشاركتها عبر الشبكات، مما يسهم في تعزيز التعددية الإخبارية ولكنه يتطلب تحققاً مهنياً صارماً.",
+        definition_en: "The active, civic role played by citizens in collecting, reporting, analyzing, and disseminating news outside traditional media conglomerates.",
+        citation: "Allan, S., & Thorsen, E. (2009). Citizen Journalism: Global Perspectives. Peter Lang."
+      },
+      {
+        id: 136,
+        term_ar: "حوكمة الذكاء الاصطناعي في الإعلام الحكومي",
+        term_en: "Governance of AI in Public Sector Communication",
+        category: "ethics",
+        definition_ar: "الأطر واللوائح التنظيمية التي تفرضها الحكومات لضمان أمان واستقامة النظم الذكية المستخدمة في إنتاج البيانات والاتصال الموجه للمواطنين.",
+        definition_en: "Regulatory frameworks and supervisory structures managing the ethical risks and accountability of algorithms deployed in government PR.",
+        citation: "Cath, C. (2018). Governing artificial intelligence: Ethical, legal and technical opportunities and challenges. Philosophical Transactions of the Royal Society A, 376(2133)."
+      },
+      {
+        id: 137,
+        term_ar: "المراسلة الصحفية الآمنة والمشفرة",
+        term_en: "Encrypted Source Protection Protocols",
+        category: "ethics",
+        definition_ar: "الممارسات والبرمجيات المشفرة (مثل Signal وTor) التي يستخدمها الصحفيون لحماية هويات المصادر الاستقصائية والشهود من التعقب والملاحقة.",
+        definition_en: "Cryptographic methods and secure operational hygiene employed by journalists to defend source identities and confidentiality against surveillance.",
+        citation: "Posetti, J. (2017). Protecting Journalism Sources in the Digital Age. UNESCO Publishing."
+      },
+      {
+        id: 138,
+        term_ar: "تسجيل الفيديو الرقمي عالي الكفاءة",
+        term_en: "HEVC & AV1 Video Compression Standards",
+        category: "theories",
+        definition_ar: "خوارزميات ضغط الفيديو الحديثة التي تقلل استهلاك سعة البيانات إلى النصف مع الحفاظ على جودة العرض بدقة 4K و8K في البث التلفزيوني الشبكي.",
+        definition_en: "Advanced video codec technologies engineered to compress ultra-high-definition video payloads efficiently over limited-bandwidth networks.",
+        citation: "Sullivan, G. J., et al. (2012). Overview of the high efficiency video coding (HEVC) standard. IEEE Transactions on Circuits and Systems for Video Technology, 22(12), 1649-1668."
+      },
+      {
+        id: 139,
+        term_ar: "الاتصال الحكومي التشاركي عبر المنصات المفتوحة",
+        term_en: "Open Government Two-Way Dialogue",
+        category: "public-relations",
+        definition_ar: "إشراك المواطنين في مراجعة التشريعات والخطط العامة عبر بوابات المشورة الرقمية، بما يضمن ديمقراطية القرار ويعزز الشفافية المؤسسية.",
+        definition_en: "Public consultation platforms providing citizens direct, mediated channels to deliberate on drafted statutes and influence ministerial policies.",
+        citation: "Noveck, B. S. (2009). Wiki Government: How Technology Can Make Government Better, Democracy Stronger, and Citizens More Powerful. Brookings Institution Press."
+      },
+      {
+        id: 140,
+        term_ar: "التتبع البصري لانتباه المشاهد",
+        term_en: "Eye-Tracking in Media Usability",
+        category: "theories",
+        definition_ar: "استخدام تقنيات تتبع حركة العين لتحديد نقاط الجذب البصري في المواقع الإخبارية والإعلانات ونشرات التلفزيون لتطوير هندسة العرض الإعلامي.",
+        definition_en: "The biometric tracking of ocular foveation points to evaluate user gaze paths, visual hierarchy, and interface usability in media platforms.",
+        citation: "Holmqvist, K., et al. (2011). Eye Tracking: A Comprehensive Guide to Methods and Measures. Oxford University Press."
+      },
+      {
+        id: 141,
+        term_ar: "أخلاقيات الرعاية الإعلانية للمحتوى الصحفي",
+        term_en: "Sponsored Content Transparency",
+        category: "ethics",
+        definition_ar: "وجوب التمييز البصري والتحريري الصارم بين المقالات الإخبارية الأصيلة والمقالات الممولة إعلانياً لحماية ثقة القارئ ومنع تضليله.",
+        definition_en: "The mandatory disclosure and clear typographical segregation separating paid advertorial content from editorial journalism.",
+        citation: "Schauster, E. E., Neill, M. S., & Ferrucci, P. (2016). Native advertising: Is deception acceptable? Journal of Media Ethics, 31(3), 166-180."
+      },
+      {
+        id: 142,
+        term_ar: "السرد الصوتي التوليدي المخصص",
+        term_en: "Dynamic Ad Insertion (DAI) in Podcasts",
+        category: "theories",
+        definition_ar: "تقنية برمجية تدرج الرسائل الإعلانية الصوتية في البودكاست لحظة تحميل الحلقة بناءً على موقع المستمع الجغرافي واهتماماته في الوقت الفعلي.",
+        definition_en: "A programmatic audio advertising mechanism stitching targeted audio promos into pre-recorded podcast files dynamically upon download.",
+        citation: "Sullivan, J. L. (2019). The platforms of podcasting: Technologies and cultural forms in digital audio. Social Media + Society, 5(4), 1-12."
+      },
+      {
+        id: 143,
+        term_ar: "استراتيجية المناصرة الداخلية للموظفين",
+        term_en: "Employee Brand Advocacy",
+        category: "public-relations",
+        definition_ar: "تمكين وتحفيز الموظفين لمشاركة تجاربهم الإيجابية وإنجازات المؤسسة عبر حساباتهم الشخصية، مما يمنح العلامة مصداقية بشرية تفوق الإعلانات.",
+        definition_en: "The structured activation of organizational workforce members to champion company culture, news, and values across personal social spheres.",
+        citation: "Dreher, S. (2014). Social media and the world of work: A strategic approach to employees' personal social media use. Public Relations Review, 40(2), 344-346."
+      },
+      {
+        id: 144,
+        term_ar: "الصحافة الموجهة بالبيانات المكانية",
+        term_en: "Spatial & Geographic Journalism",
+        category: "theories",
+        definition_ar: "بناء القصص الاستقصائية حول الخرائط التفاعلية وتحليل طبقات نظم المعلومات الجغرافية (GIS) لكشف التفاوت البيئي والاجتماعي الميداني.",
+        definition_en: "A reporting paradigm organizing journalistic inquiries and visualizations primarily through geospatial coordinates and spatial intelligence.",
+        citation: "Monmonier, M. (1996). How to Lie with Maps (2nd ed.). University of Chicago Press."
+      },
+      {
+        id: 145,
+        term_ar: "حملات العلاقات العامة متعددة القنوات",
+        term_en: "Cross-Media PR Campaign Synergy",
+        category: "public-relations",
+        definition_ar: "التنسيق الاستراتيجي المتكامل لنشر أفكار الحملة عبر وسائل الإعلام التقليدية والرقمية والفعاليات الميدانية لتعظيم الأثر الإقناعي التراكمي.",
+        definition_en: "The synchronized distribution of consistent campaign messages across divergent channels to yield magnified communicative reach and recall.",
+        citation: "Kitchen, P. J., & Burgmann, I. (2010). Integrated marketing communication: Making it work. Business Horizons, 53(4), 423-431."
+      },
+      {
+        id: 146,
+        term_ar: "أخلاقيات استخدام صور الضحايا في الكوارث",
+        term_en: "Grief and Disaster Photojournalism Ethics",
+        category: "ethics",
+        definition_ar: "المعايير الإنسانية التي توازن بين حق الرأي العام في معرفة الحقيقة وبين احترام خصوصية الضحايا وكرامتهم وتفادي الإثارة البصرية الفجة.",
+        definition_en: "Ethical frameworks balancing the public’s imperative to bear witness against the intrusive exploitation of trauma and grief in photojournalism.",
+        citation: "Newton, J. H. (2001). The Burden of Visual Truth: The Role of Photojournalism in Mediating Reality. Routledge."
+      },
+      {
+        id: 147,
+        term_ar: "استراتيجية بناء السمعة عبر المحتوى الرقمي",
+        term_en: "Inbound PR & Thought Leadership",
+        category: "public-relations",
+        definition_ar: "جذب الجمهور والشركاء للمنظمة عبر نشر أبحاث ومقالات رأي ذات قيمة علمية عالية تجعل المؤسسة مرجعاً فكرياً معتمداً في مجالها.",
+        definition_en: "The strategic pull model of public relations delivering educational, insight-dense content that organically establishes intellectual authority.",
+        citation: "Odden, L. (2012). Optimize: How to Attract and Engage More Customers by Integrating SEO, Social Media, and Content Marketing. Wiley."
+      },
+      {
+        id: 148,
+        term_ar: "البث التلفزيوني عبر الجيل الخامس",
+        term_en: "5G-Enabled Mobile Broadcasting",
+        category: "theories",
+        definition_ar: "توظيف شبكات الاتصال فائقة السرعة ومنخفضة التأخير لنقل البث الحي بجودة استوديوهات التلفزيون مباشرة من قلب الأحداث دون انقطاع.",
+        definition_en: "The exploitation of 5G cellular bandwidth and network slicing to execute instantaneous, low-latency UHD live video transmissions from the field.",
+        citation: "Zhang, L., et al. (2020). 5G for broadcast and multicast services. IEEE Communications Magazine, 58(8), 58-64."
+      },
+      {
+        id: 149,
+        term_ar: "مراقبة مشاعر العلامة المؤسسية لحظياً",
+        term_en: "Real-Time Brand Sentiment Telemetry",
+        category: "public-relations",
+        definition_ar: "لوحات تحكم رقمية ترصد التغيرات اللحظية في انطباعات ومشاعر الجمهور عبر الإنترنت لإخطار مسؤولي العلاقات العامة فور وجود مؤشر سلبي.",
+        definition_en: "Dynamic computational dashboards processing live online sentiment vectors to immediately alert communicators of burgeoning reputational risk.",
+        citation: "Pang, B., & Lee, L. (2008). Opinion mining and sentiment analysis. Foundations and Trends in Information Retrieval, 2(1–2), 1-135."
+      },
+      {
+        id: 150,
+        term_ar: "الأمن السيبراني للمؤسسات الصحفية",
+        term_en: "Newsroom Operational Cybersecurity",
+        category: "ethics",
+        definition_ar: "البروتوكولات الفنية والتنظيمية لحماية شبكات التحرير الإخباري من الاختراق، وحماية المواد الاستقصائية المسربة قبل نشرها الرسمي.",
+        definition_en: "Technical, physical, and procedural security architecture insulating editorial infrastructure against espionage and ransomware incursions.",
+        citation: "Marquis-Boire, M., et al. (2015). Communities at risk: Targeted digital threats against civil society. Citizen Lab Research Report."
+      },
+      {
+        id: 151,
+        term_ar: "التأطير الاتصالي للأخبار الاقتصادية",
+        term_en: "Economic News Framing",
+        category: "theories",
+        definition_ar: "كيفية تبسيط ونقل المفاهيم المالية المعقدة (كالتضخم وأسعار الفائدة) للمواطنين بأساليب تربطها مباشرة بحياتهم اليومية وقدرتهم الشرائية.",
+        definition_en: "The contextual packaging of complex fiscal data into relatable narrative constructs demonstrating direct ramifications on household welfare.",
+        citation: "Scheufele, D. A., & Tewksbury, D. (2007). Framing, agenda setting, and priming: The evolution of three media effects models. Journal of Communication, 57(1), 9-20."
+      },
+      {
+        id: 152,
+        term_ar: "الاتصال الحكومي أثناء الطوارئ الوطنية",
+        term_en: "National Emergency Broadcast Protocols",
+        category: "public-relations",
+        definition_ar: "الأنظمة الاتصالية الموحدة التي تسمح للحكومات بإرسال تنبيهات طارئة وفورية إلى جميع الهواتف الذكية وشاشات التلفزيون في حالات الكوارث.",
+        definition_en: "Unified governmental alert infrastructures broadcasting prioritized life-safety notifications directly to consumer mobile devices and displays.",
+        citation: "Mileti, D. (1999). Disasters by Design: A Reassessment of Natural Hazards in the United States. Joseph Henry Press."
+      },
+      {
+        id: 153,
+        term_ar: "الهندسة المعرفية للمواقع الإخبارية",
+        term_en: "Information Architecture for Digital News",
+        category: "theories",
+        definition_ar: "التنظيم الهيكلي والتصنيفي لأقسام الموقع وصفحات الأرشيف الإخباري لتمكين القارئ من الوصول إلى الخلفيات التاريخية للقصة بيسر وسهولة.",
+        definition_en: "The structural design and ontological classification of online news spaces to maximize cognitive discoverability and contextual browsing.",
+        citation: "Rosenfeld, L., Morville, P., & Arango, J. (2015). Information Architecture: For the Web and Beyond (4th ed.). O'Reilly Media."
+      },
+      {
+        id: 154,
+        term_ar: "المصداقية الرقمية المتصورة",
+        term_en: "Perceived Digital Source Credibility",
+        category: "theories",
+        definition_ar: "حكم المتلقي على مدى دقة ونزاهة وخبرة المنصة أو الحساب الإخباري استناداً إلى تصميمه البصري وسرعة تصحيحه للأخطاء وشفافية مصادره.",
+        definition_en: "The psychological evaluation made by readers regarding the expertise, trustworthiness, and objectivity of a digital information node.",
+        citation: "Metzger, M. J., & Flanagin, A. J. (2013). Credibility and trust of information in online environments. The Oxford Handbook of Internet Psychology, 313-332."
+      },
+      {
+        id: 155,
+        term_ar: "التنظيم الذاتي لأخلاقيات الإعلام الرقمي",
+        term_en: "Digital Media Self-Regulation",
+        category: "ethics",
+        definition_ar: "مواثيق الشرف التي تتبناها منصات الصحافة الرقمية طوعاً لضبط ممارساتها المهنية وتصحيح الأخطاء دون الحاجة لتدخل تشريعي حكومي خانق.",
+        definition_en: "Voluntary ethical compacts and peer-audited standards established by digital journalistic bodies to safeguard freedom and internal integrity.",
+        citation: "Bertrand, J. C. (2000). Media Ethics & Accountability Systems. Transaction Publishers."
+      },
+      {
+        id: 156,
+        term_ar: "تقنيات التفاعل في التلفزيون الرقمي",
+        term_en: "Second-Screen Viewing Engagement",
+        category: "theories",
+        definition_ar: "تفاعل المشاهد مع البرامج التلفزيونية عبر الهاتف المحمول (كالتصويت المباشر والتغريد) أثناء متابعة البث الأصلي على الشاشة الكبيرة.",
+        definition_en: "The synchronized media behavior wherein viewers interact with complementary app ecosystems on handheld devices while watching television.",
+        citation: "Giglietto, V., & Selva, D. (2014). Second screen and public sphere: The Italian political television talk shows on Twitter. Journal of Computer-Mediated Communication, 19(4), 1045-1059."
+      },
+      {
+        id: 157,
+        term_ar: "التواصل المؤسسي الاستراتيجي عبر لينكد إن",
+        term_en: "Executive Thought Leadership on LinkedIn",
+        category: "public-relations",
+        definition_ar: "إدارة الحضور المهني للرؤساء التنفيذيين ومسؤولي الاتصال لنشر أوراق العمل ومناقشة التوجهات المهنية لبناء سمعة مؤسسية رفيعة.",
+        definition_en: "The disciplined management of executive voice and strategic insights on professional networks to elevate business reputation and B2B alliances.",
+        citation: "Sallot, L. M., Porter, L. V., & Acosta-Alzuru, C. (2004). Practitioners' web use and perceptions of its value for public relations. Public Relations Review, 30(3), 269-277."
+      },
+      {
+        id: 158,
+        term_ar: "الصحافة الموجهة بالذكاء الاصطناعي التوليدي",
+        term_en: "Generative AI-Assisted Journalism",
+        category: "theories",
+        definition_ar: "الاستعانة بأدوات الذكاء الاصطناعي في تلخيص التقارير الطويلة، وتوليد زوايا المقابلات الصحفية، مع إبقاء الرقابة البشرية الإلزامية.",
+        definition_en: "Editorial workflows incorporating generative language models to assist in synthesizing research, while preserving absolute human editorial oversight.",
+        citation: "Beckett, C. (2019). New powers, new responsibilities: A global survey of journalism and artificial intelligence. Polis, London School of Economics."
+      },
+      {
+        id: 159,
+        term_ar: "حوكمة البيانات في المؤسسات الإعلامية",
+        term_en: "Data Governance in Media Enterprises",
+        category: "ethics",
+        definition_ar: "السياسات الإدارية والتقنية التي تحدد من يحق له الوصول لبيانات القراء والمشتركين، وكيفية تخزينها وحمايتها طبقاً لقوانين حماية البيانات.",
+        definition_en: "The organizational structure and technical guidelines directing how audience metrics are cataloged, safeguarded, and audited for regulatory compliance.",
+        citation: "Khatri, V., & Brown, C. V. (2010). Designing data governance. Communications of the ACM, 53(1), 148-152."
+      },
+      {
+        id: 160,
+        term_ar: "الاتصال الحكومي المرئي عبر البيانات",
+        term_en: "Government Data Infographics & Visualization",
+        category: "public-relations",
+        definition_ar: "تحويل الموازنات والمؤشرات التنموية الحكومية المعقدة إلى رسوم معلوماتية مرئية سهلة الفهم لتعزيز الشفافية وحق المواطن في المعرفة.",
+        definition_en: "The graphic translation of complicated civil statistics, expenditures, and policy outcomes into accessible visual formats for public empowerment.",
+        citation: "Cairo, A. (2012). The Functional Art: An Introduction to Information Graphics and Visualization. New Riders."
+      },
+      {
+        id: 161,
+        term_ar: "الاستماع الإذاعي الهجين",
+        term_en: "Hybrid Radio Systems",
+        category: "theories",
+        definition_ar: "دمج البث الإذاعي الرقمي (DAB+) بالاتصال الشبكي (IP) لعرض صور الألبومات، والنصوص التفاعلية، ومعلومات الطقس والحرائق على شاشة المذياع.",
+        definition_en: "Standardized protocols (RadioDNS) intertwining broadcast radio transmission with broadband internet connectivity to enhance user interactivity.",
+        citation: "O'Neill, B. (2009). DAB: The future of radio? The development of digital audio broadcasting in Ireland. Observatorio (OBS*), 3(4), 269-287."
+      },
+      {
+        id: 162,
+        term_ar: "حملات التوعية الرقمية بالاستدامة",
+        term_en: "Digital Sustainability Awareness Campaigns",
+        category: "public-relations",
+        definition_ar: "الحملات التفاعلية الموجهة عبر الشبكات لتغيير عادات المجتمع في استهلاك المياه والطاقة وإدارة النفايات وفق معايير قابلة للقياس الميداني.",
+        definition_en: "Targeted digital communication efforts structured to alter civic consumption footprints through persuasive online content and community benchmarks.",
+        citation: "Futerra. (2018). The Honest Product Guide. Sustainable Lifestyles Platform."
+      },
+      {
+        id: 163,
+        term_ar: "التحقق المتقاطع من الفيديوهات الإخبارية",
+        term_en: "Audiovisual Reverse Verification",
+        category: "theories",
+        definition_ar: "تفكيك مقاطع الفيديو إلى لقطات ثابتة وفحصها عبر محركات البحث العكسي والبيانات الفلكية للتحقق من مكان وتاريخ تصويرها الفعلي.",
+        definition_en: "The forensic breakdown of video frames into chronological keyframes subjected to reverse visual search and sun-shadow angle validation.",
+        citation: "Silverman, C. (2014). Verification Handbook: An Ultimate Guideline on Digital Age Sourcing for Emergency Coverage. European Journalism Centre."
+      },
+      {
+        id: 164,
+        term_ar: "أخلاقيات الروبوتات الصحفية التوليدية",
+        term_en: "Ethics of Generative Journalism Bots",
+        category: "ethics",
+        definition_ar: "وجوب وضع علامات صريحة على المواد الإخبارية التي تمت صياغتها بمساعدة الذكاء الاصطناعي، وتحمل رئيس التحرير البشري المسؤولية القانونية الكاملة.",
+        definition_en: "The moral and legal responsibility obligating media houses to overtly label synthetic copy and retain complete human liability for bot outputs.",
+        citation: "Dörr, K. N., & Hollnbuchner, K. (2017). Ethical challenges of algorithmic journalism. Digital Journalism, 5(4), 404-419."
+      },
+      {
+        id: 165,
+        term_ar: "الاستجابة الاتصالية للأزمات عبر الفيديو المباشر",
+        term_en: "Live-Stream Crisis Management",
+        category: "public-relations",
+        definition_ar: "بث مؤتمرات صحفية تفاعلية حية للمسؤولين التنفيذيين عبر منصات التواصل أثناء الأزمات للرد المباشر على الجمهور والحد من انتشار الشائعات.",
+        definition_en: "The agile deployment of direct, unedited video streaming by corporate spokespersons to answer breaking concerns and demonstrate decisive leadership.",
+        citation: "Fearn-Banks, K. (2016). Crisis Communications: A Casebook Approach (5th ed.). Routledge."
+      },
+      {
+        id: 166,
+        term_ar: "السرد الصحفي التفاعلي بالبيانات المتشعبة",
+        term_en: "Branching Interactive Longform Journalism",
+        category: "theories",
+        definition_ar: "التحقيقات الصحفية الرقمية الطويلة التي تجمع النصوص والخرائط والمقاطع الصوتية التفاعلية وتتيح للمتلقي استكشاف القصة وفق مساره الخاص.",
+        definition_en: "Multi-layered multimedia journalism combining parallax design, interactive data, and audio narratives to foster reader-directed exploration.",
+        citation: "Hiippala, T. (2017). The multimodal structure of interactive longform journalism. Digital Journalism, 5(4), 420-442."
+      },
+      {
+        id: 167,
+        term_ar: "إدارة الاتصال للتحول الرقمي المؤسسي",
+        term_en: "Digital Transformation Change Communication",
+        category: "public-relations",
+        definition_ar: "الخطة الاتصالية الموجهة للموظفين لتجاوز مقاومة التغيير وإكسابهم الثقة في تبني التقنيات السحابية والأنظمة الذكية الجديدة.",
+        definition_en: "Strategic internal messaging engineered to mitigate employee anxiety and align operational cultures during enterprise digital modernization.",
+        citation: "Kotter, J. P. (2012). Leading Change. Harvard Business Review Press."
+      },
+      {
+        id: 168,
+        term_ar: "المساءلة الخوارزمية في الإعلام العمومي",
+        term_en: "Public Service Media Algorithmic Principles",
+        category: "ethics",
+        definition_ar: "الضوابط التي تفرض على منصات الإعلام العمومي تصميم خوارزميات تخدم الصالح العام والتنوع الثقافي بدلاً من مجرد تعظيم النقرات التجارية.",
+        definition_en: "Public value design parameters mandating state-funded broadcasters to engineer recommender engines prioritizing cultural plurality over ad clicks.",
+        citation: "Van den Bulck, H., & Moe, H. (2018). Public service media, universality and personalisation through algorithms. Digital Journalism, 6(7), 875-893."
+      },
+      {
+        id: 169,
+        term_ar: "الإنتاج الإذاعي السحابي المتنقل",
+        term_en: "Remote Broadcast Audio Over IP (AoIP)",
+        category: "theories",
+        definition_ar: "نقل الإشارات الصوتية الإذاعية عبر بروتوكولات الإنترنت بدقة فائقة وبدون تأخير مما يمكن المذيعين من إدارة استوديوهاتهم من أي مكان بالعالم.",
+        definition_en: "The transmission of low-latency, uncompressed professional audio signals over local networks and internet connections using IP architecture.",
+        citation: "Yonge, M. (2015). AES67: The open standard for audio over IP interoperability. Audio Engineering Society."
+      },
+      {
+        id: 170,
+        term_ar: "إدارة وتصحيح المعلومات المضللة حكومياً",
+        term_en: "Governmental Misinformation Interventions",
+        category: "public-relations",
+        definition_ar: "المراصد والمنصات الرسمية التي تديرها أجهزة الاتصال الحكومي لرصد الأكاذيب وتفنيدها فورياً ببيانات وحقائق موثقة بالصوت والصورة.",
+        definition_en: "Dedicated state surveillance and intervention desks established to detect, trace, and authoritatively debunk disruptive societal fake news.",
+        citation: "Lazer, D. M., et al. (2018). The science of fake news. Science, 359(6380), 1094-1096."
+      },
+      {
+        id: 171,
+        term_ar: "الصحافة الموجهة بمشاعر القارئ",
+        term_en: "Mood-Based Journalism & Content Adaptation",
+        category: "theories",
+        definition_ar: "تصنيف وتقديم الأخبار والتحليلات بناءً على الحالة المزاجية للمستخدم أو وقت التصفح (مثل تقديم أخبار ملهمة صباحاً وتحليلات هادئة مساءً).",
+        definition_en: "The practice of algorithmically segmenting and pacing editorial offerings to harmonize with measured or inferred diurnal user sentiment cycles.",
+        citation: "Costera Meijer, I., & Groot Kormelink, T. (2015). Checking, sharing, clicking and linking: Analyzing the repertoire of news users. Digital Journalism, 3(5), 664-679."
+      },
+      {
+        id: 172,
+        term_ar: "الحوكمة الأخلاقية للقياس الحيوي في الإعلام",
+        term_en: "Biometric Media Research Ethics",
+        category: "ethics",
+        definition_ar: "الضوابط الأخلاقية المطبقة في معامل بحوث الإعلام عند استخدام أجهزة قياس النبض وموجات الدماغ لمنع استغلال الردود العاطفية اللاواعية للمتلقي.",
+        definition_en: "Strict ethical guidelines governing the laboratory collection of galvanic skin response, EEG, and neural data in media psychophysiology.",
+        citation: "Potter, R. F., & Bolls, P. (2012). Psychophysiological Measurement and Meaning: Cognitive and Emotional Responses to Media. Routledge."
+      },
+      {
+        id: 173,
+        term_ar: "الاستراتيجية الاتصالية للأزمات البيئية",
+        term_en: "Eco-Crisis Corporate Communications",
+        category: "public-relations",
+        definition_ar: "الخطة الاتصالية الفورية التي تنفذها الشركات عند حدوث تسرب أو تلوث صناعي للاعتراف بالحادث، وتحمل المسؤولية، وإعلان خطط التعويض الميداني.",
+        definition_en: "Pre-planned communicative responses activated upon industrial ecological disasters to admit liability and outline verified remediation milestones.",
+        citation: "Benoit, W. L. (2015). Accounts, Excuses, and Apologies: Image Repair Theory and Research (2nd ed.). SUNY Press."
+      },
+      {
+        id: 174,
+        term_ar: "التحرير الإخباري التعاوني عبر السحابة",
+        term_en: "Collaborative Cloud Editorial Workflows",
+        category: "theories",
+        definition_ar: "محررات نصوص وبرمجيات مونتاج مركزية تتيح لمراسلين في بلدان مختلفة العمل معاً على نفس التقرير المرئي والنص الإخباري في وقت متزامن.",
+        definition_en: "Centralized cloud ecosystems allowing distributed international newsrooms to co-author, annotate, and cut audiovisual assets synchronously.",
+        citation: "Deuze, M., & Prenger, M. (2019). Making Media: Production, Practices, and Professions. Amsterdam University Press."
+      },
+      {
+        id: 175,
+        term_ar: "أخلاقيات الإفصاح عن المساعدات الذكية في العلاقات العامة",
+        term_en: "Algorithmic Transparency in PR Output",
+        category: "ethics",
+        definition_ar: "المبدأ المهني الذي يحث وكالات العلاقات العامة على إشعار العمائل والصحفيين إذا كانت البيانات الصحفية أو التقارير تمت صياغتها آلياً.",
+        definition_en: "The ethical standard necessitating full disclosure when corporate press releases or crisis rebuttals have been synthesized by AI systems.",
+        citation: "Chartered Institute of Public Relations (CIPR). (2020). Artificial Intelligence and Public Relations: Ethical Implications. CIPR AI Panel."
+      },
+      {
+        id: 176,
+        term_ar: "التكامل الرقمي بين الراديو والتطبيقات",
+        term_en: "App-Integrated Radio Ecosystems",
+        category: "theories",
+        definition_ar: "تصميم تطبيقات الإذاعة الذكية التي توفر بثاً مباشراً متزامناً مع قراءة الأخبار، والتواصل مع المذيع، وحفظ الحلقات بجودة عالية دون انقطاع.",
+        definition_en: "Mobile software infrastructures extending broadcast radio through synchronous metadata feeds, interactive call-in chats, and offline caching.",
+        citation: "Berry, R. (2016). Part of the establishment: Reflecting on 10 years of podcasting as an alternative medium. Convergence, 22(6), 661-671."
+      },
+      {
+        id: 177,
+        term_ar: "إدارة سمعة المدن الذكية",
+        term_en: "Smart City Reputation & Place Branding",
+        category: "public-relations",
+        definition_ar: "الترويج للمدن الحديثة استناداً إلى بنيتها التحتية الرقمية، واستدامتها البيئية، وجودة حياة قاطنيها لجذب الاستثمارات والمواهب العالمية.",
+        definition_en: "Strategic public relations highlighting a municipality's IoT automation, environmental indices, and digital quality of life to woo foreign investment.",
+        citation: "Kavaratzis, M., & Ashworth, G. J. (2005). City branding: An effective assertion of identity or a transitory marketing trick? Place Branding, 1(4), 506-514."
+      },
+      {
+        id: 178,
+        term_ar: "صحافة الطائرات المسيرة (الدرون)",
+        term_en: "Drone Journalism",
+        category: "theories",
+        definition_ar: "استخدام الطائرات المسيرة بدون طيار والمزودة بكاميرات فائقة الدقة لالتقاط زوايا بصرية وتوثيق الكوارث والتجمعات الجماهيرية بموضوعية وحياد.",
+        definition_en: "The deployment of unmanned aerial vehicles (UAVs) equipped with 4K sensors to capture unprecedented geographic perspective on breaking events.",
+        citation: "Culver, K. B. (2014). From battlefield to newsroom: Ethical implications of drone journalism. Journal of Mass Media Ethics, 29(1), 52-64."
+      },
+      {
+        id: 179,
+        term_ar: "المواطنة الرقمية المسؤولة للصحفيين",
+        term_en: "Journalistic Professional Conduct on Social Media",
+        category: "ethics",
+        definition_ar: "المعايير التي تمنع الصحفيين من إبداء آراء سياسية منحازة عبر حساباتهم الشخصية لحماية مصداقية واستقلال المؤسسة الإعلامية التي يتبعونها.",
+        definition_en: "Institutional policies governing reporters' personal social media accounts to prevent conflicts of interest and preserve institutional neutrality.",
+        citation: "Molyneux, L., & Holton, A. (2015). Branding (real) journalists: How journalistic identity is shaped by social media. Journalism, 16(2), 225-242."
+      },
+      {
+        id: 180,
+        term_ar: "التأطير الاتصالي للابتكارات والذكاء الاصطناعي",
+        term_en: "Technological Framing of AI Breakthroughs",
+        category: "theories",
+        definition_ar: "كيفية تقديم أخبار التقنيات الجديدة للجمهور بطريقة متوازنة تبرز المنافع الحقيقية دون مبالغات ترويجية خيالية أو تهويل لمخاطر غير واقعية.",
+        definition_en: "The journalistic framing of emerging deep technologies balancing societal transformational promises against empirically grounded risks.",
+        citation: "Brossard, D., & Scheufele, D. A. (2013). Science, new media, and the public. Science, 339(6115), 40-41."
+      },
+      {
+        id: 181,
+        term_ar: "المواءمة الاستراتيجية للاتصال الرقمي للمؤسسات",
+        term_en: "Strategic Alignment of Digital Enterprise PR",
+        category: "public-relations",
+        definition_ar: "الربط المحكم بين مؤشرات أداء الحملات الرقمية (تفاعل، انطباع، قراءة) وبين الأهداف الاستراتيجية الكبرى للمنظمة كزيادة الحصة السوقية وبناء الثقة.",
+        definition_en: "The analytical linking of tactical digital PR metrics with overarching corporate business objectives and high-level enterprise goals.",
+        citation: "Zerfass, A., & Franke, N. (2013). Corporate communication managers' perception of social media. Public Relations Review, 39(2), 118-129."
+      },
+      {
+        id: 182,
+        term_ar: "الأمن البيومتري لحماية الأرشيف الإعلامي",
+        term_en: "Biometric and Cryptographic Media Archive Security",
+        category: "theories",
+        definition_ar: "تأمين المواد التلفزيونية والوثائق الاستقصائية الحساسة المخزنة سحابياً باستخدام البصمة البيومترية والمفاتيح المشفرة لمنع تسريبها.",
+        definition_en: "The application of hardware security keys and multi-factor biometric authentication to safeguard proprietary television raw archives.",
+        citation: "Stallings, W. (2017). Cryptography and Network Security: Principles and Practice (7th ed.). Pearson."
+      },
+      {
+        id: 183,
+        term_ar: "أخلاقيات رعاية المؤثرين الافتراضيين",
+        term_en: "Virtual Influencer Disclosure Ethics",
+        category: "ethics",
+        definition_ar: "إلزام وكالات الإعلان بوضع تنبيه واضح بأن الشخصية المؤثرة مصممة بالكمبيوتر وخوارزميات الذكاء الاصطناعي وليست شخصاً بشرياً حقيقياً.",
+        definition_en: "Regulatory mandates requiring explicit labeling confirming that a digital influencer is a synthesized CGI artifact rather than a human entity.",
+        citation: "Federal Trade Commission (FTC). (2020). Disclosures 101 for Social Media Influencers. FTC Guidelines."
+      },
+      {
+        id: 184,
+        term_ar: "تحليل الشبكات الاجتماعية للأزمات",
+        term_en: "Social Network Analysis in Crisis Management (SNA)",
+        category: "public-relations",
+        definition_ar: "رسم خرائط بيانية تظهر العقد المركزية والحسابات الأكثر نشاطاً في ترويج الشائعات أثناء الأزمات للتدخل الاتصالي المركز وتفنيدها.",
+        definition_en: "The mathematical mapping of conversational network graphs to pinpoint super-spreader nodes amplifying corporate crisis rumors.",
+        citation: "Wasserman, S., & Faust, K. (1994). Social Network Analysis: Methods and Applications. Cambridge University Press."
+      },
+      {
+        id: 185,
+        term_ar: "السرد الصحفي المعتمد على الألعاب واللعبنة",
+        term_en: "Gamification & News Games",
+        category: "theories",
+        definition_ar: "تحويل القضايا المعقدة (كإدارة ميزانية الدولة أو التغير المناخي) إلى ألعاب رقمية تفاعلية يشارك فيها المستخدم ويتخذ قرارات لفهم الواقع.",
+        definition_en: "The application of ludic gaming mechanics and interactive simulations to immerse citizens deeply in civic and budgetary policy challenges.",
+        citation: "Bogost, I., Ferrari, S., & Schweizer, B. (2010). Newsgames: Journalism at Play. MIT Press."
+      },
+      {
+        id: 186,
+        term_ar: "الاتصال الحكومي التكاملي متعدد اللغات",
+        term_en: "Multilingual Government Communication Portals",
+        category: "public-relations",
+        definition_ar: "توفير كافة البيانات والخدمات الرسمية بلغات متعددة مدققة لضمان وصول الرسالة الحكومية لجميع الجاليات والمقيمين بأعلى دقة ووضوح.",
+        definition_en: "The strategic deployment of localized, linguistically precise portals providing foreign resident cohorts equal access to vital civic bulletins.",
+        citation: "Somers, H. (2003). Computers and Translation: A Translator's Guide. John Benjamins Publishing."
+      },
+      {
+        id: 187,
+        term_ar: "الحق في النسيان الرقمي",
+        term_en: "Right to be Forgotten in Digital Journalism",
+        category: "ethics",
+        definition_ar: "حق الأفراد في مطالبة محركات البحث والمنصات بإزالة روابط أخبار قضايا قديمة تمت تبرئتهم منها لحماية مستقبلهم وحياتهم الأسرية.",
+        definition_en: "The legal and ethical entitlement allowing citizens to request the de-indexing of historical news reports concerning expunged offenses.",
+        citation: "Mayer-Schönberger, V. (2011). Delete: The Virtue of Forgetting in the Digital Age. Princeton University Press."
+      },
+      {
+        id: 188,
+        term_ar: "البث الإذاعي الرقمي المشفر عالي الدقة",
+        term_en: "High-Resolution Audio Codecs for Broadcast",
+        category: "theories",
+        definition_ar: "تقنيات ترميز الصوت الرقمي (مثل FLAC وOpus) التي تنقل الحوارات والمقاطع الإذاعية بجودة استوديو أصلية مع استهلاك رشيد لسعة الشبكة.",
+        definition_en: "Open, highly optimized lossless audio coding formats transmitting high-fidelity broadcast sound with minimal latency across IP networks.",
+        citation: "Valin, J. M., et al. (2012). Definition of the Opus Audio Codec. Internet Engineering Task Force (IETF) RFC 6716."
+      },
+      {
+        id: 189,
+        term_ar: "المحاكاة الافتراضية للمؤتمرات الصحفية",
+        term_en: "Metaverse and VR Press Conferences",
+        category: "public-relations",
+        definition_ar: "عقد اللقاءات الصحفية في بيئات الواقع الافتراضي حيث يحضر الصحفيون عبر مجسمات رقمية (Avatars) ويتفاعلون مع المتحدث الرسمي.",
+        definition_en: "The organization of corporate media events inside 3D virtual environments where journalists participate as digital avatars in real time.",
+        citation: "Slater, M., & Sanchez-Vives, M. V. (2016). Enhancing Our Lives with Immersive Virtual Reality. Frontiers in Robotics and AI, 3, 74."
+      },
+      {
+        id: 190,
+        term_ar: "الصحافة التنبؤية المعتمدة على النماذج الإحصائية",
+        term_en: "Predictive Analytics Journalism",
+        category: "theories",
+        definition_ar: "بناء تحقيقات استقصائية تستند إلى خوارزميات التنبؤ لتحليل النتائج المتوقعة لسياسات معينة (مثل نقص الرعاية الصحية أو أزمات السكن).",
+        definition_en: "The computational discipline of interrogating predictive statistical algorithms to forecast long-term social outcomes of legislative policies.",
+        citation: "Stray, J. (2019). Making artificial intelligence work for journalism. Digital Journalism, 7(8), 1076-1087."
+      },
+      {
+        id: 191,
+        term_ar: "أخلاقيات استخدام التسريبات مجهولة المصدر",
+        term_en: "Ethics of Hacked and Leaked Documents",
+        category: "ethics",
+        definition_ar: "المعايير الصحفية التي تفرض التحقق من صحة الملفات المسربة، وموازنة المصلحة العامة بكشفها مقابل الأضرار الأمنية أو انتهاك الخصوصية.",
+        definition_en: "The rigorous ethical framework weighing public interest justification against potential privacy and national security damages before publishing leaks.",
+        citation: "Greenwald, G. (2014). No Place to Hide: Edward Snowden, the NSA, and the U.S. Surveillance State. Metropolitan Books."
+      },
+      {
+        id: 192,
+        term_ar: "إدارة الاتصال بالأزمات عبر الذكاء الاصطناعي التنبؤي",
+        term_en: "Predictive AI Crisis Early Warning",
+        category: "public-relations",
+        definition_ar: "استخدام الخوارزميات لمعالجة ملايين المنشورات والمؤشرات الاقتصادية لاستكشاف بوادر الأزمات السمعية قبل اندلاعها بأسابيع.",
+        definition_en: "The application of natural language pattern matching and machine learning models to detect subtle conversational anomalies signaling pending crises.",
+        citation: "Jin, Y., Liu, B. F., & Austin, L. L. (2014). Examining the role of social media in effective crisis management. Communication Research, 41(1), 74-94."
+      },
+      {
+        id: 193,
+        term_ar: "التكامل السمعي البصري الذكي في غرف الأخبار",
+        term_en: "Automated Video-to-Text & Text-to-Video Synthesis",
+        category: "theories",
+        definition_ar: "تحويل المقابلات الصوتية والمرئية فورياً إلى نصوص مكتوبة قابلة للبحث، أو تحويل المسودات المكتوبة إلى فيديوهات سريعة بمشاهد من الأرشيف.",
+        definition_en: "Bidirectional automated synthesis pipelines transcribing spoken audio into searchable text, and transforming written wires into edited video shorts.",
+        citation: "Gatt, A., & Krahmer, E. (2018). Survey on natural language generation: Core tasks, applications and evaluation. Journal of Artificial Intelligence Research, 61, 65-170."
+      },
+      {
+        id: 194,
+        term_ar: "أخلاقيات حماية البيانات الحيوية للمتصفحين",
+        term_en: "Biometric Data Protection in Media Consumption",
+        category: "ethics",
+        definition_ar: "التشريعات التي تمنع منصات الوسائط من جمع أو بيع بصمات وجوه المستخدمين أو حركات عيونهم دون موافقة صريحة ومسبقة.",
+        definition_en: "Statutory frameworks forbidding streaming platforms from capturing, processing, or monetizing user facial geometry without informed consent.",
+        citation: "European Union. (2016). General Data Protection Regulation (GDPR). Regulation (EU) 2016/679."
+      },
+      {
+        id: 195,
+        term_ar: "الاستراتيجية الاتصالية للمسؤولية المجتمعية الرقمية",
+        term_en: "Strategic Corporate Digital Responsibility (CDR)",
+        category: "public-relations",
+        definition_ar: "إبراز مبادرات المؤسسة في محو الأمية الرقمية، وتوفير الأجهزة للأسر المحتاجة، وتطوير برمجيات صديقة لأصحاب الهمم.",
+        definition_en: "The communicative articulation of an enterprise’s voluntary ethical commitments to digital inclusion, data stewardship, and accessible tech.",
+        citation: "Lobschat, L., et al. (2021). Corporate digital responsibility. Journal of Business Research, 122, 875-888."
+      },
+      {
+        id: 196,
+        term_ar: "التأطير الاتصالي للأخبار الصحية الطارئة",
+        term_en: "Epidemic and Health Communication Framing",
+        category: "theories",
+        definition_ar: "تقديم النصائح الطبية والتحذيرات الوبائية بأسلوب علمي يوازن بين جدية الموقف وطمأنة المواطنين دون إثارة الرعب أو التشكيك في اللقاحات.",
+        definition_en: "The strategic formulation of epidemiological warnings and preventive advice to maximize public compliance without provoking mass panic.",
+        citation: "Reynolds, B., & Seeger, M. W. (2005). Crisis and emergency risk communication as an integrative model. Journal of Health Communication, 10(1), 43-55."
+      },
+      {
+        id: 197,
+        term_ar: "الإنتاج التلفزيوني بالذكاء الاصطناعي التوليدي الحجمي",
+        term_en: "Volumetric Video & Holographic TV Broadcasting",
+        category: "theories",
+        definition_ar: "تصوير الأشخاص والأحداث بتقنية الأبعاد الثلاثية الكاملة لعرضها كهولوغرام مجسم داخل استوديوهات الأخبار وكأن الضيف يجلس مع المذيع.",
+        definition_en: "The capture and rendering of true three-dimensional performance volumes enabling photorealistic holographic telepresence inside broadcast studios.",
+        citation: "Matsuyama, T., et al. (2012). 3D Video and Its Applications. Springer."
+      },
+      {
+        id: 198,
+        term_ar: "أخلاقيات الشفافية الخوارزمية في تغذية الأخبار",
+        term_en: "Newsfeed Algorithmic Transparency",
+        category: "ethics",
+        definition_ar: "منح المستخدم الحق في معرفة سبب ظهور خبر معين في صفحته الرئيسية، مع توفير خيارات لإلغاء التصفية الخوارزمية وعرض الأخبار زمنياً.",
+        definition_en: "The civic entitlement enabling users to audit why specific stories appear on their feeds, accompanied by the right to enforce chronological sorting.",
+        citation: "Helberger, N. (2019). On the democratic role of news recommenders. Digital Journalism, 7(8), 993-1012."
+      },
+      {
+        id: 199,
+        term_ar: "بناء الرابطة الوجدانية للعلامة الحكومية",
+        term_en: "Civic Brand Attachment & Pride",
+        category: "public-relations",
+        definition_ar: "حملات اتصال وطنية تركز على توثيق قصص النجاح والمشروعات القومية الكبرى لترسيخ مشاعر الفخر الوطني والانتماء المشترك لدى المواطنين.",
+        definition_en: "Strategic civic campaigns connecting national milestones with citizen identity to cultivate shared pride and institutional legitimacy.",
+        citation: "Park, C. W., MacInnis, D. J., & Priester, J. (2006). Beyond brand attitude: The relationship between brand attachment and loyalty. Journal of Marketing, 70(4), 104-117."
+      },
+      {
+        id: 200,
+        term_ar: "الاستدامة المعرفية لمنصات الإعلام الأكاديمي",
+        term_en: "Academic Media Knowledge Sustainability",
+        category: "theories",
+        definition_ar: "بناء المعاجم والمنصات المعرفية المتخصصة باستضافة سحابية مفتوحة ومجانية تضمن استمرار بقاء المرجع العلمي وتحديثه المستمر لخدمة أجيال الباحثين.",
+        definition_en: "The methodological creation of open-access, resilient academic digital repositories curated to ensure the perpetual preservation and evolution of scholarly lexicons.",
+        citation: "Suber, P. (2012). Open Access. MIT Press."
       }
     ];
 
@@ -1210,7 +2146,12 @@
       }
 
       if (noResults) noResults.classList.add('hidden');
-      container.innerHTML = filtered.map(item => `
+      container.innerHTML = filtered.map(item => {
+        const fullArabic = `${item.term_ar}: ${item.definition_ar}`;
+        const fullEnglish = `${item.term_en}: ${item.definition_en}`;
+        const citationText = item.citation;
+
+        return `
         <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700 transition flex flex-col justify-between group">
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
@@ -1218,33 +2159,33 @@
               <span class="text-[11px] font-mono text-slate-400">#${item.id}</span>
             </div>
             
-            <!-- Arabic Term & Copy Button -->
-            <div class="flex items-center justify-between gap-2 mb-1">
-              <h3 class="text-lg font-black text-slate-900 dark:text-white group-hover:text-brand-600 transition">
+            <!-- Arabic Term & Full Copy Button -->
+            <div class="flex items-center justify-between gap-2 mb-1.5">
+              <h3 class="text-lg font-black text-slate-900 dark:text-white group-hover:text-brand-600 transition leading-snug">
                 ${item.term_ar}
               </h3>
-              <button onclick="copyText('${item.term_ar.replace(/'/g, "\\'")}', 'المصطلح العربي')" class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-brand-50 hover:text-brand-700 dark:bg-slate-800 dark:hover:bg-brand-900/40 dark:hover:text-brand-300 text-slate-500 text-[11px] font-bold flex items-center gap-1 transition" title="نسخ المصطلح العربي">
-                <i class="fa-regular fa-copy"></i>
-                <span>عربي</span>
+              <button onclick="copyText('${fullArabic.replace(/'/g, "\\'")}', 'المصطلح العربي بتعريفه')" class="shrink-0 px-2.5 py-1 rounded-xl bg-slate-100 hover:bg-brand-50 hover:text-brand-700 dark:bg-slate-800 dark:hover:bg-brand-900/50 dark:hover:text-brand-300 text-slate-600 text-[11px] font-bold flex items-center gap-1.5 transition border border-slate-200/70 dark:border-slate-700" title="نسخ المصطلح العربي كاملاً مع التعريف">
+                <i class="fa-regular fa-copy text-brand-600 dark:text-brand-400"></i>
+                <span>عربي بالتعريف</span>
               </button>
             </div>
 
-            <!-- English Term & Copy Button -->
+            <!-- English Term & Full Copy Button -->
             <div class="flex items-center justify-between gap-2 mb-4">
-              <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 en-font">
+              <p class="text-xs font-bold text-brand-600 dark:text-brand-400 en-font leading-snug">
                 ${item.term_en}
               </p>
-              <button onclick="copyText('${item.term_en.replace(/'/g, "\\'")}', 'المصطلح الإنجليزي')" class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-brand-50 hover:text-brand-700 dark:bg-slate-800 dark:hover:bg-brand-900/40 dark:hover:text-brand-300 text-slate-500 text-[11px] font-bold flex items-center gap-1 transition" title="نسخ المصطلح الإنجليزي">
-                <i class="fa-regular fa-copy"></i>
-                <span class="en-font">EN</span>
+              <button onclick="copyText('${fullEnglish.replace(/'/g, "\\'")}', 'المصطلح الإنجليزي بتعريفه')" class="shrink-0 px-2.5 py-1 rounded-xl bg-slate-100 hover:bg-brand-50 hover:text-brand-700 dark:bg-slate-800 dark:hover:bg-brand-900/50 dark:hover:text-brand-300 text-slate-600 text-[11px] font-bold flex items-center gap-1.5 transition border border-slate-200/70 dark:border-slate-700" title="نسخ المصطلح الإنجليزي كاملاً مع التعريف">
+                <i class="fa-regular fa-copy text-brand-600 dark:text-brand-400"></i>
+                <span class="en-font">EN with Def</span>
               </button>
             </div>
 
             <div class="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800/80">
-              <p class="text-xs leading-relaxed text-slate-700 dark:text-slate-300 font-medium">
+              <p class="text-xs leading-relaxed text-slate-700 dark:text-slate-300 font-medium text-justify">
                 ${item.definition_ar}
               </p>
-              <p class="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400 en-font bg-slate-50 dark:bg-slate-800/40 p-2.5 rounded-xl border border-slate-100 dark:border-slate-800">
+              <p class="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400 en-font bg-slate-50 dark:bg-slate-800/40 p-3 rounded-2xl border border-slate-100 dark:border-slate-800 text-left">
                 ${item.definition_en}
               </p>
             </div>
@@ -1252,16 +2193,16 @@
 
           <!-- Citation & Copy Citation Button -->
           <div class="mt-4 pt-3 border-t border-dashed border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
-            <span class="truncate max-w-[210px]" title="${item.citation}">
-              <i class="fa-solid fa-book-open text-brand-500 ml-1"></i> ${item.citation}
+            <span class="truncate max-w-[210px] en-font" title="${citationText}">
+              <i class="fa-solid fa-book-open text-brand-500 ml-1"></i> ${citationText}
             </span>
-            <button onclick="copyText('${item.citation.replace(/'/g, "\\'")}', 'التوثيق والمرجع المعتمد')" class="text-brand-600 hover:text-brand-700 font-bold flex items-center gap-1 text-[11px] bg-brand-50 dark:bg-brand-950/60 px-2 py-1 rounded-lg border border-brand-200 dark:border-brand-800" title="نسخ التوثيق والمرجع الأكاديمي">
+            <button onclick="copyText('${citationText.replace(/'/g, "\\'")}', 'التوثيق والمرجع المعتمد (APA)')" class="text-brand-600 hover:text-brand-700 dark:text-brand-400 font-bold flex items-center gap-1 text-[11px] bg-brand-50 dark:bg-brand-950/70 px-2.5 py-1 rounded-xl border border-brand-200 dark:border-brand-800 transition" title="نسخ المرجع الأكاديمي المعتمد بنظام APA 7th">
               <i class="fa-regular fa-copy"></i>
               <span>نسخ المرجع</span>
             </button>
           </div>
         </article>
-      `).join('');
+      `}).join('');
     }
 
     document.addEventListener('DOMContentLoaded', () => {
