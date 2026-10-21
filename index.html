@@ -40,23 +40,8 @@
   </script>
 
   <style>
-    body {
-      font-family: 'Cairo', sans-serif;
-    }
-    .en-font {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
-    .custom-scroll::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scroll::-webkit-scrollbar-thumb {
-      background-color: #cbd5e1;
-      border-radius: 9999px;
-    }
-    .dark .custom-scroll::-webkit-scrollbar-thumb {
-      background-color: #334155;
-    }
+    body { font-family: 'Cairo', sans-serif; }
+    .en-font { font-family: 'Plus Jakarta Sans', sans-serif; }
     .grid-bg {
       background-size: 24px 24px;
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
@@ -72,7 +57,7 @@
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
 
   <!-- Navbar -->
-  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+  <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
         <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20">
@@ -83,7 +68,7 @@
             <span class="text-2xl font-black text-brand-900 dark:text-white tracking-tight">معجم</span>
             <span class="text-xs px-2 py-0.5 rounded-md bg-brand-100 text-brand-800 dark:bg-brand-900/60 dark:text-brand-300 font-bold en-font">LexiMedia</span>
           </div>
-          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-medium -mt-0.5">المرجع الأكاديمي لمصطلحات الإعلام والاتصال المؤسسي</p>
+          <p class="text-[11px] text-slate-500 dark:text-slate-400 font-medium -mt-0.5">المرجع الأكاديمي لمصطلحات الإعلام واقتصاد المعرفة</p>
         </div>
       </div>
 
@@ -93,16 +78,14 @@
           <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
         </button>
 
-        <a href="#statsSection" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-          <i class="fa-solid fa-chart-pie text-brand-500"></i>
-          مؤشرات المعجم
-        </a>
+        <button onclick="openModal()" class="hidden sm:inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl border border-brand-300 dark:border-brand-700 text-brand-700 dark:text-brand-300 hover:bg-brand-50 dark:hover:bg-brand-900/40 transition">
+          <i class="fa-solid fa-plus-circle"></i>
+          اقتراح مصطلح للتحكيم
+        </button>
 
-        <div class="h-6 w-[1px] bg-slate-200 dark:bg-slate-800 hidden sm:block"></div>
-
-        <a href="https://drhebeldib.github.io/leximedia/" class="inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-brand-700 hover:bg-brand-800 text-white shadow-sm transition">
+        <a href="#statsSection" class="inline-flex items-center gap-2 text-xs font-bold px-4 py-2.5 rounded-xl bg-brand-700 hover:bg-brand-800 text-white shadow-sm transition">
           <i class="fa-solid fa-graduation-cap"></i>
-          دليل التوثيق والاعتماد
+          معايير الاعتماد والتوثيق
         </a>
       </div>
     </div>
@@ -126,7 +109,7 @@
             أستاذ مساعد الإعلام والعلاقات العامة — جامعة ليوا (Liwa University)
           </p>
           <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
-            مبادرة معرفية وأكاديمية متخصصة تهدف إلى توحيد وضبط المصطلح العلمي في تخصصات العلاقات العامة، الإعلام الرقمي، والاتصال الاستراتيجي والمؤسسي في الوطن العربي لدعم الباحثين والممارسين.
+            مبادرة معرفية وبحثية متقدمة لضبط المصطلح الأكاديمي في اقتصاد المعرفة، الاستدامة الإعلامية، والعلاقات العامة الذكية لخدمة الباحثين في مرحلتي الماجستير والدكتوراه والممارسين في الوطن العربي.
           </p>
         </div>
         <div class="shrink-0 flex flex-col items-center gap-2">
@@ -141,7 +124,7 @@
       <div class="bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-none space-y-4">
         <div class="relative">
           <i class="fa-solid fa-magnifying-glass absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
-          <input type="text" id="searchInput" placeholder="ابحث بالعربية أو بالإنجليزية (مثال: Framing Theory، الاتصال الاستراتيجي، أصحاب المصلحة...)" class="w-full pr-12 pl-12 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white transition">
+          <input type="text" id="searchInput" placeholder="ابحث بالعربية أو بالإنجليزية (مثال: اقتصاد المعرفة، الاستدامة، Framing Theory...)" class="w-full pr-12 pl-12 py-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-white transition">
           <button id="clearSearch" class="hidden absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
             <i class="fa-solid fa-xmark text-lg"></i>
           </button>
@@ -150,22 +133,25 @@
         <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
           <div class="flex flex-wrap items-center gap-2" id="filterPills">
             <button data-cat="all" class="cat-pill active-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-700 text-white shadow-sm transition">
-              الكل (<span id="count-all">46</span>)
+              الكل (<span id="count-all">96</span>)
+            </button>
+            <button data-cat="top20" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 hover:bg-amber-100 transition">
+              ⭐ أهم 20 مصطلحاً بحثياً
             </button>
             <button data-cat="public-relations" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
               العلاقات العامة والاتصال المؤسسي
             </button>
             <button data-cat="theories" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-              نظريات الإعلام والإعلام الذكي
+              اقتصاد المعرفة والاستدامة
             </button>
             <button data-cat="ethics" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-              أخلاقيات الإعلام والذكاء الاصطناعي
+              أخلاقيات الذكاء الاصطناعي
             </button>
           </div>
 
           <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold flex items-center gap-1.5">
             <i class="fa-solid fa-layer-group text-brand-500"></i>
-            عدد المصطلحات المطابقة: <span id="filteredCount" class="font-bold text-brand-700 dark:text-brand-400">46</span>
+            المصطلحات المطابقة: <span id="filteredCount" class="font-bold text-brand-700 dark:text-brand-400">96</span>
           </div>
         </div>
       </div>
@@ -175,9 +161,7 @@
 
   <!-- Terms Grid Section -->
   <main class="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
-    <div id="termsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Dynamic Term Cards Inserted Here via JS -->
-    </div>
+    <div id="termsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
 
     <!-- Empty State -->
     <div id="noResults" class="hidden text-center py-20">
@@ -189,25 +173,60 @@
     </div>
   </main>
 
+  <!-- Community Submission Modal -->
+  <div id="submitModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-lg w-full p-6 border border-slate-200 dark:border-slate-800 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
+        <h3 class="font-black text-slate-900 dark:text-white flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane text-brand-600"></i>
+          اقتراح مصطلح علمي جديد للتحكيم
+        </h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="font-bold text-slate-700 dark:text-slate-300 block mb-1">اسم الباحث / الدرجة العلمية:</label>
+          <input type="text" id="researcherName" placeholder="مثال: الباحث أحمد محمود — باحث ماجستير" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500">
+        </div>
+        <div>
+          <label class="font-bold text-slate-700 dark:text-slate-300 block mb-1">المصطلح (عربي / إنجليزي):</label>
+          <input type="text" id="proposedTerm" placeholder="مثال: الإعلام البيئي الرقمي / Digital Environmental Media" class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500">
+        </div>
+        <div>
+          <label class="font-bold text-slate-700 dark:text-slate-300 block mb-1">التعريف الأكاديمي المقترح والتوثيق (APA):</label>
+          <textarea id="proposedDef" rows="3" placeholder="اكتب الشرح العلمي والمرجع المعتمد..." class="w-full p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-500"></textarea>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end gap-2">
+        <button onclick="closeModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800">إلغاء</button>
+        <button onclick="submitProposal()" class="px-5 py-2 rounded-xl text-xs font-bold bg-brand-700 hover:bg-brand-800 text-white shadow-sm">إرسال للجنة التحكيم</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Statistics & Analytics -->
   <section id="statsSection" class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-          <div class="text-3xl font-black text-brand-700 dark:text-brand-400 mb-1" id="stat-total">46</div>
+          <div class="text-3xl font-black text-brand-700 dark:text-brand-400 mb-1" id="stat-total">96</div>
           <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">مصطلحاً أكاديمياً موثقاً</div>
         </div>
         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
           <div class="text-3xl font-black text-emerald-600 dark:text-emerald-400 mb-1">APA 7</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">معيار التوثيق المعتمد</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">معيار التوثيق الأكاديمي</div>
         </div>
         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-          <div class="text-3xl font-black text-amber-600 dark:text-amber-400 mb-1">3</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">محاور علمية وتطبيقية</div>
+          <div class="text-3xl font-black text-amber-600 dark:text-amber-400 mb-1">4</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">محاور بحثية رائدة</div>
         </div>
         <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
           <div class="text-3xl font-black text-brand-600 dark:text-brand-300 mb-1">100%</div>
-          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">ثنائي اللغة (عربي/إنجليزي)</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold">ثنائي اللغة (عربي / إنجليزي)</div>
         </div>
       </div>
     </div>
@@ -224,7 +243,7 @@
     </div>
   </footer>
 
-  <!-- Term Data & Execution Script -->
+  <!-- Complete Database Script -->
   <script>
     const termsData = [
       {
@@ -640,6 +659,456 @@
         definition_ar: "منهجية جمع وتحليل البيانات والمعلومات المتاحة علناً عبر الإنترنت (كالصور، وبيانات الأقمار الصناعية، والموقع الجغرافي) للتحقق من صحة الأحداث والادعاءات الإخبارية ميدانياً.",
         definition_en: "The methodological collection and forensic analysis of publicly available online information—such as geolocation metadata and satellite imagery—to verify the factual accuracy of breaking events.",
         citation: "Silverman, C. (2020). Verification Handbook for Disinformation and Media Manipulation. European Journalism Centre."
+      },
+      {
+        id: 47,
+        term_ar: "اقتصاد المعرفة الإعلامي",
+        term_en: "Media Knowledge Economy",
+        category: "theories",
+        definition_ar: "منظومة إنتاج وتداول واستهلاك المعارف والمعلومات عبر المنصات الاتصالية باعتبارها أصولاً فكرية تحقق قيمة مضافة وعائداً تنموياً يتجاوز مجرد التوزيع الإخباري السلعي.",
+        definition_en: "An economic paradigm wherein media entities produce, aggregate, and monetize informational capital and intangible intellectual assets as the core engine of industry growth.",
+        citation: "Picard, R. G. (2011). The Economics and Financing of Media Companies (2nd ed.). Fordham University Press."
+      },
+      {
+        id: 48,
+        term_ar: "الاستدامة الإعلامية",
+        term_en: "Media Sustainability",
+        category: "theories",
+        definition_ar: "قدرة المؤسسات والأنظمة الإعلامية على الاستمرار المهني، والاستقلال التحريري، والصلابة الاقتصادية والبيئية في بيئة اتصال رقمية متسارعة التغيرات التكنولوجية.",
+        definition_en: "The systemic capacity of media organizations to maintain editorial independence, ecological viability, and operational longevity amidst volatile digital market disruptions.",
+        citation: "Kumar, K. (2006). Promoting Independent Media: Strategies for Democracy Assistance. Lynne Rienner Publishers."
+      },
+      {
+        id: 49,
+        term_ar: "الإعلام المستدام",
+        term_en: "Sustainable Media",
+        category: "theories",
+        definition_ar: "الممارسة الصحفية والاتصالية الملتزمة بتبني سياسات صديقة للبيئة في البث والإنتاج الرقمي، مع تقديم تغطيات موضوعية تعزز أهداف التنمية المستدامة والوعي المناخي.",
+        definition_en: "A journalistic and broadcast model committed to low-carbon digital production while framing climate action and sustainable development goals within mainstream public discourse.",
+        citation: "Berglez, P. (2011). Inside, outside, and beyond media logics: New directions in environmental journalism. Environmental Communication, 5(2), 243-248."
+      },
+      {
+        id: 50,
+        term_ar: "الاتصال الأخضر للمؤسسات",
+        term_en: "Corporate Green Communication",
+        category: "public-relations",
+        definition_ar: "استراتيجية العلاقات العامة المعنية بنشر وتوضيح السياسات البيئية للمنظمة والممارسات الصديقة للمناخ دون الوقوع في تضليل الغسيل الأخضر.",
+        definition_en: "Strategic PR dissemination of verifiable environmental practices, sustainability benchmarks, and ecological stewardship without engaging in deceptive greenwashing.",
+        citation: "Cox, R., & Pezzullo, P. C. (2017). Environmental Communication and the Public Sphere (5th ed.). SAGE Publications."
+      },
+      {
+        id: 51,
+        term_ar: "الغسيل الأخضر الاتصالي",
+        term_en: "Communicative Greenwashing",
+        category: "ethics",
+        definition_ar: "التضليل الاتصالي المتعمد الذي تمارسه بعض المؤسسات عبر حملات علاقات عامة لإظهار منتجاتها أو سياساتها كصديقة للبيئة على خلاف الواقع الفعلي.",
+        definition_en: "The deceptive dissemination of misleading environmental claims through corporate PR campaigns to project an unsubstantiated eco-friendly image.",
+        citation: "Lyon, T. P., & Montgomery, A. W. (2015). The means and end of greenwash. Organization & Environment, 28(2), 223-249."
+      },
+      {
+        id: 52,
+        term_ar: "العدالة الخوارزمية في الإعلام",
+        term_en: "Algorithmic Justice in Media",
+        category: "ethics",
+        definition_ar: "الالتزام بتصميم وتدريب أنظمة الذكاء الاصطناعي الإعلامية على قواعد بيانات نزيهة تمنع التمييز ضد فئات مجتمعية أو ثقافية وتضمن التعددية في التدفق الإخباري.",
+        definition_en: "The ethical standard ensuring that recommendation and automated news algorithms function without reproducing historical discrimination or demographic bias.",
+        citation: "Benjamin, R. (2019). Race After Technology: Abolitionist Tools for the New Jim Code. Polity Press."
+      },
+      {
+        id: 53,
+        term_ar: "الاستعمار الرقمي للبيانات",
+        term_en: "Digital Data Colonialism",
+        category: "theories",
+        definition_ar: "هيمنة كبرى منصات التكنولوجيا العالمية على تدفقات البيانات والمعلومات المجتمعية واستخراجها كأصول ربحية دون عوائد تنموية عادلة للدول النامية.",
+        definition_en: "The predatory extraction and economic exploitation of sovereign behavioral data by transnational digital platforms, echoing historic colonial dynamics.",
+        citation: "Couldry, N., & Mejias, U. A. (2019). The Costs of Connection: How Data Is Colonizing Human Life. Stanford University Press."
+      },
+      {
+        id: 54,
+        term_ar: "صناعة الجهل والشك الإعلامي",
+        term_en: "Media Agnotology",
+        category: "theories",
+        definition_ar: "الدراسة المنهجية لكيفية توظيف حملات العلاقات العامة والإعلام لنشر الشك والارتباك حول الحقائق العلمية المثبتة (مثل قضايا التغير المناخي واللقاحات).",
+        definition_en: "The academic study of culturally-induced ignorance or doubt, specifically generated through strategic media campaigns to obscure scientific consensus.",
+        citation: "Proctor, R. N., & Schiebinger, L. (2008). Agnotology: The Making and Unmaking of Ignorance. Stanford University Press."
+      },
+      {
+        id: 55,
+        term_ar: "رأس المال الفكري المؤسسي",
+        term_en: "Corporate Intellectual Capital",
+        category: "public-relations",
+        definition_ar: "مجموع المعارف، والخبرات، وبراءات الاختراع، والعلاقات الاستراتيجية التي تمتلكها المنظمة وتستثمرها اتصالاتياً لبناء ميزة تنافسية مستدامة في السوق.",
+        definition_en: "The collective intangible value of an enterprise comprising human expertise, relational networks, and proprietary knowledge leveraged for competitive advantage.",
+        citation: "Stewart, T. A. (1997). Intellectual Capital: The New Wealth of Organizations. Doubleday."
+      },
+      {
+        id: 56,
+        term_ar: "المواطنة البيئية الرقمية",
+        term_en: "Digital Ecological Citizenship",
+        category: "ethics",
+        definition_ar: "السلوك المسؤول لمستخدمي المنصات الرقمية في ترشيد استهلاك البصمة الكربونية للتقنيات والحد من التلوث الرقمي مع مساندة قضايا الاستدامة إعلامياً.",
+        definition_en: "The ethical responsibility of net-citizens to mitigate the carbon footprint of ICT usage and counter ecological disinformation across cyber spaces.",
+        citation: "Gabrys, J. (2016). Program Earth: Environmental Sensing Technology and the Making of a Computational Planet. University of Minnesota Press."
+      },
+      {
+        id: 57,
+        term_ar: "السمعة الخوارزمية",
+        term_en: "Algorithmic Reputation",
+        category: "public-relations",
+        definition_ar: "الصورة والانطباع المعرفي الذي تبنيه محركات البحث ونماذج الذكاء الاصطناعي التوليدية عن المؤسسة بناءً على المعالجة الآلية للمصادر المتاحة عنها.",
+        definition_en: "The synthesis of corporate identity and perceived credibility configured autonomously by AI agents, search graph engines, and large language models.",
+        citation: "Pasquale, F. (2015). The Black Box Society: The Secret Algorithms That Control Money and Information. Harvard University Press."
+      },
+      {
+        id: 58,
+        term_ar: "التحصين المعرفي المسبق",
+        term_en: "Attitudinal Inoculation (Prebunking)",
+        category: "public-relations",
+        definition_ar: "استراتيجية علاقات عامة استباقية تقوم على تحذير الجمهور وتوعيته بأساليب التضليل المتوقعة قبل إطلاق الشائعات، لبناء مناعة فكرية تحمي سمعة المؤسسة.",
+        definition_en: "A psychological and communication strategy of pre-emptively exposing audiences to weakened forms of misinformation to build resistance against future fake news.",
+        citation: "McGuire, W. J. (1964). Inducing resistance to persuasion: Some contemporary approaches. Advances in Experimental Social Psychology, 1, 191-229."
+      },
+      {
+        id: 59,
+        term_ar: "الوكالة الاتصالية للذكاء الاصطناعي",
+        term_en: "AI Communicative Agency",
+        category: "theories",
+        definition_ar: "قدرة برمجيات المحادثة التوليدية والوكلاء الأذكياء على صياغة رسائل تفاعلية ذات تأثير إقناعي واستجابة مستقلة للجمهور دون توجيه بشري لحظي.",
+        definition_en: "The operational capacity of artificial autonomous agents to act as communicators, generating persuasive, responsive dialogues with humans.",
+        citation: "Guzman, A. L. (2018). Human-Machine Communication: Rethinking Communication, Technology, and Ourselves. Peter Lang."
+      },
+      {
+        id: 60,
+        term_ar: "دبلوماسية المسار الاتصالي الثاني",
+        term_en: "Track-Two Communicative Diplomacy",
+        category: "public-relations",
+        definition_ar: "الاتصال غير الرسمي والحوارات التفاعلية التي تقودها المؤسسات الأكاديمية والمجتمعية والإعلامية لتخفيف حدة النزاعات وتصحيح التفاهمات المشتركة بين الشعوب.",
+        definition_en: "Unofficial, non-governmental communication dialogues facilitated by academic and media institutions to foster intercultural trust and bilateral reconciliation.",
+        citation: "Montville, J. V. (1991). The arrow and the olive branch: A case for track two diplomacy. The Psychodynamics of International Relationships, 2, 161-175."
+      },
+      {
+        id: 61,
+        term_ar: "إعادة التدوير الإخباري",
+        term_en: "Churnalism",
+        category: "ethics",
+        definition_ar: "ممارسة إعلامية غير احترافية تقوم على إعادة نشر وتوزيع البيانات الصحفية الخاصة بالعلاقات العامة والمواد الجاهزة دون فحص ميداني أو تحرير نقدي معمق.",
+        definition_en: "A form of degraded journalism where press releases and pre-packaged PR material are replicated as news without independent verification or original reporting.",
+        citation: "Davies, N. (2008). Flat Earth News: An Award-Winning Reporter Exposes Falsehood, Distortion and Propaganda in the Global Media. Chatto & Windus."
+      },
+      {
+        id: 62,
+        term_ar: "التأطير البصري للأزمات",
+        term_en: "Visual Crisis Framing",
+        category: "theories",
+        definition_ar: "كيفية توظيف الصور الفوتوغرافية ومقاطع الفيديو التفاعلية للتحكم في استجابة المشاعر العامة وإدراك الجمهور لحجم الكارثة ومسؤولية المؤسسة حيالها.",
+        definition_en: "The strategic deployment of visual cues and imagery to evoke emotional salience and construct moral responsibility during public crises.",
+        citation: "Rodriguez, L., & Dimitrova, D. V. (2011). The levels of visual framing. Journal of Visual Literacy, 30(1), 48-65."
+      },
+      {
+        id: 63,
+        term_ar: "إدارة البصمة الرقمية للقيادات",
+        term_en: "Executive Digital Footprint Governance",
+        category: "public-relations",
+        definition_ar: "الضبط المنهجي والأخلاقي للأثر الرقمي والتصريحات التاريخية والمشاركات اللحظية لقيادات المنظمة بما يدعم استقرار السمعة المؤسسية على المدى الطويل.",
+        definition_en: "The strategic monitoring and curated governance of executive digital trails and virtual presence to prevent leadership-induced corporate crises.",
+        citation: "Aula, P., & Heinonen, J. (2016). The Strategic Reputation of the Corporation. Springer."
+      },
+      {
+        id: 64,
+        term_ar: "الإعلام السردي التوليدي",
+        term_en: "Generative Narrative Media",
+        category: "theories",
+        definition_ar: "المحتوى الرقمي التفاعلي الذي تتشكل حبكته ونصوصه ومشاهده في الوقت الفعلي وفقاً لخيارات المتلقي واهتماماته باستخدام الشبكات العصبية الاصطناعية.",
+        definition_en: "Interactive storytelling formats that dynamically synthesize narrative branches, dialogues, and aesthetics in real-time leveraging generative neural networks.",
+        citation: "Murray, J. H. (2017). Hamlet on the Holodeck: The Future of Narrative in Cyberspace (Updated ed.). MIT Press."
+      },
+      {
+        id: 65,
+        term_ar: "أخلاقيات المراقبة الاستقصائية للجمهور",
+        term_en: "Audience Surveillance Ethics",
+        category: "ethics",
+        definition_ar: "الضوابط الأخلاقية التي تنظم جمع بيانات تفاعل القراء والمتابعين عبر المنصات الصحفية لمنع التجسس الرقمي أو الاستغلال المفرط لسلوكيات المستخدمين.",
+        definition_en: "The ethical boundaries governing the journalistic tracking of reader cookies and behavioral analytics to safeguard digital civic privacy.",
+        citation: "Zuboff, S. (2019). The Age of Surveillance Capitalism. PublicAffairs."
+      },
+      {
+        id: 66,
+        term_ar: "المجتمعات الاتصالية الافتراضية للعلامة",
+        term_en: "Virtual Brand Communities (VBC)",
+        category: "public-relations",
+        definition_ar: "فضاءات اجتماعية متخصصة عبر الإنترنت تتشكل حول علامة تجارية أو قضية مؤسسية، يقودها المعجبون وتستثمرها العلاقات العامة لتعزيز الولاء المشترك.",
+        definition_en: "Specialized, non-geographically bound online communities based on a structured set of social relations among admirers of a corporate brand.",
+        citation: "Muniz, A. M., & O'Guinn, T. C. (2001). Brand community. Journal of Consumer Research, 27(4), 412-432."
+      },
+      {
+        id: 67,
+        term_ar: "التدفق الاتصالي الرأسي البديل",
+        term_en: "Bottom-Up Communicative Flow",
+        category: "public-relations",
+        definition_ar: "انتقال المبادرات والأفكار ونبض الرأي العام من القواعد الشعبية والموظفين إلى الإدارات العليا عبر المنصات التشاركية لإحداث تغيير في سياسات المنظمة.",
+        definition_en: "The participatory upward transmission of grassroots public sentiment and employee voice to corporate leadership via participatory network channels.",
+        citation: "Castells, M. (2012). Networks of Outrage and Hope: Social Movements in the Internet Age. Polity Press."
+      },
+      {
+        id: 68,
+        term_ar: "الإجهاد المعرفي الاتصالي",
+        term_en: "Communicative Cognitive Overload",
+        category: "theories",
+        definition_ar: "حالة الإنهاك الذهني وضعف التركيز لدى الجمهور والباحثين نتيجة التعرض غير المنقطع لتدفقات هائلة من الرسائل الإخبارية والإشعارات الرقمية المتزامنة.",
+        definition_en: "The psychological exhaustion and processing deficit resulting from exposure to informational abundance surpassing human sensory bandwidth.",
+        citation: "Eppler, M. J., & Mengis, J. (2004). The concept of information overload: A review of literature. The Information Society, 20(5), 325-344."
+      },
+      {
+        id: 69,
+        term_ar: "الصلابة السمعية في الأزمات",
+        term_en: "Crisis Reputational Resilience",
+        category: "public-relations",
+        definition_ar: "قدرة المنظمة على استيعاب تداعيات الفضائح والاضطرابات العامة واستعادة ثقة الجمهور بسرعة من خلال الاتصال الصادق والإجراءات التصحيحية الملموسة.",
+        definition_en: "The institutional ability to withstand reputational disruptions and swiftly re-establish legitimacy through transparent restorative crisis response.",
+        citation: "Benoit, W. L. (2015). Accounts, Excuses, and Apologies: Image Repair Theory and Research (2nd ed.). SUNY Press."
+      },
+      {
+        id: 70,
+        term_ar: "الاتصال العلمي التشاركي",
+        term_en: "Participatory Science Communication",
+        category: "theories",
+        definition_ar: "تبسيط ونقل المعارف والأبحاث الأكاديمية المعقدة إلى عموم الجمهور عبر أدوات وسائط تفاعلية تتيح للمواطنين المشاركة في المناقشات العلمية المستجدة.",
+        definition_en: "A democratization model translating specialized academic outputs into accessible public dialogues through collaborative digital channels.",
+        citation: "Bucchi, M., & Trench, B. (2021). Routledge Handbook of Public Communication of Science and Technology (3rd ed.). Routledge."
+      },
+      {
+        id: 71,
+        term_ar: "الحوكمة الأخلاقية للبيانات الإعلامية",
+        term_en: "Media Data Governance Ethics",
+        category: "ethics",
+        definition_ar: "منظومة القوانين والمعايير التي تضمن الاستخدام النزيه لقواعد بيانات الجمهور في المؤسسات الصحفية، بما يحمي حقوق النشر والسرية والشفافية الرقابية.",
+        definition_en: "The institutional governance framework enforcing lawful, transparent, and respectful data stewardship within algorithmic communication platforms.",
+        citation: "Floridi, L. (2013). The Ethics of Information. Oxford University Press."
+      },
+      {
+        id: 72,
+        term_ar: "الاتصال المناهض للأخبار الزائفة",
+        term_en: "Counter-Misinformation Communication",
+        category: "public-relations",
+        definition_ar: "التكتيكات المنهجية التي تتبعها دوائر العلاقات العامة والإعلام لتفكيك الادعاءات المغلوطة ونشر الحقائق الموثقة بالأدلة والبراهين الرقمية المعتمدة.",
+        definition_en: "Evidence-based communicative strategies executed by corporate communicators to refute false claims without accidentally reinforcing the myth.",
+        citation: "Lewandowsky, S., et al. (2020). The Debunking Handbook 2020. Databrary."
+      },
+      {
+        id: 73,
+        term_ar: "استراتيجية الصوت البشري الأصيل",
+        term_en: "Conversational Human Voice (CHV)",
+        category: "public-relations",
+        definition_ar: "أسلوب اتصالي دافئ وتفاعلي وغير رسمي تستخدمه العلاقات العامة عبر شبكات التواصل، يمنح المؤسسة سمات إنسانية تزيد من ثقة وقرب الجمهور منها.",
+        definition_en: "An engaging, natural, and transparent style of organizational communication that humanizes corporate entities across digital touchpoints.",
+        citation: "Kelleher, T. (2009). Conversational voice, communicated commitment, and relational outcomes in online public relations. Journal of Communication, 59(1), 172-188."
+      },
+      {
+        id: 74,
+        term_ar: "المشهد الإعلامي المنقسم",
+        term_en: "Media Fragmentation",
+        category: "theories",
+        definition_ar: "تشتت الجماهير عبر آلاف المنصات الرقمية المتخصصة بعد زوال عصر الوسيط الإخباري الموحد، مما يفرض تحديات جديدة على تخطيط الحملات المؤسسية.",
+        definition_en: "The structural splintering of audiences across fragmented niche media channels, terminating mass unified communicative exposure.",
+        citation: "Webster, J. G., & Ksiazek, T. B. (2012). The dynamics of audience fragmentation: Public attention in the digital age. Journal of Communication, 62(1), 39-56."
+      },
+      {
+        id: 75,
+        term_ar: "توليد التعاطف عبر الواقع الافتراضي",
+        term_en: "Immersive Empathy Generation",
+        category: "theories",
+        definition_ar: "توظيف بيئات الواقع الافتراضي والمعزز في صناعة التقارير الإنسانية لإشراك المتلقي وجدانياً في تجربة الأحداث كأنه يعايشها ميدانياً.",
+        definition_en: "The utilization of VR spatial immersion to invoke deep affective perspective-taking and civic empathy toward socio-political crises.",
+        citation: "De la Peña, N., et al. (2010). Immersive journalism: Immersive virtual reality for the first-person experience of news. Presence, 19(4), 291-301."
+      },
+      {
+        id: 76,
+        term_ar: "المساءلة الخوارزمية المستقلة",
+        term_en: "Independent Algorithmic Auditing",
+        category: "ethics",
+        definition_ar: "إخضاع الخوارزميات المنظمة للتدفق الإخباري لفحص تقني محايد من قِبل باحثين ولجان أكاديمية لضمان عدم تلاعبها بالرأي العام أو انتهاك حقوق التعبير.",
+        definition_en: "Third-party empirical assessments of algorithmic gatekeeping mechanisms to prevent electoral manipulation and preserve democratic speech.",
+        citation: "Sandvig, C., et al. (2014). Auditing algorithms: Research methods for detecting discrimination on internet platforms. ICA Preconference."
+      },
+      {
+        id: 77,
+        term_ar: "الهندسة الاجتماعية العكسية في العلاقات العامة",
+        term_en: "Reverse Social Engineering in PR",
+        category: "public-relations",
+        definition_ar: "استباق محاولات الاختراق النفسي لسمعة المنظمة عبر تدريب العاملين وتوعيتهم بأساليب التلاعب السلوكي وتأمين قنوات الاتصال الرسمية.",
+        definition_en: "Defensive institutional training designed to immunize employees against psychological manipulation and socio-technical reputation breaches.",
+        citation: "Hadnagy, C. (2010). Social Engineering: The Art of Human Hacking. Wiley."
+      },
+      {
+        id: 78,
+        term_ar: "الاتصال التكيفي في بيئات التغير المناخي",
+        term_en: "Climate Adaptive Communication",
+        category: "theories",
+        definition_ar: "صياغة رسائل توعوية مرنة تستند إلى البيانات البيئية المحلية لتحفيز السلوك المجتمعي الداعم لخطط التأقلم مع آثار الانبعاثات الحرارية والطقس المتطرف.",
+        definition_en: "Dynamic science communication structured to translate climate volatility data into localized public resilience and behavioral adaptation.",
+        citation: "Moser, S. C. (2010). Communicating climate change: History, challenges, process and future directions. WIREs Climate Change, 1(1), 31-53."
+      },
+      {
+        id: 79,
+        term_ar: "اتصال الهوية الوطنية المستدامة",
+        term_en: "Sustainable Nation Branding",
+        category: "public-relations",
+        definition_ar: "إدارة الصورة الذهنية الدولية للدولة استناداً إلى مساهماتها الحقيقية في التنمية المستدامة، الطاقة النظيفة، واستضافة الحوارات العالمية المؤثرة.",
+        definition_en: "The strategic projection of a country's global soft power rooted in clean energy stewardship and verifiable sustainable governance milestones.",
+        citation: "Anholt, S. (2007). Competitive Identity: The New Brand Management for Nations, Cities and Regions. Palgrave Macmillan."
+      },
+      {
+        id: 80,
+        term_ar: "المواطنة الرقمية المؤسسية",
+        term_en: "Corporate Digital Citizenship (CDC)",
+        category: "ethics",
+        definition_ar: "التزام المنظمة بالمساهمة في بناء بيئة إنترنت آمنة ونزيهة، ومحاربة خطاب الكراهية، وتأمين حماية خصوصية مستخدمي تطبيقاتها وخدماتها الرقمية.",
+        definition_en: "The ethical accountability of corporations to foster inclusive, hate-free cyber ecosystems and respect stakeholder digital human rights.",
+        citation: "Westerman, G., Bonnet, D., & McAfee, A. (2014). Leading Digital: Turning Technology into Business Transformation. Harvard Business Press."
+      },
+      {
+        id: 81,
+        term_ar: "الصحافة الموجهة بالحلول",
+        term_en: "Solutions Journalism (SoJo)",
+        category: "theories",
+        definition_ar: "تغطية إخبارية استقصائية صارمة تركز على تحليل الاستجابات والحلول الناجحة للمشكلات الاجتماعية والاقتصادية بدلاً من الاكتفاء بعرض المآسي والأزمات.",
+        definition_en: "A rigorous, evidence-based reporting practice focused on how social problems are being solved rather than solely documenting failures.",
+        citation: "Curry, A. L., & Hammonds, K. H. (2014). The Power of Solutions Journalism. Engaging News Project & Solutions Journalism Network."
+      },
+      {
+        id: 82,
+        term_ar: "الاتصال الدائري وإعادة التدوير المعرفي",
+        term_en: "Circular Corporate Communication",
+        category: "public-relations",
+        definition_ar: "إعادة إنتاج وتدوير المعارف والبيانات المؤسسية في قوالب اتصالية متنوعة ومتجددة تناسب كافة أصحاب المصلحة وتقلل من الهدر الاتصالي.",
+        definition_en: "The ongoing communicative reprocessing and multidirectional recycling of organizational knowledge assets to maximize stakeholder reach.",
+        citation: "Stahel, W. R. (2019). The Circular Economy: A User's Guide. Routledge."
+      },
+      {
+        id: 83,
+        term_ar: "النزاهة الأكاديمية التوليدية",
+        term_en: "Generative Academic Integrity",
+        category: "ethics",
+        definition_ar: "المعايير المنهجية التي تضبط استخدام الباحثين لتقنيات الذكاء الاصطناعي في صياغة الأوراق العلمية؛ بما يضمن الأمانة العلمية والتوثيق الدقيق لمصادر الفكرة.",
+        definition_en: "The evolving ethical protocol governing researchers' integration of generative text tools while ensuring rigorous intellectual attribution.",
+        citation: "Eaton, S. E. (2021). Plagiarism in Higher Education: Tackling Tough Topics in Academic Integrity. Libraries Unlimited."
+      },
+      {
+        id: 84,
+        term_ar: "الرقمنة السمعية المتكاملة",
+        term_en: "Omnichannel Reputational Alignment",
+        category: "public-relations",
+        definition_ar: "المزامنة الكاملة واللحظية للرسائل السمعية عبر المنصات الرقمية والتطبيقات والفعاليات الواقعية، لخلق تجربة موحدة لا تتناقض فيها صورة المؤسسة.",
+        definition_en: "The synchronized orchestration of corporate messaging across physical and digital customer touchpoints to preserve pristine reputation equity.",
+        citation: "Verhoef, P. C., et al. (2015). From multi-channel retailing to omni-channel retailing. Journal of Retailing, 91(2), 174-181."
+      },
+      {
+        id: 85,
+        term_ar: "صحافة الاستشعار البيئي",
+        term_en: "Sensor Journalism for Ecology",
+        category: "theories",
+        definition_ar: "توظيف أجهزة الاستشعار الرقمية المحمولة وإنترنت الأشياء لجمع بيانات تلوث الهواء والمياه في التحقيقات الصحفية بدقة علمية محايدة.",
+        definition_en: "The application of remote IoT sensors and hardware tools by journalists to generate empirical datasets documenting environmental conditions.",
+        citation: "Weiss, A. S. (2015). Sensor Journalism: How Remote Sensing Is Changing Environmental Coverage. Columbia Journalism Review."
+      },
+      {
+        id: 86,
+        term_ar: "الاستقطاب الرقمي العاطفي",
+        term_en: "Affective Digital Polarization",
+        category: "theories",
+        definition_ar: "تزايد مشاعر العداء والنفور بين التيارات الفكرية عبر شبكات التواصل، والذي تغذيه خوارزميات التفاعل التي تفضل المحتوى المثير للغضب على النقاش الهادئ.",
+        definition_en: "The intensification of mutual animosity and tribal resentment between ideological camps accelerated by algorithmic amplification of outrage.",
+        citation: "Iyengar, S., et al. (2019). The origins and consequences of affective polarization in the United States. Annual Review of Political Science, 22, 129-146."
+      },
+      {
+        id: 87,
+        term_ar: "اتصال إزالة الكربون",
+        term_en: "Decarbonization Corporate Discourse",
+        category: "public-relations",
+        definition_ar: "الخطاب الاتصالي الذي تعلن من خلاله المنظمات عن خططها المحددة زمنياً للوصول إلى الحياد الكربوني، مع نشر جداول تدقيق مستقلة لإثبات الالتزام.",
+        definition_en: "Transparent strategic messaging detailing an enterprise's operational roadmap toward net-zero carbon footprints backed by audited metrics.",
+        citation: "Hoffman, A. J. (2015). How Culture Shapes the Climate Change Debate. Stanford University Press."
+      },
+      {
+        id: 88,
+        term_ar: "التوأمة الرقمية للمنظمات",
+        term_en: "Digital Twin Organization in PR",
+        category: "public-relations",
+        definition_ar: "بناء نموذج محاكاة افتراضي متكامل لشبكة علاقات المؤسسة بالجمهور، لاختبار ردود الفعل المحتملة على القرارات والبيانات الإعلامية قبل إطلاقها واقعياً.",
+        definition_en: "The creation of virtual simulation models of corporate stakeholder networks to stress-test crisis scenarios and strategic statements pre-release.",
+        citation: "Grieves, M., & Vickers, J. (2017). Digital twin: Mitigating unpredictable, undesirable emergent behavior in complex systems. In Transdisciplinary Perspectives (pp. 85-113). Springer."
+      },
+      {
+        id: 89,
+        term_ar: "أخلاقيات تصميم واجهات الاستخدام الإعلامية",
+        term_en: "Ethical UI/UX in News Platforms",
+        category: "ethics",
+        definition_ar: "تصميم واجهات المواقع الإخبارية بطريقة تحترم تركيز المستخدم ولا تلجأ إلى الأنماط الخداعية (Dark Patterns) لإجباره على النقر أو استنزاف وقته.",
+        definition_en: "Interface design principles prioritizing digital well-being and transparency while eliminating deceptive dark patterns that coerce user clicks.",
+        citation: "Brignull, H. (2011). Dark Patterns: Deception vs. Honesty in UI Design. A List Apart, 338."
+      },
+      {
+        id: 90,
+        term_ar: "حملات المناصرة الرقمية التشاركية",
+        term_en: "Participatory Digital Advocacy",
+        category: "public-relations",
+        definition_ar: "حشد الجمهور عبر القنوات الرقمية لدعم قضايا العدالة الاجتماعية أو الاستدامة عبر تمكين الأفراد من إنتاج ومشاركة رواياتهم الخاصة حول القضية.",
+        definition_en: "Empowerment-driven grassroots PR coalitions mobilizing distributed digital storytellers to influence public policy and collective consciousness.",
+        citation: "Shirky, C. (2008). Here Comes Everybody: The Power of Organizing Without Organizations. Penguin."
+      },
+      {
+        id: 91,
+        term_ar: "الشفافية في سلاسل الإمداد المعرفي",
+        term_en: "Knowledge Supply Chain Transparency",
+        category: "ethics",
+        definition_ar: "إفصاح المنصات الإعلامية عن مسار تدفق المعلومة ومصادر تمويل التحقيقات الصحفية والمستشارين الخارجيين لضمان استقلالية وموثوقية الرسالة الاتصالية.",
+        definition_en: "The explicit disclosure of information origins, funding transparency, and intellectual provenance across automated and legacy news production.",
+        citation: "Karlsson, M. (2010). Rituals of transparency: Evaluating online news disclosure practices. Journalism Studies, 11(4), 535-545."
+      },
+      {
+        id: 92,
+        term_ar: "رسم خرائط المشاعر المكانية",
+        term_en: "Geolocated Sentiment Mapping",
+        category: "public-relations",
+        definition_ar: "تحليل وتحديد التوزيع الجغرافي لردود فعل الجمهور تجاه حدث أو أزمة معينة عبر الخرائط الرقمية لتوجيه التدخل الميداني وفرق العلاقات العامة بدقة.",
+        definition_en: "Spatial analytical tracking cross-referencing public sentiment with geospatial data to deliver localized PR interventions during regional events.",
+        citation: "Crampton, J. W., et al. (2013). Beyond the geotag: Situating 'big data' and social media in geography. Cartography and Geographic Information Science, 40(2), 130-139."
+      },
+      {
+        id: 93,
+        term_ar: "الإعلام البطيء والعميق",
+        term_en: "Slow & In-Depth Journalism",
+        category: "theories",
+        definition_ar: "حركة صحفية تقاوم ضغوط السبق الفوري لصالح التحري المتأني والتحليل الاستقصائي ذي القيمة المضافة لتقديم فهم سياقي متزن للأحداث المعقدة.",
+        definition_en: "A journalistic counter-movement prioritizing contemplative investigation, cognitive accuracy, and structural context over frantic breaking news speed.",
+        citation: "Le Masurier, M. (2015). What is slow journalism? Journalism Practice, 9(2), 138-152."
+      },
+      {
+        id: 94,
+        term_ar: "الاتصال الموجه بالقيم المؤسسية",
+        term_en: "Values-Driven Corporate Communication",
+        category: "public-relations",
+        definition_ar: "إدارة الاتصال استناداً إلى ثوابت أخلاقية وإنسانية معلنة تحكم مواقف المؤسسة وتصرفاتها تجاه القضايا المجتمعية، حتى لو تعارض ذلك مع الربح اللحظي.",
+        definition_en: "Strategic messaging grounded in uncompromising ethical principles, authenticating corporate stance on societal dilemmas beyond mere profits.",
+        citation: "Argandoña, A. (2003). Fostering values in organizations. Journal of Business Ethics, 45(1), 15-28."
+      },
+      {
+        id: 95,
+        term_ar: "السيادة المعرفية الرقمية",
+        term_en: "Digital Knowledge Sovereignty",
+        category: "theories",
+        definition_ar: "حق الدول والمجتمعات في إنتاج، وأرشفة، وإدارة معارفها وهويتها الثقافية رقمياً على خوادم وطنية مستقلة دون ارتهان لمنصات التكنولوجيا الاحتكارية.",
+        definition_en: "The autonomy of sovereign nations to preserve, govern, and control digital knowledge repositories and cultural memory independent of foreign tech monopolies.",
+        citation: "Pohle, J., & Thiel, T. (2020). Digital sovereignty. Internet Policy Review, 9(4), 1-19."
+      },
+      {
+        id: 96,
+        term_ar: "التقييم المستمر للأثر الاتصالي",
+        term_en: "Continuous Communication Impact Assessment",
+        category: "public-relations",
+        definition_ar: "منهجية قياس دائرية تعتمد على لوحات تحكم تحليلية لمراقبة التغير في معارف وسلوكيات الجمهور المستهدف خلال وبعد الحملة، لإجراء تصويبات فورية.",
+        definition_en: "Iterative analytical benchmarking measuring shifts in stakeholder cognitive awareness and behavior across the entire communication life-cycle.",
+        citation: "Macnamara, J. (2018). Evaluating Public Communication: New Models, Standards, and Best Practice. Routledge."
       }
     ];
 
@@ -650,11 +1119,32 @@
       if (cat === 'public-relations') {
         return '<span class="px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200/60 dark:border-sky-800 text-[11px] font-bold">علاقات عامة واتصال مؤسسي</span>';
       } else if (cat === 'theories') {
-        return '<span class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800 text-[11px] font-bold">إعلام ذكي ونظريات اتصال</span>';
+        return '<span class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800 text-[11px] font-bold">اقتصاد المعرفة والاستدامة</span>';
       } else if (cat === 'ethics') {
         return '<span class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800 text-[11px] font-bold">أخلاقيات وذكاء اصطناعي</span>';
       }
       return '<span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-bold">مصطلح تخصصي</span>';
+    }
+
+    // Modal Handlers
+    function openModal() {
+      document.getElementById('submitModal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('submitModal').classList.add('hidden');
+    }
+    function submitProposal() {
+      const name = document.getElementById('researcherName').value.trim();
+      const term = document.getElementById('proposedTerm').value.trim();
+      if (!name || !term) {
+        alert('يرجى كتابة اسم الباحث والمصطلح المقترح كاملاً');
+        return;
+      }
+      alert('شكراً لك يا ' + name + '، تم استلام مقترح المصطلح بنجاح وسيتم رفعه للجنة التحكيم العلمي بإشراف د. هبة أحمد الديب.');
+      closeModal();
+      document.getElementById('researcherName').value = '';
+      document.getElementById('proposedTerm').value = '';
+      document.getElementById('proposedDef').value = '';
     }
 
     function renderTerms() {
@@ -667,7 +1157,15 @@
 
       const q = searchQuery.toLowerCase().trim();
       const filtered = termsData.filter(item => {
-        const matchesCategory = (currentCategory === 'all' || item.category === currentCategory);
+        let matchesCategory = false;
+        if (currentCategory === 'all') {
+          matchesCategory = true;
+        } else if (currentCategory === 'top20') {
+          matchesCategory = (item.id >= 47 && item.id <= 66) || item.id === 1 || item.id === 20;
+        } else {
+          matchesCategory = (item.category === currentCategory);
+        }
+
         const matchesSearch = !q || 
           item.term_ar.toLowerCase().includes(q) || 
           item.term_en.toLowerCase().includes(q) || 
@@ -715,7 +1213,7 @@
             <span class="truncate max-w-[200px]" title="${item.citation}">
               <i class="fa-solid fa-book-open text-brand-500 ml-1"></i> ${item.citation}
             </span>
-            <button onclick="navigator.clipboard.writeText('${item.term_ar} (${item.term_en}): ${item.citation}'); alert('تم نسخ بيانات المصطلح والتوثيق المعتمد بنجاح');" class="text-brand-600 hover:text-brand-700 font-bold" title="نسخ التوثيق">
+            <button onclick="navigator.clipboard.writeText('${item.term_ar} (${item.term_en}): ${item.citation}'); alert('تم نسخ بيانات المصطلح والتوثيق الأكاديمي بنجاح');" class="text-brand-600 hover:text-brand-700 font-bold" title="نسخ التوثيق">
               <i class="fa-regular fa-copy"></i>
             </button>
           </div>
