@@ -112,7 +112,7 @@
   <section class="relative pt-10 pb-8 grid-bg border-b border-slate-200/80 dark:border-slate-800/80">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       
-      <!-- Academic Supervisor Banner (تم حذف الكلية والإبقاء على الشارة واسمك الموقر) -->
+      <!-- Academic Supervisor Banner -->
       <div class="bg-gradient-to-r from-blue-50/90 via-white to-sky-50/90 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-900 border border-brand-200/60 dark:border-brand-900/40 rounded-3xl p-6 sm:p-7 shadow-sm mb-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex-1 text-center md:text-right">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-950/80 border border-brand-300 dark:border-brand-800 text-brand-800 dark:text-brand-300 text-xs font-bold mb-3">
@@ -150,7 +150,7 @@
         <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
           <div class="flex flex-wrap items-center gap-2" id="filterPills">
             <button data-cat="all" class="cat-pill active-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-700 text-white shadow-sm transition">
-              الكل (<span id="count-all">0</span>)
+              الكل (<span id="count-all">46</span>)
             </button>
             <button data-cat="public-relations" class="cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
               العلاقات العامة والاتصال المؤسسي
@@ -165,7 +165,7 @@
 
           <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold flex items-center gap-1.5">
             <i class="fa-solid fa-layer-group text-brand-500"></i>
-            عدد المصطلحات المطابقة: <span id="filteredCount" class="font-bold text-brand-700 dark:text-brand-400">0</span>
+            عدد المصطلحات المطابقة: <span id="filteredCount" class="font-bold text-brand-700 dark:text-brand-400">46</span>
           </div>
         </div>
       </div>
@@ -224,9 +224,8 @@
     </div>
   </footer>
 
-  <!-- Term Data & Logic Scripts -->
+  <!-- Term Data & Execution Script -->
   <script>
-    // Database of 46 Terms
     const termsData = [
       {
         id: 1,
@@ -644,30 +643,28 @@
       }
     ];
 
-    // Rendering & Interaction Logic
     let currentCategory = 'all';
     let searchQuery = '';
 
-    const container = document.getElementById('termsContainer');
-    const noResults = document.getElementById('noResults');
-    const filteredCount = document.getElementById('filteredCount');
-    const searchInput = document.getElementById('searchInput');
-    const clearSearch = document.getElementById('clearSearch');
-
     function getCategoryBadge(cat) {
-      switch(cat) {
-        case 'public-relations':
-          return `<span class="px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200/60 dark:border-sky-800 text-[11px] font-bold">علاقات عامة واتصال مؤسسي</span>`;
-        case 'theories':
-          return `<span class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800 text-[11px] font-bold">إعلام ذكي ونظريات اتصال</span>`;
-        case 'ethics':
-          return `<span class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800 text-[11px] font-bold">أخلاقيات وذكاء اصطناعي</span>`;
-        default:
-          return `<span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-bold">مصطلح تخصصي</span>`;
+      if (cat === 'public-relations') {
+        return '<span class="px-2.5 py-1 rounded-lg bg-sky-50 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200/60 dark:border-sky-800 text-[11px] font-bold">علاقات عامة واتصال مؤسسي</span>';
+      } else if (cat === 'theories') {
+        return '<span class="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200/60 dark:border-indigo-800 text-[11px] font-bold">إعلام ذكي ونظريات اتصال</span>';
+      } else if (cat === 'ethics') {
+        return '<span class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800 text-[11px] font-bold">أخلاقيات وذكاء اصطناعي</span>';
       }
+      return '<span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-[11px] font-bold">مصطلح تخصصي</span>';
     }
 
     function renderTerms() {
+      const container = document.getElementById('termsContainer');
+      const noResults = document.getElementById('noResults');
+      const filteredCount = document.getElementById('filteredCount');
+      const countAll = document.getElementById('count-all');
+
+      if (!container) return;
+
       const q = searchQuery.toLowerCase().trim();
       const filtered = termsData.filter(item => {
         const matchesCategory = (currentCategory === 'all' || item.category === currentCategory);
@@ -679,16 +676,16 @@
         return matchesCategory && matchesSearch;
       });
 
-      filteredCount.textContent = filtered.length;
-      document.getElementById('count-all').textContent = termsData.length;
+      if (filteredCount) filteredCount.textContent = filtered.length;
+      if (countAll) countAll.textContent = termsData.length;
 
       if (filtered.length === 0) {
         container.innerHTML = '';
-        noResults.classList.remove('hidden');
+        if (noResults) noResults.classList.remove('hidden');
         return;
       }
 
-      noResults.classList.add('hidden');
+      if (noResults) noResults.classList.add('hidden');
       container.innerHTML = filtered.map(item => `
         <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-sm hover:shadow-md hover:border-brand-300 dark:hover:border-brand-700 transition flex flex-col justify-between group">
           <div>
@@ -726,18 +723,55 @@
       `).join('');
     }
 
-    // Filter Buttons Handlers
-    document.querySelectorAll('.cat-pill').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.cat-pill').forEach(b => {
-          b.className = 'cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition';
-        });
-        btn.className = 'cat-pill active-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-700 text-white shadow-sm transition';
-        currentCategory = btn.getAttribute('data-cat');
-        renderTerms();
-      });
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const clearSearch = document.getElementById('clearSearch');
+      const themeToggle = document.getElementById('themeToggle');
 
-    // Search Input Handlers
-    searchInput.addEventListener('input', (e) => {
-      searchQuery
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.cat-pill').forEach(b => {
+            b.className = 'cat-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition';
+          });
+          btn.className = 'cat-pill active-pill px-4 py-1.5 rounded-xl text-xs font-bold bg-brand-700 text-white shadow-sm transition';
+          currentCategory = btn.getAttribute('data-cat');
+          renderTerms();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          searchQuery = e.target.value;
+          if (clearSearch) {
+            if (searchQuery.length > 0) clearSearch.classList.remove('hidden');
+            else clearSearch.classList.add('hidden');
+          }
+          renderTerms();
+        });
+      }
+
+      if (clearSearch && searchInput) {
+        clearSearch.addEventListener('click', () => {
+          searchInput.value = '';
+          searchQuery = '';
+          clearSearch.classList.add('hidden');
+          renderTerms();
+        });
+      }
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          document.documentElement.classList.toggle('dark');
+          localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+        });
+      }
+
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+
+      renderTerms();
+    });
+  </script>
+</body>
+</html>
